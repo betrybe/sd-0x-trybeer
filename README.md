@@ -117,7 +117,7 @@ O intuito com esse app é que uma pessoa possa pedir uma cerveja no aplicativo e
 
 - Os "cards" dos pedidos devem conter as informações: ``número do pedido, endereço para entrega e valor total``.
 
-- Ao clickar no card do pedido, levar para a rota ``/admin/pedido/:id``, onde o id é o id do pedido que o card faz referencia.
+- Ao clickar no em qualquer parte do card do pedido, levar para a rota ``/admin/pedido/:id``, onde o id é o id do pedido que o card faz referencia.
 
 ### Tela de detalhes de pedido:
 - Todos os elementos devem respeitar os atributos descritos no protótipo;
@@ -136,7 +136,7 @@ O intuito com esse app é que uma pessoa possa pedir uma cerveja no aplicativo e
 
 - Caso o status do pedido seja Pendente: um botão para marcar o pedido como entregue deve ser exibido. Caso contrário, não exibir.
 
-- Ao clickar no botão "Marcar pedido como entregue", o status desse pedido deve mudar para `Entregue` e as informações devem ser atualizadas na tela. 
+- Ao clickar no botão ``"Marcar pedido como entregue"``, o status desse pedido deve mudar para `Entregue` e as informações devem ser atualizadas na tela. 
 
 ### Tela de perfil:
 - Todos os elementos devem respeitar os atributos descritos no protótipo;
@@ -309,11 +309,18 @@ No `localStorage` do navegador:
 ```
 
 #### Endpoints
-
 - para o registro, usar ``POST /register``. 
-- para o listar os produtos do cliente, usar ``GET /products``. 
+- para o login, usar ``POST /login``. 
+
+**Client**
+- para o listar os produtos, usar ``GET /products``. 
 - para finalizar o pedido, usar ``POST /finish-order``. 
-- para carregar meus pedidos, usar ``GET /my-orders``. 
+- para carregar meus pedidos, usar ``GET /my-orders``.
+
+**Admin**
+- para listar os pedido pendentes, usar ``GET /pending-orders`` 
+- para listar o detalhes do pedido, usar ``GET /order/:id`` 
+- para marcar um pedido como entregue, usar ``POST /order``. Dica: Mandar o pedido todo com status novo. 
 
 ---
 
