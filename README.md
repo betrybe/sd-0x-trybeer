@@ -329,9 +329,9 @@ No `localStorage` do navegador:
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-01-week10-movie-card-library.git`.
+  * `git clone git@github.com:betrybe/trybeer-project.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-01-week10-movie-card-library`
+    * `cd trybeer-project`
 
 2. Instale as dependências, inicialize o projeto e rode os testes
   * Instale as dependências:
@@ -349,7 +349,7 @@ No `localStorage` do navegador:
     * Exemplo: `git checkout master`
   * Agora, crie uma branch onde você vai guardar os `commits` do seu projeto
     * Você deve criar uma branch no seguinte formato: `nome-de-usuário-nome-do-projeto`
-    * Exemplo: `git checkout -b joaozinho-movie-card-library`
+    * Exemplo: `git checkout -b joaozinho-trybeer`
 
 5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
   * Verifique que as mudanças ainda não estão no _stage_
@@ -364,16 +364,16 @@ No `localStorage` do navegador:
         * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
 
 6. Adicione a sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin joaozinho-movie-cards-library`
+  * Usando o exemplo anterior: `git push -u origin joaozinho-trybeer`
 
 7. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-01-week17-trivia-react-redux-1/pulls)
+  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/betrybe/trybeer-project/pulls)
   * Clique no botão verde _"New pull request"_
   * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
   * Clique no botão verde _"Create pull request"_
   * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
   * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-01-week17-trivia-react-redux-1/pulls) e confira que o seu _Pull Request_ está criado
+  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/betrybe/trybeer-project/pulls) e confira que o seu _Pull Request_ está criado
 
 ---
 
