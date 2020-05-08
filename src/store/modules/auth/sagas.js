@@ -5,7 +5,6 @@ import history from '../../../service/history';
 import { signInSuccess, signInFailure } from './actions';
 
 export function* signUp({ payload }) {
-  console.tron.log('ENTROU NO SAGA signUp');
   try {
     const { name, email, password, admin } = payload;
 
@@ -25,4 +24,25 @@ export function* signUp({ payload }) {
   }
 }
 
-export default all([takeLatest('@auth/SIGN_UP_REQUEST', signUp)]);
+export function* signIn({ payload }) {
+  try {
+    const { email, password } = payload;
+
+    const response = yield call(api.post, 'login', {
+      email,
+      password,
+    });
+
+    const { user, token } = response.data;
+
+    yield put(signInSuccess(token, user));
+    history.push('/dashboard');
+  } catch (err) {
+    yield put(signInFailure());
+  }
+}
+
+export default all([
+  takeLatest('@auth/SIGN_IN_REQUEST', signIn),
+  takeLatest('@auth/SIGN_UP_REQUEST', signUp),
+]);
