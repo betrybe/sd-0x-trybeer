@@ -1,10 +1,12 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Form, Input, Check } from '@rocketseat/unform';
 
 import * as Yup from 'yup';
 
 import logo from '../../assets/logo.png';
+import { signUpRequest } from '../../store/modules/auth/actions';
 
 const schema = Yup.object().shape({
   name: Yup.string().required('O nome é obrigatório'),
@@ -14,12 +16,14 @@ const schema = Yup.object().shape({
   password: Yup.string()
     .min(8, 'deve ter no mínimo 8 caracteres')
     .required('A senha é obrigatória'),
-  isSeller: Yup.bool(),
+  admin: Yup.bool(),
 });
 
 export default function SignUp() {
-  function handleSubmit(data) {
-    console.tron.log(data);
+  const dispatch = useDispatch();
+
+  function handleSubmit({ name, email, password, admin }) {
+    dispatch(signUpRequest(name, email, password, admin));
   }
 
   return (
@@ -32,7 +36,7 @@ export default function SignUp() {
           <Input name="email" type="email" placeholder="Seu e-mail" />
           <Input name="password" type="password" placeholder="Sua senha" />
           <div class="checkbox-container">
-            <Check name="isSeller" label="Quero vender" />
+            <Check name="admin" label="Quero vender" />
           </div>
 
           <button type="submit">Cadastrar</button>
