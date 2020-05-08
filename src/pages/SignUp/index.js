@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Input, Check } from '@rocketseat/unform';
-import { MixedCheckbox, useMixedCheckbox } from '@reach/checkbox';
 
 import * as Yup from 'yup';
 
