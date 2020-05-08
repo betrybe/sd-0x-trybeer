@@ -1,4 +1,5 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
+import { toast } from 'react-toastify';
 
 import api from '../../../service/api';
 import history from '../../../service/history';
@@ -22,6 +23,8 @@ export function* signUp({ payload }) {
     const redirectTo = user.admin ? '/admin/pedidos' : '/produtos';
     history.push(redirectTo);
   } catch (err) {
+    toast.error('Falha no cadastro, verifique seus dados!');
+
     yield put(signInFailure());
   }
 }
@@ -42,6 +45,8 @@ export function* signIn({ payload }) {
     const redirectTo = user.admin ? '/admin/pedidos' : '/produtos';
     history.push(redirectTo);
   } catch (err) {
+    toast.error('Falha na autenticação, verifique seus dados!');
+
     yield put(signInFailure());
   }
 }
