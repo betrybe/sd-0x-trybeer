@@ -9,12 +9,15 @@ import logo from '../../assets/logo.png';
 import { signUpRequest } from '../../store/modules/auth/actions';
 
 const schema = Yup.object().shape({
-  name: Yup.string().required('O nome é obrigatório'),
+  name: Yup.string()
+    .min(12, 'deve ter no mínimo 12 caracteres')
+    .required('O nome é obrigatório'),
   email: Yup.string()
     .email('Insira um e-mail válido')
     .required('O e-mail é obrigatório'),
   password: Yup.string()
-    .min(6, 'deve ter no mínimo 6 caracteres')
+    .matches(/^[0-9]*$/, { message: 'A senha deve conter apenas números' })
+    .min(6, 'A senha deve ter no mínimo 6 caracteres')
     .required('A senha é obrigatória'),
   admin: Yup.bool(),
 });
