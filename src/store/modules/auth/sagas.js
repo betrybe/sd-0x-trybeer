@@ -18,7 +18,9 @@ export function* signUp({ payload }) {
     const { user, token } = response.data;
 
     yield put(signInSuccess(token, user));
-    history.push('/dashboard');
+
+    const redirectTo = user.admin ? '/admin/pedidos' : '/produtos';
+    history.push(redirectTo);
   } catch (err) {
     yield put(signInFailure());
   }
@@ -36,7 +38,9 @@ export function* signIn({ payload }) {
     const { user, token } = response.data;
 
     yield put(signInSuccess(token, user));
-    history.push('/dashboard');
+
+    const redirectTo = user.admin ? '/admin/pedidos' : '/produtos';
+    history.push(redirectTo);
   } catch (err) {
     yield put(signInFailure());
   }

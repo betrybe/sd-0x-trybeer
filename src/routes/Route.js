@@ -13,11 +13,15 @@ export default function RouteWrapper({
   ...rest
 }) {
   const { signed } = store.getState().auth;
+  const { admin } = store.getState().user;
+
   if (!signed && isPrivate) {
     return <Redirect to="/" />;
   }
   if (signed && !isPrivate) {
-    return <Redirect to="/dashboard" />;
+    const redirectTo = admin ? '/admin/pedidos' : '/produtos';
+
+    return <Redirect to={redirectTo} />;
   }
 
   const Layout = signed ? DefaultLayout : AuthLayout;

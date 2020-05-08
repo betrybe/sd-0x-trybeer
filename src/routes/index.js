@@ -6,7 +6,8 @@ import Route from './Route';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 
-import Dashboard from '../pages/Dashboard';
+import Orders from '../pages/Admin/Orders';
+import Products from '../pages/Client/Products';
 
 export default function Routes() {
   return (
@@ -14,7 +15,8 @@ export default function Routes() {
       <Route path="/" exact component={SignIn} />
       <Route path="/register" component={SignUp} />
 
-      <Route path="/dashboard" component={Dashboard} isPrivate />
+      <Route path="/admin/pedidos" component={Orders} isPrivate />
+      <Route path="/produtos" component={Products} isPrivate />
     </Switch>
   );
 }
