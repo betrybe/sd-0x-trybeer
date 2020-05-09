@@ -11,14 +11,14 @@ export default function RouteWrapper({
   isPrivate = false,
   ...rest
 }) {
-  // const { signed } = store.getState().auth;
   const { signed } = useSelector((state) => state.auth);
-  const { admin } = useSelector((state) => state.user);
+  const { profile } = useSelector((state) => state.user);
 
   if (!signed && isPrivate) {
     return <Redirect to="/" />;
   }
   if (signed && !isPrivate) {
+    const { admin } = profile;
     const redirectTo = admin ? '/admin/pedidos' : '/produtos';
 
     return <Redirect to={redirectTo} />;
