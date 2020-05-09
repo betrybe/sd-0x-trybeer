@@ -17,6 +17,7 @@ export default (props) => {
 
   return (
     <Menu
+      customBurgerIcon={false}
       isOpen={window.innerWidth > 768}
       noOverlay={true}
       disableCloseOnEsc={true}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { MdRemoveCircleOutline, MdAddCircleOutline } from 'react-icons/md';
 
-import { ProductList, Cart } from './styles';
+import { Container, ProductList, Cart } from './styles';
 import api from '../../../service/api';
 import { updateAmountRequest } from '../../../store/modules/cart/actions';
 import { formatPrice } from '../../../util/format';
@@ -57,7 +57,7 @@ export default function Products() {
   }
 
   return (
-    <>
+    <Container>
       <ProductList>
         {products.map((product) => (
           <li key={product.id}>
@@ -82,6 +82,6 @@ export default function Products() {
 
         <span>{totalCart}</span>
       </Cart>
-    </>
+    </Container>
   );
 }

@@ -1,7 +1,33 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const ProductList = styled.div`
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background: #fff;
+  border-radius: 4px;
+
+  footer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      color: #fff;
+      border: 0;
+      border-radius: 4px;
+      padding: 12px 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+  }
+`;
+
+export const ProductList = styled.ul`
+  /* align-self: center; */
+  vertical-align: middle;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;

@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   background: linear-gradient(-90deg #10ea76, #3d6464);
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 `;
 
 export const Content = styled.div`
