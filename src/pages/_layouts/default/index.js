@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './index.css';
 
@@ -7,16 +7,25 @@ import PropTypes from 'prop-types';
 
 import { Wrapper, Content } from './styles';
 import Header from '../../../components/Header';
+import MenuContext from '../../../contexts/MenuContext';
 
 export default function DefaultLayout({ children }) {
+  const [menuOpenState, setMenuOpenState] = useState(window.innerWidth > 768);
+
+  function toggleMenu() {
+    setMenuOpenState(!menuOpenState);
+  }
+
   return (
-    <>
-      <Header />
-      <Sidebar />
+    <MenuContext.Provider value={{ menuOpenState }}>
+      <Header toggleMenu={toggleMenu} />
+      <MenuContext.Consumer>
+        {({ menuOpenState }) => <Sidebar isOpen={menuOpenState} />}
+      </MenuContext.Consumer>
       <Wrapper id="page-wrap">
         <Content>{children}</Content>
       </Wrapper>
-    </>
+    </MenuContext.Provider>
   );
 }
 

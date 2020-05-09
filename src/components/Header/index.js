@@ -1,26 +1,26 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import logo from '../../assets/logo.png';
 
-import { MdShoppingBasket } from 'react-icons/md';
 import { Container, Title } from './styles';
+import MenuSwitcher from '../MenuSwitcher';
 
-function Header({ cartSize }) {
+export default function Header({ toggleMenu }) {
   return (
-    <Container>
-      <Link to="/">
-        <img src={logo} alt="Trybeer"></img>
-      </Link>
+    <>
+      <Container>
+        <div>
+          <MenuSwitcher toggleMenu={toggleMenu} />
+          <Link to="/">
+            <img src={logo} alt="Trybeer"></img>
+          </Link>
+        </div>
 
-      <Title>Meus pedidos</Title>
+        <Title>Working Title</Title>
 
-      <span></span>
-    </Container>
+        <span></span>
+      </Container>
+    </>
   );
 }
-
-export default connect((state) => ({
-  cartSize: state.cart.length,
-}))(Header);

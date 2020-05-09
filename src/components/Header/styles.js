@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const Container = styled.header`
   background: #3d6464;
@@ -9,9 +8,16 @@ export const Container = styled.header`
   top: 0px;
   overflow: auto;
 
-  img {
-    margin: 10px 15px;
-    height: 20px;
+  div {
+    justify-content: space-between;
+    display: flex;
+    /* margin: 10px 15px; */
+
+    img {
+      height: 30px;
+      margin: 5px 5px;
+      vertical-align: center;
+    }
   }
 `;
 

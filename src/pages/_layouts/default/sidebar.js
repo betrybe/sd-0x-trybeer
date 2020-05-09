@@ -17,8 +17,9 @@ export default (props) => {
 
   return (
     <Menu
+      {...props}
       customBurgerIcon={false}
-      isOpen={window.innerWidth > 768}
+      // isOpen={window.innerWidth > 768}
       noOverlay={true}
       disableCloseOnEsc={true}
       pageWrapId={'page-wrap'}
