@@ -3,6 +3,7 @@ import { MdRemoveCircleOutline, MdAddCircleOutline } from 'react-icons/md';
 
 import { ProductList, Cart } from './styles';
 import api from '../../../service/api';
+import { formatPrice } from '../../../util/format';
 
 export default function Products() {
   const [products, setProducts] = useState([]);
@@ -11,7 +12,11 @@ export default function Products() {
     async function loadProducts() {
       const response = await api.get('products');
 
-      const { products: data } = response.data;
+      const data = response.data.products.map((product) => ({
+        ...product,
+        priceFormatted: formatPrice(product.price),
+      }));
+
       setProducts(data);
     }
 
