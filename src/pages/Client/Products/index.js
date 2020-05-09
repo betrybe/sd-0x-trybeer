@@ -10,13 +10,26 @@ import { formatPrice } from '../../../util/format';
 export default function Products() {
   const dispatch = useDispatch();
 
+  const [amount, setAmount] = useState([]);
   const [products, setProducts] = useState([]);
+  const [totalCart, setTotalCart] = useState(0);
   const cart = useSelector((state) => state.cart);
-  const amount = cart.reduce((amount, product) => {
-    amount[product.id] = product.amount;
 
-    return amount;
-  }, {});
+  useEffect(() => {
+    const amount = cart.reduce((amount, product) => {
+      amount[product.id] = product.amount;
+
+      return amount;
+    }, {});
+
+    setAmount(amount);
+
+    const totalCart = cart.reduce((total, product) => {
+      return total + product.price * product.amount;
+    }, 0);
+
+    setTotalCart(formatPrice(totalCart));
+  }, [cart]);
 
   useEffect(() => {
     async function loadProducts() {
@@ -66,7 +79,7 @@ export default function Products() {
       <Cart to="">
         <span>Ver carrinho</span>
 
-        <span>R$ 0,00</span>
+        <span>{totalCart}</span>
       </Cart>
     </>
   );
