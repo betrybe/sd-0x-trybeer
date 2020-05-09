@@ -1,32 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { MdRemoveCircleOutline, MdAddCircleOutline } from 'react-icons/md';
 
 import { ProductList, Cart } from './styles';
+import api from '../../../service/api';
 
 export default function Products() {
-  const products = [
-    {
-      id: 1,
-      image:
-        'https://static.carrefour.com.br/medias/sys_master/images/images/hb9/ha1/h00/h00/11461091885086.jpg',
-      title: 'Stella Artois',
-      priceFormatted: 'R$ 3,50',
-    },
-    {
-      id: 2,
-      image:
-        'https://static.carrefour.com.br/medias/sys_master/images/images/h57/h1b/h00/h00/13247489048606.jpg',
-      title: 'Heineken',
-      priceFormatted: 'R$ 4,40',
-    },
-    {
-      id: 3,
-      image:
-        'https://emporiodacerveja.vteximg.com.br/arquivos/ids/172683-1000-1000/bud550ml.jpg?v=636794614289070000',
-      title: 'Budweiser',
-      priceFormatted: 'R$ 3,00',
-    },
-  ];
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function loadProducts() {
+      const response = await api.get('products');
+
+      const { products: data } = response.data;
+      setProducts(data);
+    }
+
+    loadProducts();
+  }, []);
 
   return (
     <>
