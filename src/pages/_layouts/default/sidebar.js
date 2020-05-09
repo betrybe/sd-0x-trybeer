@@ -1,7 +1,16 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { slide as Menu } from 'react-burger-menu';
 
-export default ({ isOpen }) => {
+import { signOutRequest } from '../../../store/modules/auth/actions';
+
+export default (props) => {
+  const dispatch = useDispatch();
+
+  function handleSignOut() {
+    dispatch(signOutRequest());
+  }
+
   return (
     <Menu
       isOpen={window.innerWidth > 768}
@@ -17,13 +26,13 @@ export default ({ isOpen }) => {
         Perfil
       </a>
 
-      <a
+      <button
         style={{ verticalAlign: 'bottom' }}
         className="menu-item"
-        href="/laravel"
+        onClick={handleSignOut}
       >
         Sair
-      </a>
+      </button>
     </Menu>
   );
 };
