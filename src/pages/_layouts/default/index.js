@@ -19,5 +19,5 @@ export default function DefaultLayout({ children }) {
 }
 
 DefaultLayout.propTypes = {
-  isPrivate: PropTypes.element.isRequired,
+  children: PropTypes.element.isRequired,
 };

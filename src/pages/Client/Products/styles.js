@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { darken } from 'polished';
 
 export const ProductList = styled.div`
   display: grid;
