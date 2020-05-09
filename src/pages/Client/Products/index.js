@@ -13,6 +13,7 @@ export default function Products() {
   const [amount, setAmount] = useState([]);
   const [products, setProducts] = useState([]);
   const [totalCart, setTotalCart] = useState(0);
+
   const cart = useSelector((state) => state.cart);
 
   useEffect(() => {
@@ -76,7 +77,7 @@ export default function Products() {
         ))}
       </ProductList>
 
-      <Cart to="">
+      <Cart to="/carrinho">
         <span>Ver carrinho</span>
 
         <span>{totalCart}</span>
