@@ -9,7 +9,7 @@ import { Wrapper, Content } from './styles';
 import Header from '../../../components/Header';
 import MenuContext from '../../../contexts/MenuContext';
 
-export default function DefaultLayout({ children }) {
+export default function DefaultLayout({ children, title }) {
   const [menuOpenState, setMenuOpenState] = useState(window.innerWidth > 768);
 
   function toggleMenu() {
@@ -18,7 +18,7 @@ export default function DefaultLayout({ children }) {
 
   return (
     <MenuContext.Provider value={{ menuOpenState }}>
-      <Header toggleMenu={toggleMenu} />
+      <Header toggleMenu={toggleMenu} title={title} />
       <MenuContext.Consumer>
         {({ menuOpenState }) => <Sidebar isOpen={menuOpenState} />}
       </MenuContext.Consumer>
@@ -30,5 +30,6 @@ export default function DefaultLayout({ children }) {
 }
 
 DefaultLayout.propTypes = {
+  title: PropTypes.string,
   children: PropTypes.element.isRequired,
 };

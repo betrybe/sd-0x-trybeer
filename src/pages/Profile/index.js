@@ -25,7 +25,6 @@ export default function Profile() {
 
   return (
     <div>
-      <h1>Perfil</h1>
       <Form initialData={profile} schema={schema} onSubmit={handleSubmit}>
         <Input name="name" type="name" placeholder="Seu nome" />
         <Input name="email" type="email" placeholder="Seu e-mail" />

@@ -6,7 +6,7 @@ import logo from '../../assets/logo.png';
 import { Container, Title } from './styles';
 import MenuSwitcher from '../MenuSwitcher';
 
-export default function Header({ toggleMenu }) {
+export default function Header({ toggleMenu, title }) {
   return (
     <>
       <Container>
@@ -17,7 +17,7 @@ export default function Header({ toggleMenu }) {
           </Link>
         </div>
 
-        <Title>Working Title</Title>
+        <Title>{title}</Title>
 
         <span></span>
       </Container>

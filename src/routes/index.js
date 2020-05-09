@@ -17,10 +17,15 @@ export default function Routes() {
       <Route path="/" exact component={SignIn} />
       <Route path="/register" component={SignUp} />
 
-      <Route path="/admin/pedidos" component={Orders} isPrivate />
-      <Route path="/produtos" component={Products} isPrivate />
-      <Route path="/meu-perfil" component={Profile} isPrivate />
-      <Route path="/carrinho" component={Cart} isPrivate />
+      <Route
+        path="/admin/pedidos"
+        title="Pedidos pendentes"
+        component={Orders}
+        isPrivate
+      />
+      <Route path="/produtos" component={Products} title="Produtos" isPrivate />
+      <Route path="/meu-perfil" component={Profile} title="Perfil" isPrivate />
+      <Route path="/carrinho" component={Cart} title="Carrinho" isPrivate />
     </Switch>
   );
 }

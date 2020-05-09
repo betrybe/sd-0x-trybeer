@@ -18,8 +18,6 @@ export default function Cart() {
 
   return (
     <Container>
-      <h1>Finalizar pedido</h1>
-
       <h2>Produtos</h2>
 
       <ItemList>

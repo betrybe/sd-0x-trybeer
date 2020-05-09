@@ -9,6 +9,7 @@ import DefaultLayout from '../pages/_layouts/default';
 export default function RouteWrapper({
   component: Component,
   isPrivate = false,
+  title,
   ...rest
 }) {
   const { signed } = useSelector((state) => state.auth);
@@ -30,7 +31,7 @@ export default function RouteWrapper({
     <Route
       {...rest}
       render={(props) => (
-        <Layout>
+        <Layout {...(signed && { title })}>
           <Component {...props} />
         </Layout>
       )}
@@ -38,10 +39,12 @@ export default function RouteWrapper({
   );
 }
 RouteWrapper.propTypes = {
+  title: PropTypes.string,
   isPrivate: PropTypes.bool,
   component: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
     .isRequired,
 };
 RouteWrapper.defaultProps = {
+  title: '',
   isPrivate: false,
 };
