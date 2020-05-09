@@ -3,7 +3,7 @@ import React from 'react';
 export default function Orders() {
   return (
     <div>
-      <h1>Meus pedidos</h1>
+      <h1>Pedidos pendentes</h1>
     </div>
   );
 }
