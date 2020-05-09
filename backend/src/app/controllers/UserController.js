@@ -38,6 +38,46 @@ class UserController {
       }),
     });
   }
+
+  async update(req, res) {
+    const schema = Yup.object({
+      name: Yup.string().required().min(12),
+      email: Yup.string().email().required(),
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      return res.status(401).json({ error: 'Validação falhou' });
+    }
+
+    const user = await User.findByPk(req.userId);
+
+    if (!user) {
+      return res.status(400).json({ error: 'Usuário não encontrado.' });
+    }
+
+    const { email } = req.body;
+
+    if (email !== user.email) {
+      const userExists = await User.findOne({ where: { email } });
+
+      if (userExists) {
+        return res.status(400).json({ error: 'User already exists.' });
+      }
+    }
+
+    await user.update(req.body);
+
+    const { id, name, admin } = await User.findByPk(req.userId);
+
+    return res.json({
+      user: {
+        id,
+        name,
+        email,
+        admin,
+      },
+    });
+  }
 }
 
 export default new UserController();
