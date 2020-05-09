@@ -3,6 +3,7 @@ const routes = new Router();
 
 import UserController from './app/controllers/UserController';
 import SessionController from './app/controllers/SessionController';
+import ProductController from './app/controllers/ProductController';
 
 import authMiddleware from './app/middlewares/auth';
 
@@ -12,9 +13,6 @@ routes.post('/login', SessionController.store);
 routes.use(authMiddleware);
 
 routes.put('/users', UserController.update);
-
-routes.get('/', (req, res) => {
-  return res.json({ ok: true });
-});
+routes.get('/products', ProductController.index);
 
 export default routes;
