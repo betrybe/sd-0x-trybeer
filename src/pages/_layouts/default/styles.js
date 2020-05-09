@@ -4,7 +4,7 @@ import { darken } from 'polished';
 
 export const Wrapper = styled.div`
   height: 100%;
-  background: linear-gradient(-90deg ##10ea76, ##3d6464);
+  background: linear-gradient(-90deg #10ea76, #3d6464);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,6 +14,7 @@ export const Content = styled.div`
   width: 100%;
   max-width: 351px;
   text-align: center;
+  margin-top: 350px;
 
   img {
     max-width: 351px;
@@ -30,15 +31,10 @@ export const Content = styled.div`
       border-radius: 4px;
       height: 44px;
       padding: 0 15px;
-      /* color: #fff; */
       margin: 0 0 10px;
-      /* &::placeholder {
-        color: rgba(255, 255, 255, 0.7);
-      } */
     }
 
     span {
-      /* color: #fff; */
       align-self: flex-start;
       margin: 0 0 10px;
       font-weight: bold;
