@@ -5,13 +5,15 @@ import './index.css';
 import Sidebar from './sidebar';
 import PropTypes from 'prop-types';
 
-import { Wrapper } from './styles';
+import { Wrapper, Content } from './styles';
 
 export default function DefaultLayout({ children }) {
   return (
     <>
       <Sidebar />
-      <Wrapper id="page-wrap">{children}</Wrapper>
+      <Wrapper id="page-wrap">
+        <Content>{children}</Content>
+      </Wrapper>
     </>
   );
 }

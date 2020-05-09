@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { slide as Menu } from 'react-burger-menu';
 
@@ -22,9 +23,9 @@ export default (props) => {
         Pedidos
       </a>
 
-      <a className="menu-item" href="/laravel">
+      <Link className="menu-item" to="/meu-perfil">
         Perfil
-      </a>
+      </Link>
 
       <button
         style={{ verticalAlign: 'bottom' }}

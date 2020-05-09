@@ -8,6 +8,7 @@ import SignUp from '../pages/SignUp';
 
 import Orders from '../pages/Admin/Orders';
 import Products from '../pages/Client/Products';
+import Profile from '../pages/Profile';
 
 export default function Routes() {
   return (
@@ -17,6 +18,7 @@ export default function Routes() {
 
       <Route path="/admin/pedidos" component={Orders} isPrivate />
       <Route path="/produtos" component={Products} isPrivate />
+      <Route path="/meu-perfil" component={Profile} isPrivate />
     </Switch>
   );
 }
