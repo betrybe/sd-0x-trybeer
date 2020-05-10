@@ -25,5 +25,6 @@ routes.post('/finish-order', OrderController.store);
 
 routes.get('/orders', AdminOrderController.index);
 routes.get('/orders/:id', AdminOrderController.show);
+routes.post('/orders/:id', AdminOrderController.markAsDelivered);
 
 export default routes;

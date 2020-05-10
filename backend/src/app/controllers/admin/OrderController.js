@@ -27,9 +27,9 @@ class OrderController {
   async show(req, res) {
     const user = await User.findByPk(req.userId);
 
-    // if (!user.admin) {
-    //   return res.status(400).json({ error: 'Acesso bloqueado' });
-    // }
+    if (!user.admin) {
+      return res.status(400).json({ error: 'Acesso bloqueado' });
+    }
 
     const order = await Order.findByPk(req.params.id, {
       include: {
@@ -43,6 +43,34 @@ class OrderController {
     });
 
     return res.json(order);
+  }
+
+  async markAsDelivered(req, res) {
+    const user = await User.findByPk(req.userId);
+
+    if (!user.admin) {
+      return res.status(400).json({ error: 'Acesso bloqueado' });
+    }
+
+    const { id } = req.params;
+
+    const order = await Order.findByPk(req.params.id);
+
+    if (!order) {
+      return res.status(400).json({ error: 'Pedido nào encontrado' });
+    }
+
+    if (order.delivered) {
+      return res
+        .status(400)
+        .json({ error: 'Pedido já foi marcado como entregue' });
+    }
+
+    order.update({
+      delivered: true,
+    });
+
+    return res.status(200).json();
   }
 }
 
