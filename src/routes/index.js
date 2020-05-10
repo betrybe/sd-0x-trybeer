@@ -25,7 +25,7 @@ export default function Routes() {
       />
       <Route path="/produtos" component={Products} title="Produtos" isPrivate />
       <Route path="/meu-perfil" component={Profile} title="Perfil" isPrivate />
-      <Route path="/carrinho" component={Cart} title="Carrinho" isPrivate />
+      <Route path="/checkout" component={Cart} title="Carrinho" isPrivate />
     </Switch>
   );
 }

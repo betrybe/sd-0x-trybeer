@@ -77,7 +77,7 @@ export default function Products() {
         ))}
       </ProductList>
 
-      <Cart to="/carrinho">
+      <Cart to="/checkout">
         <span>Ver carrinho</span>
 
         <span>{totalCart}</span>
