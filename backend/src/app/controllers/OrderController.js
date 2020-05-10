@@ -7,6 +7,22 @@ import db from '../../database';
 import * as Yup from 'yup';
 
 class OrderController {
+  async index(req, res) {
+    const orders = await Order.findAll({
+      where: { user_id: req.userId },
+      include: {
+        model: OrderItem,
+        as: 'order_items',
+        include: {
+          model: Product,
+          as: 'product',
+        },
+      },
+    });
+
+    return res.json(orders);
+  }
+
   async store(req, res) {
     const schema = Yup.object({
       address_street: Yup.string().required(),

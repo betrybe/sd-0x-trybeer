@@ -18,10 +18,10 @@ class Order extends Model {
 
   static associate(models) {
     this.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' });
-    // this.hasMany(models.OrderItem, {
-    //   foreignKey: 'order_id',
-    //   as: 'order_items',
-    // });
+    this.hasMany(models.OrderItem, {
+      foreignKey: 'order_id',
+      as: 'order_items',
+    });
   }
 }
 

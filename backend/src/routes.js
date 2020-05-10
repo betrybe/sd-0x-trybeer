@@ -18,6 +18,7 @@ routes.put('/users', UserController.update);
 routes.get('/products', ProductController.index);
 routes.get('/products/:id', ProductController.show);
 
+routes.get('/my-orders', OrderController.index);
 routes.post('/finish-order', OrderController.store);
 
 export default routes;
