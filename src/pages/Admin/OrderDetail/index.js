@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+
 import api from '../../../service/api';
 import { formatPrice } from '../../../util/format';
 
-import { Container, Total, OrderContainer, Button } from './styles';
+import { Container, Total, OrderContainer, Button, BackButton } from './styles';
 
 export default function OrderDetail(props) {
   const id = props.match.params.id;
@@ -35,9 +37,24 @@ export default function OrderDetail(props) {
     loadOrder();
   }, [id]);
 
+  async function handleUpdateOrder() {
+    try {
+      const response = await api.post(`orders/${id}`);
+
+      console.log(response.data);
+
+      setOrder(response.data);
+      toast.success('Pedido marcado como entregue!');
+    } catch (err) {
+      toast.error('Falha ao atualizar pedido!');
+    }
+  }
+
   return (
     <Container>
-      <h1>Pedido {order.id}</h1>
+      <h1>
+        Pedido {order.id} - {order.delivered ? 'Entregue' : 'Pendente'}
+      </h1>
 
       <OrderContainer>
         <ul>
@@ -57,7 +74,11 @@ export default function OrderDetail(props) {
         </Total>
       </OrderContainer>
 
-      <Button>Marcar como entregue</Button>
+      {!order.delivered && (
+        <Button onClick={handleUpdateOrder}>Marcar como entregue</Button>
+      )}
+
+      <BackButton to="/admin/pedidos">Voltar</BackButton>
     </Container>
   );
 }

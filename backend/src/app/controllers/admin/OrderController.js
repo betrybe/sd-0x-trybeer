@@ -11,6 +11,7 @@ class OrderController {
     }
 
     const orders = await Order.findAll({
+      where: { delivered: false },
       include: {
         model: OrderItem,
         as: 'order_items',
@@ -66,11 +67,13 @@ class OrderController {
         .json({ error: 'Pedido já foi marcado como entregue' });
     }
 
-    order.update({
+    await order.update({
       delivered: true,
     });
 
-    return res.status(200).json();
+    const orderUpdated = await Order.findByPk(req.params.id);
+
+    return res.status(200).json(orderUpdated);
   }
 }
 

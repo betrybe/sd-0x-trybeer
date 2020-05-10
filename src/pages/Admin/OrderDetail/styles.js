@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   display: flex;
@@ -44,6 +45,16 @@ export const Total = styled.div`
 `;
 
 export const Button = styled.button`
+  background: #3d6464;
+  color: #fff;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 15px;
+  width: auto;
+  text-align: center;
+`;
+
+export const BackButton = styled(Link)`
   background: #3d6464;
   color: #fff;
   font-weight: bold;
