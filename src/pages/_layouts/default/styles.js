@@ -11,10 +11,10 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 100%;
-  max-width: 351px;
+  /* width: 100%; */
+  /* max-width: 351px; */
+  width: 600px;
   text-align: center;
-  /* margin-top: 350px; */
 
   img {
     max-width: 351px;

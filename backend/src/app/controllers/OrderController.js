@@ -8,7 +8,6 @@ import * as Yup from 'yup';
 
 class OrderController {
   async index(req, res) {
-    console.log(req.userId);
     const orders = await Order.findAll({
       where: { user_id: req.userId },
       include: {
