@@ -36,10 +36,10 @@ export default (props) => {
         </>
       ) : (
         <>
-          <Link className="menu-item bm-item" to="">
+          <Link className="menu-item bm-item" to="/produtos">
             Produtos
           </Link>
-          <Link className="menu-item bm-item" to="">
+          <Link className="menu-item bm-item" to="/meus-pedidos">
             Meus pedidos
           </Link>
           <Link className="menu-item bm-item" to="">

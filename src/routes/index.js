@@ -9,6 +9,7 @@ import SignUp from '../pages/SignUp';
 import Orders from '../pages/Admin/Orders';
 import Products from '../pages/Client/Products';
 import Cart from '../pages/Client/Cart';
+import MyOrders from '../pages/Client/Orders';
 import Profile from '../pages/Profile';
 
 export default function Routes() {
@@ -26,6 +27,12 @@ export default function Routes() {
       <Route path="/produtos" component={Products} title="Produtos" isPrivate />
       <Route path="/meu-perfil" component={Profile} title="Perfil" isPrivate />
       <Route path="/checkout" component={Cart} title="Carrinho" isPrivate />
+      <Route
+        path="/meus-pedidos"
+        component={MyOrders}
+        title="Meus pedidos"
+        isPrivate
+      />
     </Switch>
   );
 }
