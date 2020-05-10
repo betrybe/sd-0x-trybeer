@@ -31,6 +31,9 @@ export default function cart(state = INITIAL_STATE, action) {
         }
       });
     }
+    case '@cart/CHECKOUT_SUCCESS': {
+      return INITIAL_STATE;
+    }
     case '@auth/SIGN_OUT_REQUEST': {
       return INITIAL_STATE;
     }

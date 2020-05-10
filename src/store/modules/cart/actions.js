@@ -13,3 +13,17 @@ export function updateAmountSuccess(product, amount) {
     amount,
   };
 }
+
+export function checkoutRequest(address_street, address_number) {
+  return {
+    type: '@cart/CHECKOUT_REQUEST',
+    address_street,
+    address_number,
+  };
+}
+
+export function checkoutSuccess() {
+  return {
+    type: '@cart/CHECKOUT_SUCCESS',
+  };
+}
