@@ -6,15 +6,15 @@ import Route from './Route';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 
-import Orders from '../pages/admin/Orders';
-import OrderDetail from '../pages/admin/OrderDetail';
-import AdminProfile from '../pages/admin/Profile';
+import Orders from '../pages/Admin/Orders';
+import OrderDetail from '../pages/Admin/OrderDetail';
+import AdminProfile from '../pages/Admin/Profile';
 
-import Products from '../pages/client/Products';
-import Cart from '../pages/client/Cart';
-import MyOrders from '../pages/client/Orders';
-import Order from '../pages/client/Order';
-import Profile from '../pages/client/Profile';
+import Products from '../pages/Client/Products';
+import Cart from '../pages/Client/Cart';
+import MyOrders from '../pages/Client/Orders';
+import Order from '../pages/Client/Order';
+import Profile from '../pages/Client/Profile';
 
 export default function Routes() {
   return (
