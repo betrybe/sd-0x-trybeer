@@ -38,7 +38,7 @@ export default function Cart() {
         <strong>{totalCart}</strong>
       </Total>
 
-      <OrderForm disableSubmit={cart.length === 0} />
+      <OrderForm disabled={cart.length === 0} />
 
       <BackButton to="/produtos">Voltar</BackButton>
     </Container>

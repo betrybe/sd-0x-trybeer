@@ -30,10 +30,6 @@ class OrderController {
   async show(req, res) {
     const user = await User.findByPk(req.userId);
 
-    if (!user.admin) {
-      return res.status(400).json({ error: 'Acesso bloqueado' });
-    }
-
     const order = await Order.findByPk(req.params.id, {
       include: {
         model: OrderItem,
@@ -44,6 +40,10 @@ class OrderController {
         },
       },
     });
+
+    if (!user.admin && order.user_id != req.userId) {
+      return res.status(400).json({ error: 'Acesso bloqueado' });
+    }
 
     return res.json(order);
   }

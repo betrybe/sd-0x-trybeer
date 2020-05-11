@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import api from '../../../service/api';
 import { formatPrice } from '../../../util/format';
 
-import { Container, OrderList, Total } from './styles';
+import { Container, OrderList, OrderLink, Total } from './styles';
 
 export default function Orders() {
   const [orders, setOrders] = useState([]);
@@ -33,13 +33,13 @@ export default function Orders() {
     <Container>
       <OrderList>
         {orders.map((order) => (
-          <li key={order.id}>
+          <OrderLink to={`pedido/${order.id}`} key={order.id}>
             <strong>Pedido {order.id}</strong>
             <span>
               {order.address_street} {order.address_number}
             </span>
             <Total>{order.total}</Total>
-          </li>
+          </OrderLink>
         ))}
       </OrderList>
     </Container>

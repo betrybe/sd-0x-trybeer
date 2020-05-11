@@ -12,6 +12,7 @@ import OrderDetail from '../pages/Admin/OrderDetail';
 import Products from '../pages/Client/Products';
 import Cart from '../pages/Client/Cart';
 import MyOrders from '../pages/Client/Orders';
+import Order from '../pages/Client/Order';
 import Profile from '../pages/Profile';
 
 export default function Routes() {
@@ -39,6 +40,12 @@ export default function Routes() {
       <Route
         path="/meus-pedidos"
         component={MyOrders}
+        title="Meus pedidos"
+        isPrivate
+      />
+      <Route
+        path="/pedido/:id"
+        component={Order}
         title="Meus pedidos"
         isPrivate
       />

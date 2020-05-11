@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   display: flex;
@@ -14,26 +15,27 @@ export const OrderList = styled.ul`
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   list-style: none;
+`;
 
-  li {
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    border-radius: 4px;
-    padding: 20px;
-    border: 1px solid;
-    width: 300px;
-    text-align: left;
-    justify-content: space-between;
+export const OrderLink = styled(Link)`
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid;
+  width: 300px;
+  text-align: left;
+  justify-content: space-between;
 
-    > strong {
-      font-size: 21px;
-      font-weight: bold;
-    }
+  > strong {
+    font-size: 21px;
+    font-weight: bold;
+  }
 
-    > span {
-      font-size: 18px;
-    }
+  > span {
+    font-size: 18px;
   }
 `;
 
