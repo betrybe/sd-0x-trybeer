@@ -30,7 +30,7 @@ export default (props) => {
             Pedidos
           </Link>
 
-          <Link className="menu-item bm-item" to="/meu-perfil">
+          <Link className="menu-item bm-item" to="/admin/perfil">
             Perfil
           </Link>
         </>
@@ -42,7 +42,7 @@ export default (props) => {
           <Link className="menu-item bm-item" to="/meus-pedidos">
             Meus pedidos
           </Link>
-          <Link className="menu-item bm-item" to="">
+          <Link className="menu-item bm-item" to="/meu-perfil">
             Meu perfil
           </Link>
         </>

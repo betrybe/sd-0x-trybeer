@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
-import { updateProfileRequest } from '../../store/modules/user/actions';
+import { updateProfileRequest } from '../../../store/modules/user/actions';
 
 const schema = Yup.object().shape({
   name: Yup.string()

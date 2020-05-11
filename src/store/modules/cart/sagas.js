@@ -21,7 +21,7 @@ export function* updateAmount({ id, amount }) {
     } else {
     }
   } catch (err) {
-    console.tron.warn(err);
+    toast.error('Erro ao atualizar quantidade!');
   }
 }
 
