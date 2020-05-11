@@ -25,6 +25,13 @@ export function* updateAmount({ id, amount }) {
   }
 }
 
+async function checkoutApi(order) {
+  return await api
+    .post('finish-order', order)
+    .then((response) => ({ response }))
+    .catch((error) => ({ error: error.response }));
+}
+
 export function* checkoutRequest({ address_street, address_number }) {
   const { cart } = store.getState();
 
@@ -34,24 +41,28 @@ export function* checkoutRequest({ address_street, address_number }) {
     yield put(checkoutFailure());
   }
 
-  const items = cart.map((product) => ({
-    product_id: product.id,
-    amount: product.amount,
-  }));
+  const order = {
+    address_street,
+    address_number,
+    items: cart.map((product) => ({
+      product_id: product.id,
+      amount: product.amount,
+    })),
+  };
 
-  try {
-    yield call(api.post, `finish-order`, {
-      address_street,
-      address_number,
-      items,
-    });
+  const { response, error } = yield call(checkoutApi, order);
+
+  if (response) {
+    toast.success('Pedido feito com sucesso!');
 
     yield put(checkoutSuccess());
 
-    toast.success('Pedido feito com sucesso!');
-
     history.push('/meus-pedidos');
-  } catch (err) {
+  } else {
+    const { error: message } = error.data;
+
+    toast.error(message);
+
     yield put(checkoutFailure());
   }
 }

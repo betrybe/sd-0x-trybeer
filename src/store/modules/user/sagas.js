@@ -2,11 +2,7 @@ import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
 
 import api from '../../../services/api';
-import {
-  updateProfileSuccess,
-  updateProfileFailure,
-  updateProfileRequest,
-} from './actions';
+import { updateProfileSuccess, updateProfileFailure } from './actions';
 
 async function updateUserApi({ name, email }) {
   return await api
