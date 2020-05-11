@@ -23,6 +23,7 @@ Código desenvolvido para o teste para time de aprendizagem da Trybe. #vqv #goTr
 ```
 cd backend
 docker-compose up
+docker-compose run app yarn sequelize db:seed:all # Popular o banco de dados
 ```
 
 ### ➡️ Frontend

@@ -4,6 +4,7 @@ services:
   app:
     container_name: app
     build: '.'
+    command: ./entrypoint.sh
     volumes:
       - .:/home/node/api
     depends_on:
