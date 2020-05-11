@@ -19,8 +19,8 @@ export default function OrderForm({ disableSubmit }) {
 
   return (
     <Form schema={schema} onSubmit={handleSubmit}>
-      <Input name="address_street" />
-      <Input name="address_number" />
+      <Input name="address_street" disabled={true} />
+      <Input name="address_number" disabled={true} />
 
       <button disabled={disableSubmit} type="submit">
         Fazer pedido

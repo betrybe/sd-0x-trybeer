@@ -93,4 +93,7 @@ export const Cart = styled(Link)`
   font-weight: bold;
   width: 630px;
   padding: 15px;
+  /* position: fixed;
+  bottom: 0;
+  overflow: true; */
 `;

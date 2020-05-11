@@ -7,12 +7,9 @@ export const Wrapper = styled.div`
   background: linear-gradient(-90deg #10ea76, #3d6464);
   display: flex;
   justify-content: center;
-  /* align-items: center; */
 `;
 
 export const Content = styled.div`
-  /* width: 100%; */
-  /* max-width: 351px; */
   width: 600px;
   text-align: center;
 
@@ -26,12 +23,16 @@ export const Content = styled.div`
     flex-direction: column;
     margin-top: 30px;
     input {
-      background: rgba(0, 0, 0, 0.1);
-      border: 0;
-      border-radius: 4px;
+      /* background: #aaa; */
+      border: 1px solid;
+      border-radius: 6px;
       height: 44px;
       padding: 0 15px;
       margin: 0 0 10px;
+
+      &:disabled {
+        background: #eee;
+      }
     }
 
     span {
@@ -47,15 +48,21 @@ export const Content = styled.div`
     button {
       margin: 5px 0 0;
       height: 44px;
-      background: #3b9eff;
+      background: #3d6464;
       font-weight: bold;
       color: #fff;
       border: 0;
       border-radius: 4px;
       font-size: 16px;
       transition: background 0.2s;
+      &:disabled {
+        background: #ccc;
+        &:hover {
+          background: ${darken(0.03, '#ccc')};
+        }
+      }
       &:hover {
-        background: ${darken(0.03, '#3b9eff')};
+        background: ${darken(0.05, '#3d6464')};
       }
     }
 

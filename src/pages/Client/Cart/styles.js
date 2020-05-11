@@ -55,9 +55,9 @@ export const Total = styled.div`
 `;
 
 export const BackButton = styled(Link)`
-  margin: 20px 0;
+  margin: 10px 0;
 
-  background: #3d6464;
+  background: #ccc;
   color: #fff;
   font-weight: bold;
   padding: 15px;
