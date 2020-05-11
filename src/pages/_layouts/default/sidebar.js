@@ -19,7 +19,7 @@ export default (props) => {
     <Menu
       {...props}
       customBurgerIcon={false}
-      // isOpen={window.innerWidth > 768}
+      customCrossIcon={false}
       noOverlay={true}
       disableCloseOnEsc={true}
       pageWrapId={'page-wrap'}
@@ -47,11 +47,7 @@ export default (props) => {
           </Link>
         </>
       )}
-      <button
-        style={{ verticalAlign: 'bottom' }}
-        className="menu-item"
-        onClick={handleSignOut}
-      >
+      <button className="menu-item" onClick={handleSignOut}>
         Sair
       </button>
     </Menu>

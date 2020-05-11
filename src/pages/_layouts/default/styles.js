@@ -23,7 +23,6 @@ export const Content = styled.div`
     flex-direction: column;
     margin-top: 30px;
     input {
-      /* background: #aaa; */
       border: 1px solid;
       border-radius: 6px;
       height: 44px;
