@@ -2,14 +2,14 @@
 
 Código desenvolvido para o teste para time de aprendizagem da Trybe. #vqv #goTrybe
 
-# 🧰 Funcionalidades
+## 🧰 Funcionalidades
 
 - Autenticação e cadastro com JWT
 - Listagem de produtos
 - Carrinho de Compras
 - Gerenciamento de pedidos
 
-# 💻 Tecnologias
+## 💻 Tecnologias
 
 - Node (Sequelize, Express, Yup)
 - React (Redux, Redux Sagas, React Hooks)
@@ -25,7 +25,7 @@ cd backend
 docker-compose up
 ```
 
-### ➡️Frontend
+### ➡️ Frontend
 
 ```
 yarn
