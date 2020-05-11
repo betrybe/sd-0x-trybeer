@@ -16,7 +16,6 @@ export default function user(state = INITIAL_STATE, action) {
         break;
       }
       case '@user/UPDATE_PROFILE_SUCCESS': {
-        console.tron.log(action.payload);
         draft.profile = action.payload;
         break;
       }
