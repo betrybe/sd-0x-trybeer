@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import api from '../../../service/api';
+import api from '../../../services/api';
 import { formatPrice } from '../../../util/format';
 
 import { Container, OrderList, OrderLink, Total } from './styles';

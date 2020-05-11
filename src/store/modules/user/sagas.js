@@ -1,6 +1,6 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 
-import api from '../../../service/api';
+import api from '../../../services/api';
 import { updateProfileSuccess } from './actions';
 
 export function* updateUser({ payload }) {
@@ -17,9 +17,6 @@ export function* updateUser({ payload }) {
     console.tron.log(user);
 
     yield put(updateProfileSuccess(user));
-
-    // const redirectTo = user.admin ? '/admin/pedidos' : '/produtos';
-    // history.push(redirectTo);
   } catch (err) {}
 }
 

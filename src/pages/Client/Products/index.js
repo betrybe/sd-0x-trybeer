@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { MdRemoveCircleOutline, MdAddCircleOutline } from 'react-icons/md';
 
 import { Container, ProductList, Cart } from './styles';
-import api from '../../../service/api';
+import api from '../../../services/api';
 import { updateAmountRequest } from '../../../store/modules/cart/actions';
 import { formatPrice } from '../../../util/format';
 

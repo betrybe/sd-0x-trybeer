@@ -2,7 +2,6 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    console.log('seeding...');
     return queryInterface.bulkInsert(
       'products',
       [

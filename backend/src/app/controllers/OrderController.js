@@ -36,10 +36,6 @@ class OrderController {
       ),
     });
 
-    schema.validate(req.body).catch(function (e) {
-      console.log(e);
-    });
-
     if (!(await schema.isValid(req.body))) {
       return res.status(401).json({ error: 'Dados inválidos' });
     }

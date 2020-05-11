@@ -8,7 +8,7 @@ import './config/ReactotronConfig';
 
 import GlobalStyle from './styles/global';
 import Routes from './routes';
-import history from './service/history';
+import history from './services/history';
 import { store, persistor } from './store';
 
 function App() {

@@ -1,8 +1,8 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
 
-import api from '../../../service/api';
-import history from '../../../service/history';
+import api from '../../../services/api';
+import history from '../../../services/history';
 import { store } from '../../../store';
 import {
   updateAmountSuccess,

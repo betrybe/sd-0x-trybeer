@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
-import api from '../../../service/api';
+import api from '../../../services/api';
 import { formatPrice } from '../../../util/format';
 
 import { Container, Total, OrderContainer, Button, BackButton } from './styles';
@@ -40,8 +40,6 @@ export default function OrderDetail(props) {
   async function handleUpdateOrder() {
     try {
       const response = await api.post(`orders/${id}`);
-
-      console.log(response.data);
 
       setOrder(response.data);
       toast.success('Pedido marcado como entregue!');
