@@ -21,6 +21,7 @@ export default function Routes() {
     <Switch>
       {/* Rotas admin */}
       <Route path="/" exact component={SignIn} />
+      <Route path="/login" exact component={SignIn} />
       <Route path="/register" component={SignUp} />
 
       <Route
