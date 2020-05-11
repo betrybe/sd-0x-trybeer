@@ -10,6 +10,7 @@ class OrderController {
   async index(req, res) {
     const orders = await Order.findAll({
       where: { user_id: req.userId },
+      order: [['id', 'desc']],
       include: {
         model: OrderItem,
         as: 'order_items',

@@ -6,12 +6,14 @@ import User from '../../models/User';
 class OrderController {
   async index(req, res) {
     const user = await User.findByPk(req.userId);
+
     if (!user.admin) {
       return res.status(400).json({ error: 'Acesso bloqueado' });
     }
 
     const orders = await Order.findAll({
       where: { delivered: false },
+      order: [['id', 'desc']],
       include: {
         model: OrderItem,
         as: 'order_items',

@@ -27,3 +27,9 @@ export function checkoutSuccess() {
     type: '@cart/CHECKOUT_SUCCESS',
   };
 }
+
+export function checkoutFailure() {
+  return {
+    type: '@cart/CHECKOUT_FAILURE',
+  };
+}

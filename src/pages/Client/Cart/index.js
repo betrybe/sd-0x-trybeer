@@ -1,15 +1,12 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { Container, ItemList, Total, BackButton } from './styles';
-import { Form, Input } from '@rocketseat/unform';
 
-import { checkoutRequest } from '../../../store/modules/cart/actions';
 import { formatPrice } from '../../../util/format';
+import OrderForm from './form';
 
 export default function Cart() {
-  const dispatch = useDispatch();
-
   const cart = useSelector((state) => state.cart).map((item) => ({
     ...item,
     subtotal: formatPrice(item.price * item.amount),
@@ -20,10 +17,6 @@ export default function Cart() {
       return total + product.price * product.amount;
     }, 0)
   );
-
-  function handleSubmit({ address_street, address_number }) {
-    dispatch(checkoutRequest(address_street, address_number));
-  }
 
   return (
     <Container>
@@ -45,12 +38,7 @@ export default function Cart() {
         <strong>{totalCart}</strong>
       </Total>
 
-      <Form onSubmit={handleSubmit}>
-        <Input name="address_street" />
-        <Input name="address_number" />
-
-        <button type="submit">Fazer pedido</button>
-      </Form>
+      <OrderForm disableSubmit={cart.length === 0} />
 
       <BackButton to="/produtos">Voltar</BackButton>
     </Container>

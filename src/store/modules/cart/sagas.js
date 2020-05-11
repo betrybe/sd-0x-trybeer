@@ -1,9 +1,14 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
+import { toast } from 'react-toastify';
 
 import api from '../../../service/api';
 import history from '../../../service/history';
 import { store } from '../../../store';
-import { updateAmountSuccess, checkoutSuccess } from './actions';
+import {
+  updateAmountSuccess,
+  checkoutSuccess,
+  checkoutFailure,
+} from './actions';
 
 export function* updateAmount({ id, amount }) {
   try {
@@ -21,7 +26,15 @@ export function* updateAmount({ id, amount }) {
 }
 
 export function* checkoutRequest({ address_street, address_number }) {
-  const items = store.getState().cart.map((product) => ({
+  const { cart } = store.getState();
+
+  if (cart.length === 0) {
+    toast.error('Seu carrinho está vazio!');
+
+    yield put(checkoutFailure());
+  }
+
+  const items = cart.map((product) => ({
     product_id: product.id,
     amount: product.amount,
   }));
@@ -35,8 +48,12 @@ export function* checkoutRequest({ address_street, address_number }) {
 
     yield put(checkoutSuccess());
 
+    toast.success('Pedido feito com sucesso!');
+
     history.push('/meus-pedidos');
-  } catch (err) {}
+  } catch (err) {
+    yield put(checkoutFailure());
+  }
 }
 
 export default all([
