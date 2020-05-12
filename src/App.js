@@ -1,24 +1,28 @@
 import React from 'react';
-import './App.css';
+import { ToastContainer } from 'react-toastify';
+import { Router } from 'react-router-dom';
+import { PersistGate } from 'redux-persist/integration/react';
+import { Provider } from 'react-redux';
+
+import './config/ReactotronConfig';
+
+import GlobalStyle from './styles/global';
+import Routes from './routes';
+import history from './services/history';
+import { store, persistor } from './store';
 
 function App() {
-    return (
-        <div className="App">
-            <header className="App-header">
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
-    );
+  return (
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <Router history={history}>
+          <Routes></Routes>
+          <GlobalStyle />
+          <ToastContainer autoClose={3000} />
+        </Router>
+      </PersistGate>
+    </Provider>
+  );
 }
 
 export default App;
