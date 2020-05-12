@@ -5,6 +5,7 @@ services:
     container_name: app
     build: '.'
     command: ./entrypoint.sh
+    restart: always
     volumes:
       - .:/home/node/api
     depends_on:

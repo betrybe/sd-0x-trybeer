@@ -10,6 +10,9 @@ USER node
 
 RUN yarn
 
+# Bundle app source
+COPY . .
+
 EXPOSE 3001
 
 ENTRYPOINT [ "./entrypoint.sh" ]

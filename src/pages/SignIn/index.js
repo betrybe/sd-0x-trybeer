@@ -54,8 +54,6 @@ export default function SignIn() {
     setValues(attrs);
   }
 
-  const { email, password } = values;
-
   return (
     <>
       <img src={logo} alt="TryBeer" />

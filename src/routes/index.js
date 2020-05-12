@@ -22,7 +22,7 @@ export default function Routes() {
       {/* Rotas admin */}
       <Route path="/" exact component={SignIn} />
       <Route path="/login" exact component={SignIn} />
-      <Route path="/register" component={SignUp} />
+      <Route path="/registro" component={SignUp} />
 
       <Route
         path="/admin/pedidos"

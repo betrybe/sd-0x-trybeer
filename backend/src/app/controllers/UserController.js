@@ -9,10 +9,7 @@ class UserController {
     const schema = Yup.object({
       name: Yup.string().required().min(12),
       email: Yup.string().email().required(),
-      password: Yup.string()
-        .matches(/^[0-9]*$/)
-        .required()
-        .min(6),
+      password: Yup.string().required().min(6),
     });
 
     if (!(await schema.isValid(req.body))) {
