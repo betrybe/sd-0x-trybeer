@@ -2,8 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
 
-test('VAI COMEÇAR, A CYBER LUTAAAAA... ATÉ CAIR! NÃO PERCA O CONTROLE, E AO TOPO VAMOS SUBIR!', () => {
+test('renders learn react link', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/SUA VEZ/i);
+  const linkElement = getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
