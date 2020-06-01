@@ -6,27 +6,29 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ## O que deverá ser desenvolvido
 
-Esse será o projeto mais desafiador até agora! Você será responsavél por criar uma aplicação de ponta-a-ponta!
+Esse será o projeto mais desafiador até agora! Você será responsável por criar uma aplicação de ponta-a-ponta!
 
-Isso significa que tanto a API, o banco de dados e o front-end serão escritos por você 😁
+Isso significa que a API, o banco de dados e o front-end serão escritos por você 😁
 
-O projeto em si é super divertido! Vamos criar uma plataforma de delivery de cerveja 🍻
+O projeto em si é super divertido! Você criar uma plataforma de delivery de cerveja 🍻
 
-Para facilitar, dá para dividirmos a aplicação em 3 partes:
+Para facilitar o entendimento, dá para dividirmos a aplicação em três partes:
 
-- API (vamos fazer apenas uma)
-- Front-End Cliente (onde nosso cliente vai comprar a cerveja)
-- Front-End Admin (onde o estabelecimento controla os pedido feitos)
+- API (você fará apenas uma);
 
-Você pode acessar um protótipo do Front-End no link abaixo:
+- Front-end **cliente** (onde nosso cliente vai comprar a cerveja);
+
+- Front-end **admin** (onde o estabelecimento controla os pedido feitos).
+
+Você pode acessar um protótipo do front-end no link abaixo:
 
 https://www.figma.com/file/gzvsPYRwHUmRnvmVn9h6b5/TryBeer?node-id=0%3A1
 
-Lembre-se de escrever testes unitários e sinta-se livre para alterar a UI, só respeite os atributos `data-testid`, eles serão usados na correção do exercicio.
+Lembre-se de escrever testes unitários e sinta-se livre para alterar a UI. Contudo, respeite os atributos `data-testid`, eles serão usados na correção do projeto.
 
-Você pode ler mais sobre atributos para testes [nesse link](https://www.eduardopedroso.com.br/?p=494) 
+Você pode ler mais sobre atributos que serão utilizados para testes [nesse link](https://www.eduardopedroso.com.br/?p=494)
 
-#### ⚠️ Lembre-se de escrever testes unitários e sinta-se livre para alterar a UI, só respeite os atributos `data-testid`, eles serão usados na correção do exercício.
+#### ⚠️ Lembre-se de escrever testes unitários e sinta-se livre para alterar a UI. Contudo, respeite os atributos `data-testid`, eles serão usados na correção do projeto.
 
 #### ⚠️ Para ver os comentários sobre cada componente, basta clicar no ícone de comentários no Figma (lado esquerdo superior).
 
@@ -36,291 +38,340 @@ Você pode ler mais sobre atributos para testes [nesse link](https://www.eduardo
 
 ## Desenvolvimento e testes
 
-Este repositório já contem um _template_ com um App React criado, configurado e com os testes automatizados que fazem parte da correção. Após clonar o projeto e instalar as dependências, sinta-se livre para escolher usar Redux ou não, saiba avaliar as vantagens/desvantagens.
+Este repositório já contem um _template_ com um App React criado e com os testes automatizados que fazem parte da correção. Após clonar o projeto e instalar as dependências, sinta-se livre para escolher usar Redux ou não, saiba avaliar as vantagens/desvantagens.
 
-Para o projeto ser validado, todos os [testes E2E](https://www.guru99.com/end-to-end-testing.html) devem passar. É possível testar isso local rodando `npm run cy`. Esse comando roda a suite de testes do [Cypress](https://www.cypress.io/how-it-works/) que valida se o fluxo geral e os requisitos funcionais estão funcionando como deveriam.
+Para o projeto ser validado, todos os [testes E2E](https://www.guru99.com/end-to-end-testing.html) devem passar. É possível testar isso local rodando `npm run cy`. Esse comando roda a suíte de testes do [Cypress](https://www.cypress.io/how-it-works/) que valida se o fluxo geral e os requisitos funcionais estão agindo da maneira que deveriam.
 
-Esses testes não consideram o layout de maneira geral, mas sim os atributos e informações corretas, então preste atenção nos atributos definidos no protótipo.
+Esses testes não consideram o layout de maneira geral, mas sim os atributos e as informações corretas. Então, preste atenção nos atributos definidos no protótipo.
 
 Os testes te darão uma mensagem de erro caso não estejam passando (seja qual for o motivo). 😉
 
 #### Além dos testes automatizados, você também deve **escrever testes unitários que devem cobrir pelo menos 90% do projeto**. Na [documentação do Jest CLI](https://jestjs.io/docs/en/cli) é possível ver como essa cobertura é coletada.
 
+## Implementações técnicas
+
+Algumas coisas devem seguir um padrão pré-estabelecido para que os teste de correção funcionem corretamente.
+
+- O front-end deve estar em `localhost:3000` e a API em `localhost:3001`.
+
+- O uso de `localStorage` é necessário para que as informações não se percam caso o usuário atualize a página.
+
+No `localStorage` do navegador:
+
+- A chave `user` deve conter a seguinte estrutura:
+
+  ```json
+  {
+    "name": "Taylor Swift",
+    "email": "taylorswift@email.com",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4(...)",
+    "role": "client"
+  }
+  ```
+
+- Ao deslogar, remova completamente a chave `user` do `localStorage`.
+
+- Os endpoints devem autorizar o acesso utilizando um token de teste: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`
+
+- Crie um `produto de teste`, que deve ficar na primeira posição dos cards, com o `test-id` começando com o **indice 0**. Para isso, o corpo da sua requisição deve ser:
+
+  ```json
+  {
+    "name": "Cerveja Skol Lata 250ml",
+    "price": 2.2,
+    "image": "https://res.cloudinary.com/drdpedroso/image/upload/c_scale,w_600/v1587242866/132_Cerveja_Skol_Pilsen_Lata_350ml_zu1xth.jpg"
+  }
+  ```
+
+- Crie um login de teste para um usuário do tipo `ADMIN`. Para isso, o corpo da sua requisição deve ser:
+
+  ```json
+  {
+    "name": "Admin Trybe",
+    "email": "admin@trybe.com",
+    "password": "123456"
+  }
+  ```
+
+- Crie um login de teste para um usuário do tipo `CLIENT`. Para isso, o corpo da sua requisição deve ser:
+
+  ```json
+  {
+    "name": "Client Trybe",
+    "email": "client@trybe.com",
+    "password": "123456"
+  }
+  ```
+
+### Endpoints
+
+- Para o registro de um usuário, faça uma requisição do tipo `POST` para o endpoint `/register`.
+
+- Para o login de um usuário, faça uma requisição do tipo `POST` para o endpoint `/login`.
+
+**Client**
+
+- Para listar os produtos, faça uma requisição do tipo `GET` para o endpoint `/products`.
+
+- No momento de finalizar um pedido, faça uma requisição do tipo `POST` para o endpoint `/finish-order`.
+
+- Para carregar "Meus pedidos", faça uma requisição do tipo `GET` para o endpoint `/my-orders`.
+
+**Admin**
+
+- Para listar os pedido pendentes, faça uma requisição do tipo `GET` para o endpoint `/pending-orders`.
+
+- Para listar o detalhes do pedido, faça uma requisição do tipo `GET` para o endpoint `/order/:id`.
+
+- Para marcar um pedido como entregue, faça uma requisição do tipo `POST` para o endpoint `/order`. **Dica**: Mande, para o endpoint, o pedido todo, atualizando apenas o status.
+
+⚠️ A próxima sessão lista, com maiores detalhes, os requisitos. **Lembre-se** de, sempre que for começar um novo requisito, retornar nessa sessão para estar alinhado com o que foi pedido.
+
 ## Requisitos do projeto
 
-⚠️ Lembre-se que o seu projeto só será avaliado se estiver passando pelos _checks_ do **CodeClimate**, e tiver a **cobertura de testes unitários mínima de 90%**
-⚠️ Os endpoints, a arquitetura do banco e a estrutura geral do projeto estão nas mãos da pessoa que está desenvolvendo o projeto. O importante é que todos os requisitos sejam atendidos.  
- 
-O intuito com esse app é que uma pessoa possa pedir uma cerveja no aplicativo e outra pessoa possa aceitar esse pedido no admin.  
+⚠️ Lembre-se que o seu projeto só será avaliado se estiver passando pelos _checks_ do **CodeClimate**.
 
+⚠️ Os endpoints, a arquitetura do banco e a estrutura geral do projeto estão nas mãos da pessoa que está desenvolvendo o projeto. O importante é que todos os requisitos sejam atendidos.
 
-### Tela de login:
+O intuito desse app é que uma pessoa possa pedir uma cerveja no aplicativo e outra pessoa possa aceitar esse pedido no **admin**.
 
-   - Todos os elementos devem respeitar os atributos descritos no protótipo;
+#### O projeto sera composto por duas entregas, cada uma especificada abaixo com seus respectivos requisitos e o prazo decidido com o especialista.
 
-   - A pessoa deve conseguir escrever seu email no input de email;
-   
-   - A pessoa deve conseguir escrever sua senha no input de senha;
-   
-   - O formulário só fica válido após um email válido e uma senha de mais de 6 caracteres serem preenchidos.
-   
-   - Caso o formulário esteja inválido, o botão de submeter deve estar desativado. Caso contrário, deve estar ativado.
-   
-   - Após a submissão, um token que identifica o usuário deve ser salvo no navegador. Esse token vai ser utilizado para as requisições da API.
-   
-   - Se o usuário for do tipo `administrador`, a próxima rota deve ser a de **Pedidos**.
-    
-   - Se o usuário for do tipo `cliente`, a próxima rota deve ser a de **Produtos**.
-   
-   - Um botão de se registrar deve existir. Ao ser clickado, levar para a rota `/registrar`. 
-   
+## Requisitos Entrega 1
+
+1. A cobertura de testes unitários deve ser de no mínimo 90%;
+
+### Tela de login
+
+2. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de login;
+
+3. A pessoa deve conseguir escrever seu email no input de email;
+
+4. A pessoa deve conseguir escrever sua senha no input de senha;
+
+5. O formulário só fica válido após um email válido e uma senha de, no mínimo, 6 números serem preenchidos;
+
+6. Caso o formulário esteja inválido, o botão de submeter deve estar desativado. Caso contrário, deve estar ativado;
+
+7. Após a submissão, um token que identifica o usuário deve ser salvo no `localStorage`. Esse token vai ser utilizado para futuras requisições à API;
+
+8. Após a submissão, se o usuário for do tipo `administrador`, a próxima rota deve ser a de **Pedidos**;
+
+9. Após a submissão, se o usuário for do tipo `cliente`, a próxima rota deve ser a de **Produtos**;
+
+10. Deve existir um botão para o usuário se registrar: "`Ainda não tenho conta`". Ao ser clicado, leve-o para a rota `/register`.
+
 ### Tela de registro
-- Todos os elementos devem respeitar os atributos descritos no protótipo;
 
-- A tela deve mostrar um formulário com os seguintes campos:
+11. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de registro;
 
-- `nome` - deve conter no minimo 12 letras, sem números ou caracteres especiais.
+12. A tela deve mostrar um formulário com os seguintes campos:
 
-- `email` - deve conter um email válido.
- 
-- `senha` - composta por 6 números.
+    - **nome** - deve conter, no mínimo, 12 letras, sem números ou caracteres especiais;
 
-- `quero vender` - sendo um checkbox opcional.
+    - **email** - deve conter um email válido;
 
-- Caso a opção `quero vender` esteja "checkada", o usuário deve ter um papel de ADMIN. Caso contrário, será um CLIENT.
+    - **senha** - composta por, no mínimo, 6 números;
 
-- O botão de submeter o formulário deve está desabilitado caso algum dos campos seja inválido. 
+    - **quero vender** - sendo um checkbox opcional.
 
-- Caso a opção `quero vender` esteja "checkada", ao clickar no botão `Cadastrar`, a rota deve mudar para `/admin/pedidos`.
- Caso contrario, mudar a rota para `produtos`
+13. Caso a opção `quero vender` esteja "checada", o usuário deve ter um papel de **ADMIN**. Caso contrário, será um **CLIENT**;
 
+14. Caso o formulário esteja inválido, o botão de submeter deve estar desativado. Caso contrário, deve estar ativado;
 
-## Admin
-
-### Menu Lateral 
-- Todos os elementos devem respeitar os atributos descritos no protótipo;
-
-- Deve conter 3 items: `Pedidos`, `Perfil` e `Sair`
-
-- Ao clickar no item `Pedidos`, a rota deve mudar para `/admin/pedidos` e mostrar a tela de Pedidos.
-
-- Ao clickar no item `Perfil`, a rota deve mudar para `/admin/perfil` e mostrar a tela de Perfil.
- 
-- Ao clickar no item `Sair`, a rota deve mudar para `/login` e a pessoa deve ser deslogada. 
-
-### Tela de pedidos:
-- Todos os elementos devem respeitar os atributos descritos no protótipo;
-
-- A rota deve ser `/admin/pedidos`.
-
-- Essa tela deve mostrar todos os pedidos com status **Pendente**.
-
-- Os "cards" dos pedidos devem conter as informações: ``número do pedido, endereço para entrega e valor total``.
-
-- Ao clickar no em qualquer parte do card do pedido, levar para a rota ``/admin/pedido/:id``, onde o id é o id do pedido que o card faz referencia.
-
-### Tela de detalhes de pedido:
-- Todos os elementos devem respeitar os atributos descritos no protótipo;
-
-- A rota deve ser `/admin/pedido/:id`.
-
-- No cabeçalho, mostrar o ``número do pedido`` e o `status` atual.
-
-- Mostrar uma listagem com os produtos do pedido, onde cada linha deve conter `quantidade, o nome do produto e qual o preço total do produto`.
-
-- A listagem deve sempre mostrar o pedido mais antigo com status pendente primeiro.
-
-- O `preço total do produto` é calculado usando `quantidade * preço unitário`.
-
-- Mostrar também o `valor total do pedido`, calculado com a `soma de todos os preços totais dos produtos`.
-
-- Caso o status do pedido seja Pendente: um botão para marcar o pedido como entregue deve ser exibido. Caso contrário, não exibir.
-
-- Ao clickar no botão ``"Marcar pedido como entregue"``, o status desse pedido deve mudar para `Entregue` e as informações devem ser atualizadas na tela. 
-
-### Tela de perfil:
-- Todos os elementos devem respeitar os atributos descritos no protótipo;
-
-- A rota deve ser `/admin/perfil`.
-
-- Mostrar o `e-mail` e o `nome` do usuário. Não permitir edição.
-
+15. Caso a opção `quero vender` esteja "checada", ao clicar no botão "`Cadastrar`", redirecione para `/admin/orders`. Caso contrario, redirecione a rota para `/products`.
 
 ## Cliente
 
 ### Menu superior
-- Todos os elementos devem respeitar os atributos descritos no protótipo;
 
-- Mostrar o titulo correspondente a tela (vide protótipo).
+16. Todos os elementos devem respeitar os atributos descritos no protótipo para o menu superior;
 
-- Mostrar "hamburguer" que, quando clickado, deve mostrar o menu lateral (caso esteja oculto) e esconder (caso esteja aberto).
+17. Mostre o título correspondente à tela em que o usuário se encontra (vide protótipo);
+
+18. Deve ter um ícone, do tipo "hamburguer", no canto superior esquerdo do Menu superior. Quando clicado, caso o menu lateral esteja oculto, deve mostrá-lo. Caso contrário, deve esconder o menu lateral.
 
 ### Menu lateral
-- Todos os elementos devem respeitar os atributos descritos no protótipo;
 
-- Deve conter 3 items: `Produtos`, `Meus pedidos`, `Meu Perfil` e `Sair`
+19. Todos os elementos devem respeitar os atributos descritos no protótipo para o menu lateral;
 
-- Ao clickar no item `Produtos`, a rota deve mudar para `/produtos` e mostrar a tela de Produtos.
+20. Deve conter quatro itens: "`Produtos`", "`Meus pedidos`", "`Meu Perfil`" e "`Sair`";
 
-- Ao clickar no item `Meus pedidos`, a rota deve mudar para `/meus-pedidos` e mostrar a tela de Meus Pedidos.
+21. Ao clicar no item "`Produtos`", a rota deve mudar para `/products` e mostrar a tela de produtos;
 
-- Ao clickar no item `Meu perfil`, a rota deve mudar para `/meu-perfil` e mostrar a tela de Meu Perfil.
- 
-- Ao clickar no item `Sair`, a rota deve mudar para `/login` e a pessoa deve ser deslogada.
+22. Ao clicar no item "`Meus pedidos`", a rota deve mudar para `/my-orders` e mostrar a tela de meus pedidos;
 
-### Tela de Produtos
-- Todos os elementos devem respeitar os atributos descritos no protótipo;
+23. Ao clicar no item "`Meu perfil`", a rota deve mudar para `/profile` e mostrar a tela de meu perfil;
 
-- A rota deve ser `/products`.
+24. Ao clicar no item "`Sair`", a rota deve mudar para `/login` e a pessoa deve ser deslogada.
 
-- Caso a pessoa atualize o browser, o carrinho deve ser mantido.
+### Tela de perfil
 
-- Caso a pessoa volte em menos de 12h (contando da ultima alteração nos items do checkout), o carrinho deve ser mantido.
+25. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de perfil;
 
-- Nessa tela, os produtos devem ser organizados em cards.
+26. A rota deve ser `/profile`;
 
-- Os cards devem conter `foto, nome do produto, o preço unitário, quantidade atual, um botão de adicionar e de remover`.
+27. Deve ter dois campos de texto, um para o `email` e o outro para o `nome`. Apenas o `nome` pode ser alterado. Dessa forma, o campo `email` é `read-only`;
 
-- O preço unitário deve seguir o padrão da moeda: ``R$ 00,00``.
+28. Deve ter um botão "`Salvar`". Caso o usuário tenha editado o nome, o botão deve ser habilitado. Caso contrário, o botão deve estar desabilitado.
 
-- Ao clickar no botão `+`, a quantidade do produto deve aumentar em 1.
+### Tela de produtos
 
-- Ao clickar no botão `-`, a quantidade do produto deve diminuir em 1, limitado a 0.
+29. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de produtos;
 
-- Quando a quantidade for 0, o produto deve ser removido do carrinho.
+30. A rota deve ser `/products`;
 
-- Mostrar um botão de ``Ver carrinho`` com o `valor total` no texto.
+31. Caso a pessoa atualize o browser, o carrinho deve ser mantido;
 
-- Quando a quantidade mudar, o valor total no botão deve mudar.
+32. O carrinho deve ser mantido por 12h. Ou seja, caso um usuário insira produtos no carrinho e não finalize a compra, ele deve ser mantido por 12h. Para isso, conte as horas a partir da última alteração nos itens do checkout;
 
-- Ao clickar no botão ``Ver carrinho``, mudar a rota para `/checkout`.
+33. Nessa tela, os produtos devem ser organizados em "cards";
 
-### Tela de Meus pedidos
-- Todos os elementos devem respeitar os atributos descritos no protótipo;
+34. Os cards devem conter os seguintes dados do produto:
 
-- A rota deve ser `/meus-pedidos`.
+    - Foto;
 
-- Essa tela deve contar uma lista de cards contendo informações do pedido: ``número do pedido, data e o valor total`` (apenas dia e mês para data).
+    - Nome do produto;
 
-- A listagem deve sempre mostrar o pedido mais novo primeiro. 
+    - Preço unitário;
 
-- Ao clickar no card, a rota deve mudar para os detalhes do pedido clickado: ``/pedido/:numero-do-pedido``, sendo `numero-do-pedido` o número daquele pedido.
+    - Quantidade atual inserida no carrinho;
 
-### Tela de Detalhes do pedido
-- Todos os elementos devem respeitar os atributos descritos no protótipo;
+    - Botão de adicionar e de remover do carrinho.
 
-- A rota deve ser ``/pedido/:numero-do-pedido``.
+35. O preço unitário deve seguir o padrão da moeda: `R$ 00,00`;
 
-- Mostrar o `número do pedido e a data de realização` (apenas dia e mês).
+36. Ao clicar no botão `+`, a quantidade do produto deve aumentar em 1;
 
-- Mostrar uma lista com ``quantidade do produto -- nome do produto -- valor total do produto``. Sendo o valor total calculado por `quantidade * preço unitário`.
+37. Ao clicar no botão `-`, a quantidade do produto deve diminuir em 1, limitado a 0;
 
-- Abaixo da lista, mostrar o `valor total do pedido`, sendo calculado pela `soma de todos os valores totais por produto`.
+38. Quando a quantidade, mostrada no card do produto, chegar a 0, o produto deve ser removido do carrinho;
 
-### Tela de perfil:
-- Todos os elementos devem respeitar os atributos descritos no protótipo;
+39. Deve ter um botão "`Ver carrinho`". Esse botão deve ter o `valor total` como conteúdo;
 
-- A rota deve ser `/perfil`.
+40. O `valor total`, mostrado no botão, deve ser alterado dinâmicamente, ou seja, ao adicionar um novo produto no carrinho, o valor total deve ser atualizado;
 
-- Mostrar campos de texto com `e-mail` e o `nome` do usuário. Permitir edição apenas do `nome`.
+41. Ao clicar no botão "`Ver carrinho`", mudar a rota para `/checkout`.
 
-- Disponibilizar um botão `Salvar`, que quando clickado deve alterar o nome do usuário (caso ele tenha editado).
+---
 
-- Caso nenhuma edição ocorra, o botão deve ficar desabilitado.
+## Requisitos Entrega 2
 
-### Tela de Checkout 
-- Todos os elementos devem respeitar os atributos descritos no protótipo;
+42. A cobertura de testes unitários deve ser de no mínimo 90%;
 
-- A rota deve ser ``/checkout``.
+### Tela de checkout
 
-- Caso a pessoa atualize o browser, o carrinho deve ser mantido.
+43. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de checkout;
 
-- Caso a pessoa volte em menos de 12h (contando da ultima alteração nos items do checkout), o carrinho deve ser mantido.
+44. A rota deve ser `/checkout`;
 
-- Mostrar o `número do pedido e a data de realização` (apenas dia e mês).
+45. Caso a pessoa atualize o browser, o carrinho deve ser mantido;
 
-- Mostrar uma lista com ``quantidade do produto -- nome do produto -- valor total do produto``. Sendo o valor total calculado por `quantidade * preço unitário`.
+46. Os produtos, mostrados nessa página, devem ser mantidos por 12h. Ou seja, caso um usuário insira produtos e não finalize a compra, eles devem ser mantidos por 12h. Para isso, conte as horas a partir da última alteração nos itens;
 
-- O campo de `quantidade` deve habilitar a edição da mesma. Caso a quantidade se altere, recalcular o `valor total do pedido`.
+47. Mostre o `número do pedido` e a `data de realização`. Para a data de realiazação do pedido, mostre apenas o dia e o mês;
 
-- Abaixo da lista, mostrar o `valor total do pedido`, sendo calculado pela `soma de todos os valores totais por produto`.
+48. Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`. Sendo o valor total calculado por **quantidade * preço unitário**;
 
-- Deve existir um formulário para a pessoal digitar a `rua` e o `número da casa` para entrega.
+49. Deve ser possível editar o campo `quantidade`. Caso a quantidade se altere, recalcule o `valor total do pedido`;
 
-- Exibir um botão de `Finalizar pedido`, que deve estar habilitado apenas se: o valor for maior que 0 e o endereço estiver preenchido.
+50. Abaixo da lista, mostre o `valor total do pedido`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**;
 
-- Ao clickar em `Finalizar pedido`, a rota deve mudar para a `/produtos` (em caso de sucesso).
+51. Deve existir um formulário para a pessoa digitar o endereço de entrega dos produtos. O formulário deve conter dois campos de texto, um para a **rua** e o outro para o **número da casa**;
 
-- Uma mensagem de sucesso deve ser exibida caso a operação dê certo. Caso contrário, exibir uma mensagem de erro.
+52. Deve ter um botão para "`Finalizar pedido`". O botão deve estar habilitado **apenas** se o valor total do pedido for `maior que zero` e o endereço de entrega preenchido;
 
-   
-### Implementações técnicas
+53. Ao clicar em "`Finalizar pedido`", caso a operação dê certo, uma mensagem de sucesso deve ser exibida e a rota deve mudar para `/products`. Caso contrário, deve ser exibido uma mensagem de erro.
 
-Algumas coisas devem seguir um padrão pré-estabelecido para que os teste de correção funcionem corretamente.
+### Tela de meus pedidos
 
-- O Front-End deve estar na em ``localhost:3000`` e a API em ``localhost:3001``.
+54. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de meus pedidos;
 
-- O uso de `localStorage` é necessário para que as informações não se percam caso a pessoa atualize a página. 
+55. A rota deve ser `/my-orders`;
 
-No `localStorage` do navegador:
-* a chave `user` deve conter a seguinte estrutura:
-```
-{
-    name,
-    email,
-    token,
-    role (podendo ser ADMIN ou CLIENT) 
-}
-```
+56. Deve conter uma lista de cards contendo as seguintes informações: `número do pedido`, `data de realização` e `valor total do pedido`. Para a data de realiazação do pedido, mostre apenas o dia e o mês;
 
-- Ao deslogar, remover completamente a chave `user` do `localStorage`.
+57. A listagem deve sempre mostrar o pedido mais recente primeiro;
 
-- Os endpoints devem permitir o acesso com um token de teste: ```eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c```
+58. Ao clicar no card, a rota deve mudar para os detalhes do respectivo pedido, utilizando a seguinte rota: `/my-orders/:numero-do-pedido`.
 
-- Criar um ``produto de teste`` que deve ficar na primeira posição dos cards (com test-id começando com o indice 0) com as especificações:
+### Tela de detalhes do pedido
 
-```javascript
-{
-    name: 'Cerveja Skol Lata 250ml',
-    price: 2.20,
-    image: 'https://res.cloudinary.com/drdpedroso/image/upload/c_scale,w_600/v1587242866/132_Cerveja_Skol_Pilsen_Lata_350ml_zu1xth.jpg'
-}
-``` 
+59. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de detalhes do pedido;
 
+60. A rota deve ser `/my-orders/:numero-do-pedido`;
 
-- Criar um `login de teste para ADMIN` com as seguintes especificações: 
+61. Mostre o `número do pedido` e a `data de realização`. Para a data de realiazação do pedido, mostre apenas o dia e o mês;
 
-```javascript
-{
-    name: 'Admin Trybe',
-    email: 'admin@trybe.com',
-    password: '123456'
-}
-```
+62. Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`. Sendo o valor total calculado por **quantidade * preço unitário**;
 
-- Criar um `login de teste para CLIENT` com as seguintes especificações: 
+63. Abaixo da lista, mostre o `valor total do pedido`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**.
 
-```javascript
-{
-    name: 'Client Trybe',
-    email: 'client@trybe.com',
-    password: '123456'
-}
-```
+## Admin
 
-#### Endpoints
-- para o registro, usar ``POST /register``. 
-- para o login, usar ``POST /login``. 
+### Menu lateral
 
-**Client**
-- para o listar os produtos, usar ``GET /products``. 
-- para finalizar o pedido, usar ``POST /finish-order``. 
-- para carregar meus pedidos, usar ``GET /my-orders``.
+64. Todos os elementos devem respeitar os atributos descritos no protótipo para o menu lateral;
 
-**Admin**
-- para listar os pedido pendentes, usar ``GET /pending-orders`` 
-- para listar o detalhes do pedido, usar ``GET /order/:id`` 
-- para marcar um pedido como entregue, usar ``POST /order``. Dica: Mandar o pedido todo com status novo. 
+65. Deve conter três itens: "`Pedidos`", "`Perfil`" e "`Sair`";
+
+66. Ao clicar no item "`Pedidos`", a rota deve mudar para `/admin/pending-orders` e mostrar a tela de pedidos;
+
+67. Ao clicar no item "`Perfil`", a rota deve mudar para `/admin/profile` e mostrar a tela de perfil;
+
+68. Ao clicar no item "`Sair`", a rota deve mudar para `/login` e a pessoa deve ser deslogada.
+
+### Tela de perfil
+
+69. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de perfil;
+
+70. A rota deve ser `/admin/profile`;
+
+71. Mostrar o `email` e o `nome` do usuário. Não permita que o usuário edite os dados.
+
+### Tela de pedidos
+
+72. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de pedidos;
+
+73. A rota deve ser `/admin/pending-orders`;
+
+74. Essa tela deve mostrar todos os pedidos com status **Pendente**;
+
+75. Os "cards" dos pedidos devem conter as informações:
+
+    - Número do pedido;
+
+    - Endereço para entrega;
+
+    - Valor total do pedido.
+
+76. Ao clicar em qualquer parte do card do pedido, levar para a rota `/admin/order/:id`, onde o **:id** é o id do pedido referente ao card.
+
+### Tela de detalhes de pedido
+
+77. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de detalhes do pedido;
+
+78. A rota deve ser `/admin/order/:id`;
+
+79. No cabeçalho, mostre o `número do pedido` e o `status` atual;
+
+80. Deve ter uma listagem com os produtos do pedido, onde cada linha deve conter:
+
+    - Quantidade;
+
+    - Nome do produto;
+
+    - Valor total do produto.
+
+81. A listagem deve mostrar, sempre, o pedido mais antigo com **status pendente primeiro**;
+
+82. O `preço total` do produto é calculado usando **quantidade * preço unitário**;
+
+83. Mostre também o `valor total do pedido`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**;
+
+84. Caso o status do pedido seja **pendente**, um botão para marcar o pedido como entregue deve ser exibido. Caso contrário, não exiba o botão;
+
+85. Ao clicar no botão "`Marcar pedido como entregue`", o status desse pedido deve mudar para `Entregue`. Consequentemente, a lista da tela "Pedidos pendentes" deve ser atualizada.
 
 ---
 
@@ -329,58 +380,63 @@ No `localStorage` do navegador:
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone git@github.com:betrybe/trybeer-project.git`.
-  * Entre na pasta do repositório que você acabou de clonar:
-    * `cd trybeer-project`
+
+- `git clone git@github.com:betrybe/trybeer-project.git`.
+- Entre na pasta do repositório que você acabou de clonar:
+  - `cd trybeer-project`
 
 2. Instale as dependências, inicialize o projeto e rode os testes
-  * Instale as dependências:
-    * `npm install`
-  * Inicialize o projeto:
-    * `npm start` (uma nova página deve abrir no seu navegador com um texto simples)
-  * Verifique que os testes E2E estão executando:
-    * `npm run cy` (os testes devem rodar e falhar)
-    * `npm run cy:open` (os testes devem rodar e falhar, legal caso queira ver o Cypress funcionando)
+
+- Instale as dependências:
+  - `npm install`
+- Inicialize o projeto:
+  - `npm start` (uma nova página deve abrir no seu navegador com um texto simples)
+- Verifique que os testes E2E estão executando:
+  - `npm run cy` (os testes devem rodar e falhar)
+  - `npm run cy:open` (os testes devem rodar e falhar, legal caso queira ver o Cypress funcionando)
 
 3. Crie uma branch a partir da branch `master`
-  * Verifique que você está na branch `master`
-    * Exemplo: `git branch`
-  * Se não estiver, mude para a branch `master`
-    * Exemplo: `git checkout master`
-  * Agora, crie uma branch onde você vai guardar os `commits` do seu projeto
-    * Você deve criar uma branch no seguinte formato: `nome-de-usuário-nome-do-projeto`
-    * Exemplo: `git checkout -b joaozinho-trybeer`
+
+- Verifique que você está na branch `master`
+  - Exemplo: `git branch`
+- Se não estiver, mude para a branch `master`
+  - Exemplo: `git checkout master`
+- Agora, crie uma branch onde você vai guardar os `commits` do seu projeto
+  - Você deve criar uma branch no seguinte formato: `nome-de-usuário-nome-do-projeto`
+  - Exemplo: `git checkout -b joaozinho-trybeer`
 
 5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
-  * Verifique que as mudanças ainda não estão no _stage_
-    * Exemplo: `git status` (deve aparecer listada a pasta _components_ em vermelho)
-  * Adicione o novo arquivo ao _stage_ do Git
-      * Exemplo:
-        * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
-        * `git status` (deve aparecer listado o arquivo _components/Header.jsx_ em verde)
-  * Faça o `commit` inicial
-      * Exemplo:
-        * `git commit -m 'iniciando o projeto. VAMOS COM TUDO :rocket:'` (fazendo o primeiro commit)
-        * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
+
+- Verifique que as mudanças ainda não estão no _stage_
+  - Exemplo: `git status` (deve aparecer listada a pasta _components_ em vermelho)
+- Adicione o novo arquivo ao _stage_ do Git
+  - Exemplo:
+    - `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
+    - `git status` (deve aparecer listado o arquivo _components/Header.jsx_ em verde)
+- Faça o `commit` inicial
+  - Exemplo:
+    - `git commit -m 'iniciando o projeto. VAMOS COM TUDO :rocket:'` (fazendo o primeiro commit)
+    - `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
 
 6. Adicione a sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin joaozinho-trybeer`
+
+- Usando o exemplo anterior: `git push -u origin joaozinho-trybeer`
 
 7. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/betrybe/trybeer-project/pulls)
-  * Clique no botão verde _"New pull request"_
-  * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
-  * Clique no botão verde _"Create pull request"_
-  * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
-  * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/betrybe/trybeer-project/pulls) e confira que o seu _Pull Request_ está criado
+
+- Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/betrybe/trybeer-project/pulls)
+- Clique no botão verde _"New pull request"_
+- Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
+- Clique no botão verde _"Create pull request"_
+- Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
+- **Não se preocupe em preencher mais nada por enquanto!**
+- Volte até a [página de _Pull Requests_ do repositório](https://github.com/betrybe/trybeer-project/pulls) e confira que o seu _Pull Request_ está criado
 
 ---
 
 ### DURANTE O DESENVOLVIMENTO
 
-* ⚠ **LEMBRE-SE DE CRIAR TODOS OS ARQUIVOS DENTRO DA PASTA COM O SEU NOME** ⚠
-
+- ⚠ **LEMBRE-SE DE CRIAR TODOS OS ARQUIVOS DENTRO DA PASTA COM O SEU NOME** ⚠
 
 * Faça `commits` das alterações que você fizer no código regularmente
 
@@ -390,8 +446,8 @@ No `localStorage` do navegador:
   1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
   2. `git add` _(para adicionar arquivos ao stage do Git)_
   3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
-  5. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-  4. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
+  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
+  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
 
 ---
 
@@ -399,10 +455,10 @@ No `localStorage` do navegador:
 
 Para **"entregar"** seu projeto, siga os passos a seguir:
 
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-01`
+- Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
+  - No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
+  - No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
+  - No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-01`
 
 Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
@@ -417,4 +473,3 @@ Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um vid
 Os monitores também farão a revisão de todos os projetos, e irão avaliar tanto o seu _Pull Request_, quanto as revisões que você fizer nos _Pull Requests_ dos seus colegas!!!
 
 Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
-
