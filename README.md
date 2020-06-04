@@ -24,7 +24,7 @@ Utilize o `MySQL` para o banco de dados!
 
 Você pode acessar um protótipo do front-end no link abaixo:
 
-https://www.figma.com/file/gzvsPYRwHUmRnvmVn9h6b5/TryBeer?node-id=0%3A1
+https://www.figma.com/file/tzP4txu6Uy0qCxVZWdWMBO/TryBeer?node-id=0%3A1
 
 Lembre-se de escrever testes unitários e sinta-se livre para alterar a UI. Contudo, respeite os atributos `data-testid`, eles serão usados na correção do projeto.
 
