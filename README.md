@@ -235,7 +235,7 @@ Esta tela possui o nome `Cliente - Checkout` no protótipo.
 
 54. Mostre o `número do pedido` e sua `data de realização`. Para a data de realização do pedido, mostre apenas o dia e o mês;
 
-55. Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`, sendo o valor total calculado por **quantidade \* preço unitário**;
+55. Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`, sendo o valor total calculado por **quantidade * preço unitário**;
 
 56. Ao lado de cada produto deve haver um botão que, quando clicado, exclui este produto do carrinho;
 
@@ -277,7 +277,7 @@ Esta tela possui o nome `Cliente - Detalhes de Pedido` no protótipo.
 
 71. Mostre o `número do pedido` e a `data de realização`. Para a data de realização do pedido, mostre apenas o dia e o mês;
 
-72. Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`. Sendo o valor total calculado por **quantidade \* preço unitário**;
+72. Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`. Sendo o valor total calculado por **quantidade * preço unitário**;
 
 73. Abaixo da lista, mostre o `valor total do pedido`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**.
 
@@ -351,7 +351,7 @@ Essa página corresponde às páginas `Admin - Detalhes de Pedido - Pendente` e 
 
     - Valor total do produto.
 
-95. O `preço total` do produto é calculado usando **quantidade \* preço unitário**;
+95. O `preço total` do produto é calculado usando **quantidade * preço unitário**;
 
 96. Mostre também o `valor total do pedido`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**;
 
