@@ -35,74 +35,34 @@ Você pode ler mais sobre os atributos que serão utilizados para testes [neste 
 
 ---
 
-## Desenvolvimento e testes
+## Desenvolvimento
 
-Este repositório já contem um _template_ com um App React criado e com os testes automatizados que fazem parte da correção. Após clonar o projeto e instalar as dependências, sinta-se livre para escolher usar Redux ou ContextAPI + React Hooks. Saiba avaliar as vantagens/desvantagens de cada um na hora da escolha.
+Esse repositório contém duas pastas, `back-end` e `front-end`, onde você deve desenvolver o front-end e o back-end da aplicação. Ambas as pastas contêm um projeto iniciado com as configurações básicas necessárias. Após clonar o projeto e instalar as dependências, sinta-se livre para escolher usar Redux ou ContextAPI + React Hooks. Saiba avaliar as vantagens/desvantagens de cada um na hora da escolha.
 
 Para o banco de dados, você deverá utilizar o `MySQL`. Modele-o e disponibilize um script, na raiz do seu app, para que o seu projeto seja corrigido utilizando o banco de dados arquitetado por você! O nome do script deve ser `script.sql`.
 
-Para o projeto ser validado, todos os [testes E2E](https://www.guru99.com/end-to-end-testing.html) devem passar. Para testar isso localmente, inicie sua aplicação com `npm start` e, em outro terminal, execute `npm run cy` ou `npm run cy:open`. Esse comando roda a suíte de testes do [Cypress](https://www.cypress.io/how-it-works/) que valida se o fluxo geral e os requisitos funcionais estão agindo da maneira que deveriam.
+##### Você também deve **escrever testes unitários que devem cobrir pelo menos 90% do projeto**. Na [documentação do Jest CLI](https://jestjs.io/docs/en/cli) é possível ver como essa cobertura é coletada.
 
-Esses testes não consideram o layout de maneira geral, mas sim os atributos e as informações corretas. Então, preste atenção nos atributos definidos no protótipo.
+Para que seu projeto seja corretamente avaliado, siga as orientações a seguir:
 
-Os testes te darão uma mensagem de erro caso não estejam passando (seja qual for o motivo). 😉
-
-##### Além dos testes automatizados, você também deve **escrever testes unitários que devem cobrir pelo menos 90% do projeto**. Na [documentação do Jest CLI](https://jestjs.io/docs/en/cli) é possível ver como essa cobertura é coletada.
-
-## Implementações técnicas
-
-Algumas coisas devem seguir um padrão pré-estabelecido para que os testes de correção funcionem corretamente.
-
-- O front-end deve estar em `localhost:3000` e a API em `localhost:3001`.
+- O front-end deve ser iniciado com `npm start` na pasta `front-end` e escutar a porta `3000`. A API deve ser iniciada com `npm start` dentro da pasta `back-end` e escutar a porta `3001`.
 
 - O uso de `localStorage` é necessário para que as informações não se percam caso o usuário atualize a página.
 
-No `localStorage` do navegador:
+- No `localStorage` do navegador:
 
-- A chave `user` deve conter a seguinte estrutura:
+    - A chave `user` deve conter a seguinte estrutura:
 
-  ```json
-  {
-    "name": "Taylor Swift",
-    "email": "taylorswift@email.com",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4(...)",
-    "role": "client"
-  }
-  ```
+      ```json
+      {
+        "name": "Taylor Swift",
+        "email": "taylorswift@email.com",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4(...)",
+        "role": "client"
+      }
+      ```
 
-- Ao deslogar, remova completamente a chave `user` do `localStorage`.
-
-- Os endpoints devem autorizar o acesso utilizando um token de teste: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`
-
-- Crie um `produto de teste`, que deve ficar na primeira posição dos cards, com o `test-id` começando com o **indice 0**. Para isso, o corpo da sua requisição deve ser:
-
-  ```json
-  {
-    "name": "Cerveja Skol Lata 250ml",
-    "price": 2.2,
-    "image": "https://res.cloudinary.com/drdpedroso/image/upload/c_scale,w_600/v1587242866/132_Cerveja_Skol_Pilsen_Lata_350ml_zu1xth.jpg"
-  }
-  ```
-
-- Crie um login de teste para um usuário do tipo `ADMIN`. Para isso, o corpo da sua requisição deve ser:
-
-  ```json
-  {
-    "name": "Admin Trybe",
-    "email": "admin@trybe.com",
-    "password": "123456"
-  }
-  ```
-
-- Crie um login de teste para um usuário do tipo `CLIENT`. Para isso, o corpo da sua requisição deve ser:
-
-  ```json
-  {
-    "name": "Client Trybe",
-    "email": "client@trybe.com",
-    "password": "123456"
-  }
-  ```
+    - Ao deslogar, remova completamente a chave `user` do `localStorage`.
 
 ## Requisitos do projeto
 
@@ -409,19 +369,19 @@ Essa página corresponde às páginas `Admin - Detalhes de Pedido - Pendente` e 
 
 1. Clone o repositório
 
-- `git clone git@github.com:betrybe/trybeer-project.git`.
+- `git clone git@github.com:tryber/trybeer-project.git`.
 - Entre na pasta do repositório que você acabou de clonar:
   - `cd trybeer-project`
 
-2. Instale as dependências, inicialize o projeto e rode os testes
+2. Instale as dependências do front-end e do back-end
 
-- Instale as dependências:
+- Instale as dependências do front-end e inicie o servidor
+  - `cd front-end`
   - `npm install`
-- Inicialize o projeto:
   - `npm start` (uma nova página deve abrir no seu navegador com um texto simples)
-- Verifique que os testes E2E estão executando:
-  - `npm run cy` (os testes devem rodar e falhar)
-  - `npm run cy:open` (os testes devem rodar e falhar, legal caso queira ver o Cypress funcionando)
+- Instale as dependências do back-end
+  - `cd front-end`
+  - `npm install`
 
 3. Crie uma branch a partir da branch `master`
 
@@ -443,7 +403,7 @@ Essa página corresponde às páginas `Admin - Detalhes de Pedido - Pendente` e 
     - `git status` (deve aparecer listado o arquivo _components/Header.jsx_ em verde)
 - Faça o `commit` inicial
   - Exemplo:
-    - `git commit -m 'iniciando o projeto. VAMOS COM TUDO :rocket:'` (fazendo o primeiro commit)
+    - `git commit -m 'iniciando o projeto'` (fazendo o primeiro commit)
     - `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
 
 6. Adicione a sua branch com o novo `commit` ao repositório remoto
@@ -452,7 +412,7 @@ Essa página corresponde às páginas `Admin - Detalhes de Pedido - Pendente` e 
 
 7. Crie um novo `Pull Request` _(PR)_
 
-- Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/betrybe/trybeer-project/pulls)
+- Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/trybeer-project/pulls)
 - Clique no botão verde _"New pull request"_
 - Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
 - Clique no botão verde _"Create pull request"_
