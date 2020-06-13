@@ -24,7 +24,6 @@ O banco de dados utilizado será o `MySQL`!
 
 Você pode acessar um protótipo do front-end [aqui](https://www.figma.com/file/tzP4txu6Uy0qCxVZWdWMBO/TryBeer?node-id=0%3A1).
 
-
 ##### ⚠️ Lembre-se de escrever testes unitários e sinta-se livre para alterar a UI. Contudo, respeite os atributos `data-testid`, pois eles serão usados na correção do projeto.
 
 Você pode ler mais sobre os atributos que serão utilizados para testes [neste link](https://www.eduardopedroso.com.br/?p=494).
@@ -51,18 +50,18 @@ Para que seu projeto seja corretamente avaliado, siga as orientações a seguir:
 
 - No `localStorage` do navegador:
 
-    - A chave `user` deve conter a seguinte estrutura:
+  - A chave `user` deve conter a seguinte estrutura:
 
-      ```json
-      {
-        "name": "Taylor Swift",
-        "email": "taylorswift@email.com",
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4(...)",
-        "role": "client"
-      }
-      ```
+    ```json
+    {
+      "name": "Taylor Swift",
+      "email": "taylorswift@email.com",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4(...)",
+      "role": "client"
+    }
+    ```
 
-    - Ao deslogar, remova completamente a chave `user` do `localStorage`.
+  - Ao deslogar, remova completamente a chave `user` do `localStorage`.
 
 ## Requisitos do projeto
 
@@ -102,7 +101,7 @@ Esta tela possui o nome `Login` no protótipo.
 
 10. O formulário só fica válido após um email válido e uma senha de, no mínimo, 6 números serem preenchidos. Um email válido possui a forma `<nome>@<domínio>`. Caso o formulário esteja inválido, o botão de submeter deve estar desativado. Caso contrário, deve estar ativado;
 
-11. Após a submissão bem sucedida for formulário, o token que identifica o usuário recebido na resposta deve ser salvo no `localStorage`. Esse token deve ser utilizado para futuras requisições à API;
+11. Após a submissão bem sucedida do formulário, o token que identifica o usuário recebido na resposta deve ser salvo no `localStorage`. Esse token deve ser utilizado para futuras requisições à API;
 
 12. Após a submissão bem sucedida do formulário, se o usuário for do tipo `administrador`, a pessoa deve ser redirecionada para a página **Admin - Home**;
 
@@ -132,7 +131,7 @@ Esta tela possui o nome `Registro` no protótipo.
 
 19. Caso os dados inseridos no formulário sejam inválidos, o botão de submeter deve estar desativado. Caso contrário, deve estar ativado;
 
-20. Caso a opção `Quero vender` esteja marcada, ao clicar no botão `"Cadastrar"`, a pessoa deve ser redirecionada para a página a página **Admin - Home**. Caso contrario, deve ser redirecionada para a página de **Cliente - Produtos**.
+20. Caso a opção `Quero vender` esteja marcada, ao clicar no botão `"Cadastrar"`, a pessoa deve ser redirecionada para a página **Admin - Home**. Caso contrario, deve ser redirecionada para a página de **Cliente - Produtos**.
 
 ## Cliente
 
@@ -234,9 +233,9 @@ Esta tela possui o nome `Cliente - Checkout` no protótipo.
 
 53. Caso a pessoa atualize o browser, o carrinho deve ser mantido;
 
-54. Mostre o `número do pedido` e sua `data de realização`. Para a data de realiazação do pedido, mostre apenas o dia e o mês;
+54. Mostre o `número do pedido` e sua `data de realização`. Para a data de realização do pedido, mostre apenas o dia e o mês;
 
-55. Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`, sendo o valor total calculado por **quantidade * preço unitário**;
+55. Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`, sendo o valor total calculado por **quantidade \* preço unitário**;
 
 56. Ao lado de cada produto deve haver um botão que, quando clicado, exclui este produto do carrinho;
 
@@ -252,7 +251,6 @@ Esta tela possui o nome `Cliente - Checkout` no protótipo.
 
 62. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
-
 ##### Tela de Meus Pedidos
 
 Esta tela possui o nome `Cliente - Meus Pedidos` no protótipo.
@@ -261,11 +259,11 @@ Esta tela possui o nome `Cliente - Meus Pedidos` no protótipo.
 
 64. A rota da tela deve ser `/orders`;
 
-65. Deve conter uma lista de cards, onde cada card é um pedido. Cada card deve conter as seguintes informações: `número do pedido`, `data de realização` e `valor total do pedido`. Para a data de realiazação do pedido, mostre apenas o dia e o mês;
+65. Deve conter uma lista de cards, onde cada card é um pedido. Cada card deve conter as seguintes informações: `número do pedido`, `data de realização` e `valor total do pedido`. Para a data de realização do pedido, mostre apenas o dia e o mês;
 
 66. A listagem deve mostrar os pedidos mais recentes primeiro;
 
-67. Ao clicar no card, a pessoa deve ser redirecioanda para a página **Cliente - Detalhes do Pedido**.
+67. Ao clicar no card, a pessoa deve ser redirecionada para a página **Cliente - Detalhes do Pedido**.
 
 68. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
@@ -277,9 +275,9 @@ Esta tela possui o nome `Cliente - Detalhes de Pedido` no protótipo.
 
 70. A rota da página deve ser `/orders/:numero-do-pedido`;
 
-71. Mostre o `número do pedido` e a `data de realização`. Para a data de realiazação do pedido, mostre apenas o dia e o mês;
+71. Mostre o `número do pedido` e a `data de realização`. Para a data de realização do pedido, mostre apenas o dia e o mês;
 
-72. Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`. Sendo o valor total calculado por **quantidade * preço unitário**;
+72. Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`. Sendo o valor total calculado por **quantidade \* preço unitário**;
 
 73. Abaixo da lista, mostre o `valor total do pedido`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**.
 
@@ -353,7 +351,7 @@ Essa página corresponde às páginas `Admin - Detalhes de Pedido - Pendente` e 
 
     - Valor total do produto.
 
-95. O `preço total` do produto é calculado usando **quantidade * preço unitário**;
+95. O `preço total` do produto é calculado usando **quantidade \* preço unitário**;
 
 96. Mostre também o `valor total do pedido`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**;
 
@@ -418,7 +416,7 @@ Essa página corresponde às páginas `Admin - Detalhes de Pedido - Pendente` e 
 - Clique no botão verde _"Create pull request"_
 - Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
 - **Não se preocupe em preencher mais nada por enquanto!**
-- Volte até a [página de _Pull Requests_ do repositório](https://github.com/betrybe/trybeer-project/pulls) e confira que o seu _Pull Request_ está criado
+- Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/trybeer-project/pulls) e confira que o seu _Pull Request_ está criado
 
 ---
 
