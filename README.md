@@ -382,7 +382,7 @@ Essa página corresponde às páginas `Admin - Detalhes de Pedido - Pendente` e 
   - `npm install`
   - `npm start` (uma nova página deve abrir no seu navegador com um texto simples)
 - Instale as dependências do back-end
-  - `cd front-end`
+  - `cd back-end`
   - `npm install`
 
 3. Crie uma branch a partir da branch `master`
