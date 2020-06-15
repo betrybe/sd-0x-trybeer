@@ -46,6 +46,20 @@ Para que seu projeto seja corretamente avaliado, siga as orientações a seguir:
 
 - Sua aplicação deve ter um admin padrão com o nome de usuário `tryber` e senha `123456`.
 
+- Sua aplicação deve ter, no mínimo, os produtos abaixo cadastrados. O arquivo `images.tar.gz`, na raiz do projeto, contém imagens para estes produtos.
+
+  - Skol Lata 250ml, R$ 2.20;
+  - Heineken 600ml, R$ 7.50;
+  - Antarctica Pilsen 300ml, R$ 2.49;
+  - Brahma 600ml, R$ 7.50;
+  - Skol 269ml, R$ 2.19;
+  - Skol Beats Senses 313ml, R$ 4.49;
+  - Becks 330ml, R$ 4.99;
+  - Brahma Duplo Malte 350ml, R$ 2.79;
+  - Becks 600ml, R$ 8.89;
+  - Skol Beats Senses 269ml, R$ 3.57;
+  - Stella Artois 275ml, R$ 3.49.
+
 - O front-end deve ser iniciado com `npm start` na pasta `front-end` e escutar a porta `3000`. A API deve ser iniciada com `npm start` dentro da pasta `back-end` e escutar a porta `3001`.
 
 - O uso de `localStorage` é necessário para que as informações não se percam caso o usuário atualize a página.
