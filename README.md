@@ -44,6 +44,8 @@ Para o banco de dados, você deverá utilizar o `MySQL`. Modele-o e disponibiliz
 
 Para que seu projeto seja corretamente avaliado, siga as orientações a seguir:
 
+- Sua aplicação deve ter um admin padrão com o nome de usuário `tryber` e senha `123456`.
+
 - O front-end deve ser iniciado com `npm start` na pasta `front-end` e escutar a porta `3000`. A API deve ser iniciada com `npm start` dentro da pasta `back-end` e escutar a porta `3001`.
 
 - O uso de `localStorage` é necessário para que as informações não se percam caso o usuário atualize a página.
@@ -83,7 +85,7 @@ O intuito desse app é que uma pessoa possa pedir uma cerveja no aplicativo e ou
 
 3. O back-end deve ser construído seguindo o padrão arquitetural `MSC`;
 
-4. Disponibilize um script SQL na raiz do projeto com comandos para a criação do banco de dados, das tabelas e inserção dos dados iniciais. O script deve ser nomeado `script.sql`.
+4. Disponibilize um script SQL na raiz do projeto com comandos para a criação do banco de dados, das tabelas, inserção dos dados iniciais e criação do admin padrão. O script deve ser nomeado `script.sql`.
 
 ##### Página de Login
 
