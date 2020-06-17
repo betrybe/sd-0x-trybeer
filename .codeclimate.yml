@@ -37,6 +37,7 @@ exclude_patterns:
   - "**/libs/*.css"
   - "**/libs/*.js"
   - "cypress/**/*"
+  - "back-end/public/**/*"
 plugins:
   csslint:
     enabled: true
