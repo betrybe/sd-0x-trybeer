@@ -1,8 +1,17 @@
 version: "2"         # required to adjust maintainability checks
+exclude_patterns:
+  - "**/*.test.js"
+  - "src/serviceWorker.js"
+  - "src/index.css"
+  - "src/App.css"
+  - "**/libs/*.css"
+  - "**/libs/*.js"
+  - "cypress/**/*"
+  - "back-end/public/**/*"
 checks:
   argument-count:
     config:
-      threshold: 5
+      threshold: 6
   complex-logic:
     config:
       threshold: 4
@@ -17,7 +26,7 @@ checks:
       threshold: 20
   method-lines:
     config:
-      threshold: 30
+      threshold: 25
   nested-control-flow:
     config:
       threshold: 4
@@ -25,20 +34,14 @@ checks:
     config:
       threshold: 4
   similar-code:
-    enabled: false
+    config:
+      threshold: 90
   identical-code:
     config:
       threshold: # language-specific defaults. an override will affect all languages.
-exclude_patterns:
-  - "**/*.test.js"
-  - "src/serviceWorker.js"
-  - "src/index.css"
-  - "src/App.css"
-  - "**/libs/*.css"
-  - "**/libs/*.js"
-  - "cypress/**/*"
-  - "back-end/public/**/*"
 plugins:
+  editorconfig:
+    enabled: true
   csslint:
     enabled: true
     checks:
@@ -62,3 +65,9 @@ plugins:
     enabled: true
   stylelint:
     enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+        javascript:
+          mass_threshold: 90
