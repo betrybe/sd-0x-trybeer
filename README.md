@@ -250,97 +250,95 @@ Esta tela possui o nome `Cliente - Checkout` no protótipo.
 
 52. Caso a pessoa atualize o browser, o carrinho deve ser mantido;
 
-53. Mostre o `número do pedido` e sua `data de realização`. Para a data de realização do pedido, mostre apenas o dia e o mês;
+53. Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`, sendo o valor total calculado por **quantidade * preço unitário**;
 
-54. Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`, sendo o valor total calculado por **quantidade * preço unitário**;
+54. Ao lado de cada produto deve haver um botão que, quando clicado, exclui este produto do carrinho;
 
-55. Ao lado de cada produto deve haver um botão que, quando clicado, exclui este produto do carrinho;
+55. Abaixo da lista, mostre o **valor total do pedido**, no seguinte formato: `Total: R$ 0,00`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**;
 
-56. Abaixo da lista, mostre o **valor total do pedido**, no seguinte formato: `Total: R$ 0,00`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**;
+56. Deve existir um formulário para a pessoa digitar o endereço de entrega dos produtos. O formulário deve conter dois campos de texto: um para a **rua** e o outro para o **número da casa**;
 
-57. Deve existir um formulário para a pessoa digitar o endereço de entrega dos produtos. O formulário deve conter dois campos de texto: um para a **rua** e o outro para o **número da casa**;
+57. Deve ter um botão `"Finalizar Pedido"`. O botão deve estar habilitado **apenas** se o valor total do pedido for **maior que zero** e o endereço de entrega estiver preenchido;
 
-58. Deve ter um botão `"Finalizar Pedido"`. O botão deve estar habilitado **apenas** se o valor total do pedido for **maior que zero** e o endereço de entrega estiver preenchido;
+58. Ao clicar em "`Finalizar pedido`", caso a operação dê certo, uma mensagem de sucesso deve ser exibida e a pessoa deve ser redirecionada para a página **Cliente - Produtos**. Caso contrário, deve ser exibido uma mensagem de erro;
 
-59. Ao clicar em "`Finalizar pedido`", caso a operação dê certo, uma mensagem de sucesso deve ser exibida e a pessoa deve ser redirecionada para a página **Cliente - Produtos**. Caso contrário, deve ser exibido uma mensagem de erro;
+59. Quando um pedido for finalizado, o carrinho deve ser esvaziado;
 
-60. Quando um pedido for finalizado, o carrinho deve ser esvaziado;
-
-61. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
+60. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
 ##### Tela de Meus Pedidos
 
 Esta tela possui o nome `Cliente - Meus Pedidos` no protótipo.
 
-62. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de meus pedidos;
+61. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de meus pedidos;
 
-63. A rota da tela deve ser `/orders`;
+62. A rota da tela deve ser `/orders`;
 
-64. Deve conter uma lista de cards, onde cada card é um pedido. Cada card deve conter as seguintes informações: `número do pedido`, `data de realização` e `valor total do pedido`. Para a data de realização do pedido, mostre apenas o dia e o mês;
+63. Deve conter uma lista de cards, onde cada card é um pedido. Cada card deve conter as seguintes informações: `número do pedido`, `data de realização` e `valor total do pedido`. Para a data de realização do pedido, mostre apenas o dia e o mês;
 
-65. A listagem deve mostrar os pedidos mais recentes primeiro;
+64. A listagem deve mostrar os pedidos mais recentes primeiro;
 
-66. Ao clicar no card, a pessoa deve ser redirecionada para a página **Cliente - Detalhes do Pedido**.
+65. Ao clicar no card, a pessoa deve ser redirecionada para a página **Cliente - Detalhes do Pedido**.
 
-67. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
+66. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
 ##### Tela de detalhes de pedido
 
 Esta tela possui o nome `Cliente - Detalhes de Pedido` no protótipo.
 
-68. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de detalhes do pedido;
+67. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de detalhes do pedido;
 
-69. A rota da página deve ser `/orders/:numero-do-pedido`;
+68. A rota da página deve ser `/orders/:numero-do-pedido`;
 
-70. Mostre o `número do pedido` e a `data de realização`. Para a data de realização do pedido, mostre apenas o dia e o mês;
+69. Mostre o `número do pedido` e a `data de realização`. Para a data de realização do pedido, mostre apenas o dia e o mês;
 
-71. Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`. Sendo o valor total calculado por **quantidade * preço unitário**;
+70. Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`. Sendo o valor total calculado por **quantidade * preço unitário**;
 
-72. Abaixo da lista, mostre o `valor total do pedido`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**.
+71. Abaixo da lista, mostre o `valor total do pedido`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**.
 
-73. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
+72. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
 ## Admin
 
 ##### Menu lateral
 
-74. Todos os elementos devem respeitar os atributos descritos no protótipo para o menu lateral;
+73. Todos os elementos devem respeitar os atributos descritos no protótipo para o menu lateral;
 
-75. Deve conter três itens: `"Pedidos"`", `"Perfil"`" e "`Sair`";
+74. Deve conter três itens: `"Pedidos"`", `"Perfil"`" e "`Sair`";
 
-76. Ao clicar no item `"Pedidos"`, a pessoa deve ser redirecionada para a tela **Admin - Home**;
+75. Ao clicar no item `"Pedidos"`, a pessoa deve ser redirecionada para a tela **Admin - Home**;
 
-77. Ao clicar no item `"Perfil"`, a pessoa deve ser redirecionada para tela **Admin - Perfil**;
+76. Ao clicar no item `"Perfil"`, a pessoa deve ser redirecionada para tela **Admin - Perfil**;
 
-78. Ao clicar no item `"Sair"`, a pessoa deve ser redirecionada para a tela **Login** e ser deslogada.
+77. Ao clicar no item `"Sair"`, a pessoa deve ser redirecionada para a tela **Login** e ser deslogada.
 
 ##### Tela de perfil
 
 Esta tela possui o nome `Admin - Perfil` no protótipo.
 
-79. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de perfil;
+78. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de perfil;
 
-80. A rota da página deve ser `/admin/profile`;
+79. A rota da página deve ser `/admin/profile`;
 
-81. Mostrar o `email` e o `nome` do usuário. Não permita que o usuário edite os dados;
+80. Mostrar o `email` e o `nome` do usuário. Não permita que o usuário edite os dados;
 
-82. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
+81. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
 ### Tela de Pedidos
 
 Esta tela possui o nome `Admin - Pedidos` no protótipo.
 
-83. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de pedidos;
+82. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de pedidos;
 
-84. A rota da página deve ser `/admin/orders`;
+83. A rota da página deve ser `/admin/orders`;
 
-85. Essa tela deve mostrar todos os pedidos feitos;
+84. Essa tela deve mostrar todos os pedidos feitos;
 
-86. Os pedidos pendentes devem ter o label `Pendentes`, ao passo que os pedidos entregues devem ter o label `Entregue`;
+85. Os pedidos pendentes devem ter o label `Pendentes`, ao passo que os pedidos entregues devem ter o label `Entregue`;
 
-87. Pedidos pendentes devem ser listados antes dos pedidos entregues
+86. Pedidos pendentes devem ser listados antes dos pedidos entregues
 
-88. Os "cards" dos pedidos devem conter as informações:
+87. Os "cards" dos pedidos devem conter as informações:
 
     - Número do pedido;
 
@@ -348,19 +346,19 @@ Esta tela possui o nome `Admin - Pedidos` no protótipo.
 
     - Valor total do pedido.
 
-89. Ao clicar em qualquer parte do card do pedido, a pessoa deve ser redirecionada para a tela `Admin - Detalhe de Pedido`.
+88. Ao clicar em qualquer parte do card do pedido, a pessoa deve ser redirecionada para a tela `Admin - Detalhe de Pedido`.
 
 ### Tela de Detalhes de Pedido
 
 Essa página corresponde às páginas `Admin - Detalhes de Pedido - Pendente` e `Admin - Detalhes de Pedido - Entregue` no protótipo.
 
-90. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de detalhes do pedido;
+89. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de detalhes do pedido;
 
-91. A rota da página deve ser `/admin/orders/:id`;
+90. A rota da página deve ser `/admin/orders/:id`;
 
-92. No cabeçalho, mostre o `número do pedido` e o `status` atual - Pendente ou Entregue;
+91. No cabeçalho, mostre o `número do pedido` e o `status` atual - Pendente ou Entregue;
 
-93. Deve ter uma listagem com os produtos do pedido, onde cada linha deve conter:
+92. Deve ter uma listagem com os produtos do pedido, onde cada linha deve conter:
 
     - Quantidade;
 
@@ -368,17 +366,17 @@ Essa página corresponde às páginas `Admin - Detalhes de Pedido - Pendente` e 
 
     - Valor total do produto.
 
-94. O `preço total` do produto é calculado usando **quantidade * preço unitário**;
+93. O `preço total` do produto é calculado usando **quantidade * preço unitário**;
 
-95. Mostre também o `valor total do pedido`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**;
+94. Mostre também o `valor total do pedido`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**;
 
-96. Caso o status do pedido seja **pendente**, um botão para marcar o pedido como entregue deve ser exibido. Caso contrário, não exiba o botão;
+95. Caso o status do pedido seja **pendente**, um botão para marcar o pedido como entregue deve ser exibido. Caso contrário, não exiba o botão;
 
-97. Ao clicar no botão `"Marcar pedido como entregue"`, o status desse pedido deve mudar para `Entregue` e o botão deve desaparecer.
+96. Ao clicar no botão `"Marcar pedido como entregue"`, o status desse pedido deve mudar para `Entregue` e o botão deve desaparecer.
 
 ### Bônus
 
-98. Escreva testes unitários com cobertura de, no mínimo, 90%, considerando front-end e back-end;
+97. Escreva testes unitários com cobertura de, no mínimo, 90%, considerando front-end e back-end;
 
 ---
 
