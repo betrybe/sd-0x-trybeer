@@ -8,6 +8,9 @@ exclude_patterns:
   - "**/libs/*.js"
   - "cypress/**/*"
   - "back-end/public/**/*"
+  - "back-end/infrastructure/database/migrations/*.js"
+  - "back-end/infrastructure/database/seeders/*.js"
+  - "back-end/infrastructure/database/models/index.js"
 checks:
   argument-count:
     config:
