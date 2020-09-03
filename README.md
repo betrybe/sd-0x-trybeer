@@ -104,7 +104,7 @@ O intuito desse app é que uma pessoa possa pedir uma cerveja no aplicativo e ou
 
 4. Disponibilize um script SQL na raiz do projeto com comandos para a criação do banco de dados, das tabelas, inserção dos dados iniciais e criação do admin padrão. O script deve ser nomeado `script.sql`.
 
-##### Página de Login
+### 1 - Crie uma página de login
 
 Esta tela possui o nome `Login` no protótipo.
 
@@ -126,7 +126,32 @@ Esta tela possui o nome `Login` no protótipo.
 
 13. Deve existir um botão para o usuário se registrar com o texto `"Ainda não tenho conta"`. Ao ser clicado, a pessoa deve ser redirecionada para a página **Registro**.
 
-##### Página de Registro
+DATA TEST ID
+URL - /login
+Campo email                - data-testid="email-input"
+campo senha                - data-testid="password-input"
+botao entrar               - data-testid="signin-btn"
+link ainda nao tenho conta - data-testid="no-account-btn"
+
+### Página de Login:
+
+**[Será validado que é possível acessar a home]**
+
+**[Será validado que a tela login contém os atributos descritos no protótipo]**
+
+**[Será validado que não é possível fazer login com um email inválido]**
+
+**[Será validado que não é possível fazer login com uma senha em branco]**
+
+**[Será validado que não é possível fazer login com uma senha com menos de 6 caracteres]**
+
+**[Será validado que é possível fazer login com um cliente e ser redirecionado para tela de cliente]**
+
+**[Será validado que é possível fazer login com um admin e ser redirecionado para tela de admin]**
+
+**[Será validado que é possível clicar no botão "Ainda não tenho conta" e ser redirecionado para tela de registro]**
+
+### 2 - Crie uma página de registro de usuários
 
 Esta tela possui o nome `Registro` no protótipo.
 
@@ -150,9 +175,43 @@ Esta tela possui o nome `Registro` no protótipo.
 
 19. Caso a opção `Quero vender` esteja marcada, ao clicar no botão `"Cadastrar"`, a pessoa deve ser redirecionada para a página **Admin - Home**. Caso contrario, deve ser redirecionada para a página de **Cliente - Produtos**.
 
-## Cliente
+DATA TEST ID
 
-##### Menu superior
+Campo nome            - data-testid="signup-name"
+Campo email           - data-testid="signup-email"
+Campo password        - data-testid="signup-password"
+Checkbox quero vender - data-testid="signup-seller"
+Botão de cadastrar    - data-testid="signup-btn"
+
+### Página de Registro 
+
+**[Será validado que é possível acessar a tela de registro]**
+
+**[Será validado que contém os atributos descritos no protótipo]**
+
+**[Será validado que não é possível fazer o registro com um nome com caracteres especiais]**
+
+**[Será validado que não é possível fazer o registro com um nome com menos de 12 letras]**
+
+**[Será validado que não é possível fazer o registro com um nome com números]**
+
+**[Será validado que não é possível fazer login com um email inválido]**
+
+**[Será validado que não é possível fazer login com um email já existente]**
+
+**[Será validado que não é possível fazer login com uma senha em branco]**
+
+**[Será validado que não é possível fazer login com uma senha com menos de 6 caracteres]**
+
+**[Será validado que é possível fazer cadastro de um admin com sucesso e ser redirecionado para tela do admin]**
+
+**[Será validado que é possível fazer cadastro de um cliente com sucesso e ser redirecionado para tela do cliente]**
+
+## Cliente 
+
+### Menu superior 
+
+### 3 - Crie o menu top e o menu side bar
 
 20. Todos os elementos devem respeitar os atributos descritos no protótipo para o menu superior;
 
@@ -161,8 +220,6 @@ Esta tela possui o nome `Registro` no protótipo.
 22. O título correspondente à tela em que o usuário se encontra deve ser mostrado, confome protótipos;
 
 23. Deve haver um ícone do tipo "hambúrguer" no canto superior esquerdo do menu superior. Quando clicado, caso o menu lateral esteja oculto, deve ser mostrado. Caso contrário, o menu lateral deve ser escondido.
-
-##### Menu lateral
 
 24. Todos os elementos devem respeitar os atributos descritos no protótipo para o menu lateral;
 
@@ -176,7 +233,35 @@ Esta tela possui o nome `Registro` no protótipo.
 
 29. Ao clicar no item `"Sair"`, a pessoa deve ser redirecionada para a tela **Login** e ser deslogada.
 
-##### Tela de perfil
+### Menu superior 
+
+side-bar - class="side-menu-container"
+titulo - data-testid="top-title"
+Botão Hamburguer - data-testid="top-hamburguer"
+
+### Menu lateral
+
+botao produtos     - data-testid="side-menu-item-products"
+botao meus pedidos - data-testid="side-menu-item-my-orders"
+botao meu perfil   - data-testid="side-menu-item-my-profile"
+botao sair         - data-testid="side-menu-item-logout"
+o componente sidebar deve ter a seguinte classe = ".side-menu-container"
+
+**[Será validado que os atributos do top menu devem ser mostrados confome protótipos]**
+
+**[Será validado que ao clicar no componente hamburguer o sidebar deve ficar visível]**
+
+**[Será validado que os atributos do side menu devem ser mostrados confome protótipos]**
+
+**[Será validado que ao clicar no botão "produtos" será redirecionado para tela de produtos]**
+
+**[Será validado que ao clicar no botão "meus pedidos" será redirecionado para tela de meus pedidos]**
+
+**[Será validado que ao clicar no botão "meu perfil" será redirecionado para tela de meu perfil]**
+
+**[Será validado que ao clicar no botão sair será redirecionado para tela home]**
+
+### 4 - Criar tela de perfil do cliente
 
 Esta tela possui o nome `Cliente - Meu Pefil` no protótipo.
 
@@ -192,7 +277,26 @@ Esta tela possui o nome `Cliente - Meu Pefil` no protótipo.
 
 35. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
-##### Tela de produtos
+input name   - data-testid="profile-name-input"
+input email  - data-testid="profile-email-input"
+botao salvar - data-testid="profile-save-btn"
+title        - data-testid="top-title"
+
+### Tela de perfil
+
+**[Será validado que é possível acessar a tela de perfil do cliente]**
+
+**[Será validado que contém os atributos descritos no protótipo]**
+
+**[Será validado que campo email está como readonly]**
+
+**[Será validado que o botão salvar fique desabilitado caso não altere o nome]**
+
+**[Será validado que o botão salvar fique habilitado caso altere o nome]**
+
+**[Será validado que é possível alterar o nome com sucesso]**
+
+### 5 - Criar Tela de Produtos
 
 Esta tela possui o nome `Cliente - Produtos` no protótipo.
 
@@ -232,15 +336,53 @@ Esta tela possui o nome `Cliente - Produtos` no protótipo.
 
 48. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
+card de um elemento - class="product-card"
+garantir que o id mude de um produto para o outro em ordem crescente sendo o primeiro produto comecando por 0
+
+valor do produto - data-testid="0-product-price"
+imagem do produto - data-testid="0-product-img"
+nome do produto - data-testid="0-product-name"
+botao mais - data-testid="0-product-plus"
+botao menos - data-testid="0-product-minus"
+quantidade do produto - data-testid="1-product-qtd"
+botao ver carrinho - data-testid="checkout-bottom-btn"
+valor carrinho - data-testid="checkout-bottom-btn-value"
+
+### Tela de produtos
+
+**[Será validado que existe um produto na tela de produtos]**
+
+**[Será validado que existe todos os produtos na tela de produtos]**
+
+**[Será validado que é possíve clicar no botão "+" e atualizar o produto para 1]**
+
+**[Será validado que é possível clicar no botão "-"e atualizar o produto para 0]**
+
+**[Será validado que não é possível clicar no botão "-" e atualizar o produto para menor que zero]**
+
+**[Será validado que é possível visualizar o botão "ver carrinho"]**
+
+**[Será validado que é possível atualizar o valor do carrinho ao adicionar um produto]**
+
+**[Será validado que é possível atualizar o valor do carrinho ao remover um produto]**
+
+**[Será validado que ao atualizar a tela continuará na tela de produtos e carrinho com o mesmo valor]**
+
+**[Será validado que é possível adicionar um produto e clicar no botão "ver carrinho" e ser redirecionado para tela de carrinho]**
+
+**[Será validado que não o botão ver carrinho fique desabilitado caso não adicione nenhum produto]**
+
+**[Será validado que não é possível acessar a tela de produtos sem estar logado e será redirecionado para tela de login]**
+
 ---
 
 ## Requisitos Entrega 2
 
 ##### Requisitos Gerais
-
+<!-- VERIFICAR SE VALE -->
 49. A cobertura de testes unitários deve ser de, no mínimo, 90%;
 
-##### Tela de Checkout
+### 6 - Criar Tela de Checkout
 
 Esta tela possui o nome `Cliente - Checkout` no protótipo.
 
@@ -266,7 +408,41 @@ Esta tela possui o nome `Cliente - Checkout` no protótipo.
 
 60. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
-##### Tela de Meus Pedidos
+
+titulo - data-testid="top-title"
+quantidade do produto - data-testid="0-product-qtd-input"
+nome do produto - data-testid="0-product-name"
+valor do produto - data-testid="0-product-total-value"
+valor unitario  - data-testid="0-product-unit-price"
+botao de remover produto - data-testid="0-removal-button"
+valor total - data-testid="order-total-value"
+input da rua - data-testid="checkout-street-input"
+numero da casa - data-testid="checkout-house-number-input"
+botao finalizar pedido - data-testid="checkout-finish-btn"
+mensagem de sucesso - Compra realizada com sucesso!
+excluir todos os produtos aparece essa mensagem - Não há produtos no carrinho
+
+### Tela de Checkout
+
+**[Será validado que é possível acessar a tela de checkout]**
+
+**[Será validado que contém atributos descritos no protótipo]**
+
+**[Será validado que é possível ver que o produto tem quantidade, nome e valor total do produto]**
+
+**[Será validado que é possível a lista mostrar o valor total do carrinho]**
+
+**[Será validado que é possível fazer refresh da tela e os dados continuarem na tela]**
+
+**[Será validado que é possível excluir um produto no checkout]**
+
+**[Será validado que é possível o botão finalizar pedido ficar habilitado apenas quando tiver produto maior que zero e rua e numero preenchidos]**
+
+**[Será validado que é possível fazer a compra de um produto e ao finalizar ver a mensagem de sucesso e ser redirecionado para tela de produtos]**
+
+**[Será validado que não é possível acessar o checkout sem estar logado e será redirecionado para tela de login]**
+
+### 7 - Criar Tela de Meus Pedidos
 
 Esta tela possui o nome `Cliente - Meus Pedidos` no protótipo.
 
@@ -276,13 +452,33 @@ Esta tela possui o nome `Cliente - Meus Pedidos` no protótipo.
 
 63. Deve conter uma lista de cards, onde cada card é um pedido. Cada card deve conter as seguintes informações: `número do pedido`, `data de realização` e `valor total do pedido`. Para a data de realização do pedido, mostre apenas o dia e o mês;
 
-64. A listagem deve mostrar os pedidos mais recentes primeiro;
+64. A listagem deve mostrar os pedidos ordenados por id;
 
 65. Ao clicar no card, a pessoa deve ser redirecionada para a página **Cliente - Detalhes do Pedido**.
 
 66. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
-##### Tela de detalhes de pedido
+data-testid="top-title"
+numero do pedido - data-testid="0-order-number"
+data do pedido - data-testid="0-order-date"
+valor do pedido - data-testid="0-order-total-value"
+cards - data-testid="0-order-card-container"
+
+### Tela de Meus Pedidos
+
+**[Será validado que é possível acessar a tela de meus pedidos]**
+
+**[Será validado que contém os atributos descritos no protótipo]**
+
+**[Será validado que é possível ver que o produto tem quantidade, nome, valor total e a data da compra]**
+
+**[Será validado que é possível clicar no card e ser redirecionado para tela do detalhe do produto]**
+
+**[Será validado que não é possível acessar a tela de meus pedidos sem estar logado e será redirecionado para tela de login]**
+
+<!--  -->
+
+### 8 - Criar Tela de Detalhes Pedidos
 
 Esta tela possui o nome `Cliente - Detalhes de Pedido` no protótipo.
 
@@ -298,9 +494,32 @@ Esta tela possui o nome `Cliente - Detalhes de Pedido` no protótipo.
 
 72. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
-## Admin
+titulo - data-testid="top-title" - Detalhes de Pedido
+numero do pedido - data-testid="order-number" - Pedido 1
+data do pedido - data-testid="order-date" - 03/09
+quantidade do produto - data-testid="0-product-qtd" - 1
+nome do produto - data-testid="0-product-name" - Skol Lata 250ml
+valor do produto - data-testid="0-product-total-value" - R$ 2,20
+valor total da compra - data-testid="order-total-value" - Total: R$ 2,20
+url - http://localhost:3000/orders/1
 
-##### Menu lateral
+### Tela de detalhes de pedido
+
+**[Será validado que é possível acessar a tela do detalhe do pedido]**
+
+**[Será validado que contém os atributos descritos no protótipo]**
+
+**[Será validado que é possível ver que tem numero do pedido e a data da compra]**
+
+**[Será validado que é possível ver que o produto tem quantidade, nome e valor total do produto]**
+
+**[Será validado que é possível ver o valor total do pedido]**
+
+**[Será validado que não é possível acessar a tela de meus pedidos sem estar logado e será redirecionado para tela de login]**
+
+## Administrador
+
+### 9 - Criar menu side bar para Administrador
 
 73. Todos os elementos devem respeitar os atributos descritos no protótipo para o menu lateral;
 
@@ -312,7 +531,25 @@ Esta tela possui o nome `Cliente - Detalhes de Pedido` no protótipo.
 
 77. Ao clicar no item `"Sair"`, a pessoa deve ser redirecionada para a tela **Login** e ser deslogada.
 
-##### Tela de perfil
+url http://localhost:3000/admin/orders
+
+side bar - class - admin-side-bar-container
+
+botao meus pedidos - data-testid="side-menu-item-orders"
+botao meu perfil - data-testid="side-menu-item-profile"
+botao logout - data-testid="side-menu-item-logout"
+
+### Menu lateral Administrador
+
+**[Será validado que o sidebar devem ser mostrados, conforme protótipos]**
+
+**[Será validado que ao clicar no menu meus pedidos será redirecionado para tela de meus pedidos']**
+
+**[Será validado que ao clicar no menu meus perfil será redirecionado para tela de meus perfil]**
+
+**[Será validado que ao clicar no menu sair será redirecionado para tela home]**
+
+### 10 - Criar tela de perfil de Administrador
 
 Esta tela possui o nome `Admin - Perfil` no protótipo.
 
@@ -324,7 +561,22 @@ Esta tela possui o nome `Admin - Perfil` no protótipo.
 
 81. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
-### Tela de Pedidos
+texto - Perfil
+url - `/admin/profile`
+campo email - data-testid="profile-email"
+campo nome - data-testid="profile-name"
+
+### Tela de perfil Administrador
+
+**[Será validado que é possível acessar a tela do perfil do administrador]**
+
+**[Será validado que a tela de perfil contém os atributos descritos no protótipo]**
+
+**[Será validado que a tela de perfil contém o email e nome do administrador]**
+
+**[Será validado que não é possível acessar a tela sem estar autenticado e ser redirecionado para tela de login]**
+
+### 11 - Criar tela de pedidos de admin
 
 Esta tela possui o nome `Admin - Pedidos` no protótipo.
 
@@ -348,7 +600,22 @@ Esta tela possui o nome `Admin - Pedidos` no protótipo.
 
 88. Ao clicar em qualquer parte do card do pedido, a pessoa deve ser redirecionada para a tela `Admin - Detalhe de Pedido`.
 
-### Tela de Detalhes de Pedido
+numero do pedido - data-testid="0-order-number"
+endereco do pedido - data-testid="0-order-address"
+valor total do pedido - data-testid="0-order-total-value"
+status - data-testid="0-order-status"
+
+### Tela de Pedidos
+
+**[Será validado que é possível acessar a tela do pedidos do administrador]**
+
+**[Será validado que a tela de pedidos contém os atributos descritos no protótipo]**
+
+**[Será validado que os dados do card estão corretos]**
+
+**[Será validado que é possível clicar no card do produto e ser redirecionado para tela de detalhes do produto]**
+
+### 12 - Criar tela de Detalhes de admin
 
 Essa página corresponde às páginas `Admin - Detalhes de Pedido - Pendente` e `Admin - Detalhes de Pedido - Entregue` no protótipo.
 
@@ -374,7 +641,23 @@ Essa página corresponde às páginas `Admin - Detalhes de Pedido - Pendente` e 
 
 96. Ao clicar no botão `"Marcar pedido como entregue"`, o status desse pedido deve mudar para `Entregue` e o botão deve desaparecer.
 
+numero do pedido - data-testid="order-number"
+nome do pedido - data-testid="0-product-name"
+valor tota do produto - data-testid="0-product-total-value"
+valor unitario - data-testid="order-unit-price"
+valor total do pedido - data-testid="order-total-value"
+
+### Tela de Detalhes de Pedido
+
+**[]**
+**[]**
+**[]**
+**[]**
+**[]**
+
 ### Bônus
+
+### 13 - Cobertura de testes unitários
 
 97. Escreva testes unitários com cobertura de, no mínimo, 90%, considerando front-end e back-end;
 
