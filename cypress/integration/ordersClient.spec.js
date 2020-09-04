@@ -11,7 +11,7 @@ import {
   accessOrdersClient,
 } from '../actions/actionBase';
   
-describe('7 - Criar Tela de Meus Pedidos', () => {
+describe('Criar Tela de Meus Pedidos', () => {
   before(() => {
     createAndInsertsDataBase()
   });

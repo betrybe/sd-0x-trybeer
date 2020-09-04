@@ -12,7 +12,7 @@ import {
   verifyElementNotVisible,
 } from '../actions/actionBase';
     
-describe('12 - Criar Tela de Detalhes Pedidos', () => {
+describe('Criar Tela de Detalhes Pedidos', () => {
   beforeEach(() => {
     createAndInsertsDataBase();
     cy.visit(Cypress.config().baseUrl);
