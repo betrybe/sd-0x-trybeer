@@ -1,13 +1,13 @@
 import {
-    verifyElementVisible,
-    login,
-    verifyElementContainsText,
-    createAndInsertsDataBase,
-    dropAndTruncateDataBase,
-    verifyElementNotVisible,
-    clickButton,
-    verifyContainsUrl,
-  } from '../actions/actionBase';
+  verifyElementVisible,
+  login,
+  verifyElementContainsText,
+  createAndInsertsDataBase,
+  dropAndTruncateDataBase,
+  verifyElementNotVisible,
+  clickButton,
+  verifyContainsUrl,
+} from '../actions/actionBase';
   
 describe('3 - Crie o menu top e menu side bar', () => {
   before(() => {

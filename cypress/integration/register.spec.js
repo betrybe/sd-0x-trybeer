@@ -1,16 +1,16 @@
 import {
-    insertText,
-    clickButton,
-    verifyContainsUrl,
-    verifyContainsText,
-    verifyElementVisible,
-    verifyElementIsDisable,
-    checkElement,
-    createAndInsertsDataBase,
-    dropAndTruncateDataBase,
-  } from '../actions/actionBase';
+  insertText,
+  clickButton,
+  verifyContainsUrl,
+  verifyContainsText,
+  verifyElementVisible,
+  verifyElementIsDisable,
+  checkElement,
+  createAndInsertsDataBase,
+  dropAndTruncateDataBase,
+} from '../actions/actionBase';
 
-  import { internet } from 'faker';
+import { internet } from 'faker';
   
 describe('2 - Crie uma página de registro de usuários', () => {
   before(() => {

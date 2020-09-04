@@ -1,17 +1,17 @@
 import {
-    verifyContainsText,
-    verifyElementVisible,
-    login,
-    clickButton,
-    verifyElementIsDisable,
-    createAndInsertsDataBase,
-    dropAndTruncateDataBase,
-    verifyElementContainsText,
-    verifyElementContainsAttribute,
-    verifyElementNotContainsAttribute,
-    accessProfileClient,
-    verifyContainsUrl,
-  } from '../actions/actionBase';
+  verifyContainsText,
+  verifyElementVisible,
+  login,
+  clickButton,
+  verifyElementIsDisable,
+  createAndInsertsDataBase,
+  dropAndTruncateDataBase,
+  verifyElementContainsText,
+  verifyElementContainsAttribute,
+  verifyElementNotContainsAttribute,
+  accessProfileClient,
+  verifyContainsUrl,
+} from '../actions/actionBase';
   
 describe('4 - Criar tela de perfil do cliente', () => {
   before(() => {

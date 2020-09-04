@@ -1,11 +1,11 @@
 import {
-    verifyElementVisible,
-    login,
-    createAndInsertsDataBase,
-    dropAndTruncateDataBase,
-    clickButton,
-    verifyContainsUrl,
-  } from '../actions/actionBase';
+  verifyElementVisible,
+  login,
+  createAndInsertsDataBase,
+  dropAndTruncateDataBase,
+  clickButton,
+  verifyContainsUrl,
+} from '../actions/actionBase';
   
 describe('9 - Criar menu side bar para Administrador', () => {
   before(() => {

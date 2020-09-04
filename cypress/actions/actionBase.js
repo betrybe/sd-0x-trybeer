@@ -69,6 +69,10 @@ export function accessOrdersClient(){
   clickButton('[data-testid="side-menu-item-my-orders"]');
 }
 
+export function accessOrdersAdmin(){
+  clickButton('[data-testid="side-menu-item-orders"]');
+}
+
 export function accessProfileClient(){
   clickButton('[data-testid="top-hamburguer"]');
   clickButton('[data-testid="side-menu-item-my-profile"]');

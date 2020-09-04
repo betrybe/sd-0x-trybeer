@@ -1,18 +1,14 @@
 import {
-    verifyContainsText,
-    verifyElementVisible,
-    login,
-    clickButton,
-    verifyElementIsDisable,
-    createAndInsertsDataBase,
-    dropAndTruncateDataBase,
-    verifyElementContainsText,
-    verifyElementContainsAttribute,
-    verifyElementNotContainsAttribute,
-    verifyContainsUrl,
-    loginClientAndBuyProduct,
-    logout,
-  } from '../actions/actionBase';
+  verifyElementVisible,
+  login,
+  clickButton,
+  createAndInsertsDataBase,
+  dropAndTruncateDataBase,
+  verifyElementContainsText,
+  verifyContainsUrl,
+  loginClientAndBuyProduct,
+  logout,
+} from '../actions/actionBase';
   
 describe('11 - Criar tela de pedidos de admin', () => {
   beforeEach( () => {
@@ -24,13 +20,6 @@ describe('11 - Criar tela de pedidos de admin', () => {
   afterEach(() => {
     dropAndTruncateDataBase();
   }) 
-  /*
-  --validar se e possivel acessar a tela de pedidos
-  --validar se e tem todos os campos
-  --validar se os pedidos tem a label pendentes
-  --validar que clicar em qualquer parte do card vou para tela do detalhe do pedido
-  --validar se ao finaliar com entregue fique com a label  entregue
-  */
 
   it('Será validado que é possível acessar a tela do pedidos do administrador', () => {
     loginClientAndBuyProduct();
@@ -69,6 +58,4 @@ describe('11 - Criar tela de pedidos de admin', () => {
     clickButton('[data-testid="0-order-number"]');
     verifyContainsUrl(`${Cypress.config().baseUrl}/admin/orders/1`);
   });
-
-  //ver sobre pendentes
 });

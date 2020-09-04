@@ -1,89 +1,88 @@
 import {
-    clickButton,
-    verifyContainsUrl,
-    verifyElementVisible,
-    login,
-    createAndInsertsDataBase,
-    dropAndTruncateDataBase,
-    verifyElementContainsText,
-    getDateAndMonth,
-    buyOneProduct,
-    accessOrdersClient,
-    buyProducts,
-  } from '../actions/actionBase';
+  clickButton,
+  verifyContainsUrl,
+  verifyElementVisible,
+  login,
+  createAndInsertsDataBase,
+  dropAndTruncateDataBase,
+  verifyElementContainsText,
+  logout,
+  loginClientAndBuyProduct,
+  accessOrdersAdmin,
+  verifyElementNotVisible,
+} from '../actions/actionBase';
     
-  describe('12 - Criar Tela de Detalhes Pedidos', () => {
-    beforeEach(() => {
-      createAndInsertsDataBase();
-      cy.visit(Cypress.config().baseUrl);
-    });
-  
-    afterEach(() => {
-      dropAndTruncateDataBase();
-    }) 
-  
-
-    /*
-    validar se acesa a pagina
-   validar elementos
-   validar se no cabecalho esta pendente ou entregue
-   ver se tem quantidade,nome do produto,valor total do produto
-   validar preco total do produto
-   validar preco total do pedido
-   se o pedido tiver pendente ter um botao para marcar como entregue
-   ao clicar o botao deve desaparecer e statis passar a ser entregue
-   
-    */
-   it('Será validado que é possível acessar a tela do detalhe do pedido do administrador', () => {
-/*       login(Cypress.env('login'), Cypress.env('password'));
-      buyOneProduct();
-      accessOrdersClient();
-      clickButton('[data-testid="0-order-number"]');
-      verifyContainsUrl(`${Cypress.config().baseUrl}/orders/1`); */
-    });
-  
-    it('Será validado que contém os atributos descritos no protótipo', () => {
- /*      login(Cypress.env('login'), Cypress.env('password'));
-      buyOneProduct();
-      accessOrdersClient();
-      clickButton('[data-testid="0-order-number"]');
-      verifyElementVisible('[data-testid="top-title"]');
-      verifyElementVisible('[data-testid="order-number"]');
-      verifyElementVisible('[data-testid="order-date"]');
-      verifyElementVisible('[data-testid="0-product-qtd"]');
-      verifyElementVisible('[data-testid="0-product-name"]');
-      verifyElementVisible('[data-testid="0-product-total-value"]');
-      verifyElementVisible('[data-testid="order-total-value"]'); */
-    });
-  
-    it('', () => {
-/*       const date = getDateAndMonth();
-      login(Cypress.env('login'), Cypress.env('password'));
-      buyOneProduct();
-      accessOrdersClient();
-      clickButton('[data-testid="0-order-number"]');
-      verifyElementContainsText('[data-testid="order-number"]','Pedido 1');
-      verifyElementContainsText('[data-testid="order-date"]', date); */
-    });
-  
-    it('', () => {
- /*      login(Cypress.env('login'), Cypress.env('password'));
-      buyOneProduct();
-      accessOrdersClient();
-      clickButton('[data-testid="0-order-number"]');
-      verifyElementContainsText('[data-testid="0-product-qtd"]','1');
-      verifyElementContainsText('[data-testid="0-product-name"]','Skol Lata 250ml');
-      verifyElementContainsText('[data-testid="0-product-total-value"]','R$ 2,20'); */
-    });
-  
-    it('', () => {
-/*       login(Cypress.env('login'), Cypress.env('password'));
-      buyProducts();
-      accessOrdersClient();
-      clickButton('[data-testid="0-order-number"]');
-      verifyElementContainsText('[data-testid="0-product-qtd"]','2');
-      verifyElementContainsText('[data-testid="0-product-name"]','Skol Lata 250ml');
-      verifyElementContainsText('[data-testid="order-total-value"]','R$ 4,40'); */
-    });
+describe('12 - Criar Tela de Detalhes Pedidos', () => {
+  beforeEach(() => {
+    createAndInsertsDataBase();
+    cy.visit(Cypress.config().baseUrl);
+    loginClientAndBuyProduct(),
+    logout();
   });
   
+  afterEach(() => {
+    dropAndTruncateDataBase();
+  }) 
+ 
+  it('Será validado que é possível acessar a tela do detalhe do pedido do administrador', () => {
+    login(Cypress.env('loginAdmin'), Cypress.env('passwordAdmin'));
+    accessOrdersAdmin();
+    clickButton('[data-testid="0-order-number"]');
+    verifyContainsUrl(`${Cypress.config().baseUrl}/admin/orders/1`);
+  });
+  
+  it('Será validado que contém os atributos descritos no protótipo', () => {
+    login(Cypress.env('loginAdmin'), Cypress.env('passwordAdmin'));
+    accessOrdersAdmin();
+    clickButton('[data-testid="0-order-number"]');
+    verifyElementVisible('[data-testid="order-number"]')
+    verifyElementVisible('[data-testid="order-status"]');
+    verifyElementVisible('[data-testid="0-product-name"]');
+    verifyElementVisible('[data-testid="0-product-qtd"]');
+    verifyElementVisible('[data-testid="0-product-total-value"]');
+    verifyElementVisible('[data-testid="0-order-unit-price"]');
+    verifyElementVisible('[data-testid="order-total-value"]');
+  });
+  
+  it('Será validado que o pedido contém nome e status do pedido', () => {
+    login(Cypress.env('loginAdmin'), Cypress.env('passwordAdmin'));
+    accessOrdersAdmin();
+    clickButton('[data-testid="0-order-number"]');
+    verifyElementContainsText('[data-testid="order-number"]', 'Pedido 1');
+    verifyElementContainsText('[data-testid="order-status"]', 'Pendente');
+  });
+  
+  it('Será validado que o pedido contém todos os detalhes do pedido', () => {
+    login(Cypress.env('loginAdmin'), Cypress.env('passwordAdmin'));
+    accessOrdersAdmin();
+    clickButton('[data-testid="0-order-number"]');
+    verifyElementContainsText('[data-testid="order-number"]', 'Pedido 1');
+    verifyElementContainsText('[data-testid="order-status"]', 'Pendente');
+    verifyElementContainsText('[data-testid="0-product-name"]', 'Skol Lata 250ml');
+    verifyElementContainsText('[data-testid="0-product-qtd"]', '1');
+    verifyElementContainsText('[data-testid="0-product-total-value"]', 'R$ 2,20');
+    verifyElementContainsText('[data-testid="0-order-unit-price"]', '(R$ 2,20)');
+    verifyElementContainsText('[data-testid="order-total-value"]', 'R$ 2,20');
+  });
+  
+  it('Será validado que o pedido com status pendente irá apresentar na tela o botão "Marcar como entregue"', () => {
+    login(Cypress.env('loginAdmin'), Cypress.env('passwordAdmin'));
+    accessOrdersAdmin();
+    clickButton('[data-testid="0-order-number"]');
+    verifyElementContainsText('[data-testid="order-number"]', 'Pedido 1');
+    verifyElementContainsText('[data-testid="order-status"]', 'Pendente');
+    verifyElementVisible('[data-testid="mark-as-delivered-btn"]');
+    verifyElementContainsText('[data-testid="mark-as-delivered-btn"]', 'Marcar como entregue');
+  });
+
+  it('Será validado que o pedido ao marcar como entregue o status mude para entregue" e o botão nao esteja mais visível', () => {
+    login(Cypress.env('loginAdmin'), Cypress.env('passwordAdmin'));
+    accessOrdersAdmin();
+    clickButton('[data-testid="0-order-number"]');
+    verifyElementContainsText('[data-testid="order-number"]', 'Pedido 1');
+    verifyElementContainsText('[data-testid="order-status"]', 'Pendente');
+    clickButton('[data-testid="mark-as-delivered-btn"]');
+    verifyElementContainsText('[data-testid="order-status"]', 'Entregue');
+    verifyElementNotVisible('[data-testid="mark-as-delivered-btn"]');
+  });
+});
