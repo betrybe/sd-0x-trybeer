@@ -1,0 +1,18 @@
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  evaluator_job:
+    name: Evaluator Job
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1.4.3
+        with:
+          node-version: '12'
+      - name: Static code analysis step
+        uses: betrybe/linter-evaluator-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
