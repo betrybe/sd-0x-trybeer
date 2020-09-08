@@ -15,4 +15,3 @@ jobs:
         uses: betrybe/eslint-linter-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-

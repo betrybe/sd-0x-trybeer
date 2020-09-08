@@ -1,4 +1,5 @@
 {
+  "root": true,
   "extends": "airbnb",
   "rules": {
     "no-console": "off",
@@ -24,4 +25,3 @@
     "jest": true
   }
 }
-  
