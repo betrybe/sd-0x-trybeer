@@ -1,8 +1,9 @@
+DROP DATABASE IF EXISTS Trybeer;
 CREATE DATABASE IF NOT EXISTS Trybeer;
 
 USE Trybeer;
 
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
 	id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
@@ -12,7 +13,7 @@ CREATE TABLE users (
     UNIQUE KEY `email_un` (email)
 );
 
-CREATE TABLE sales (
+CREATE TABLE IF NOT EXISTS sales (
     id INT NOT NULL AUTO_INCREMENT,
     user_id INT NOT NULL,
     total_price DECIMAL(9,2) NOT NULL,
@@ -24,7 +25,7 @@ CREATE TABLE sales (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-CREATE TABLE products (
+CREATE TABLE IF NOT EXISTS products (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     price DECIMAL(4,2) NOT NULL,
@@ -33,7 +34,7 @@ CREATE TABLE products (
     UNIQUE KEY `name` (name)
 );
 
-CREATE TABLE sales_products (
+CREATE TABLE IF NOT EXISTS sales_products (
     sale_id INT NOT NULL,
     product_id INT NOT NULL,
     quantity VARCHAR(10) NOT NULL,
