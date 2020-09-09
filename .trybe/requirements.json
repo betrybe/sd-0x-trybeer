@@ -1,0 +1,56 @@
+{
+  "requirements": [
+    {
+      "description": "Crie uma página de login",
+      "bonus": false
+    },
+    {
+      "description": "Crie uma página de registro de usuários",
+      "bonus": false
+    },
+    {
+      "description": "Crie o menu top e menu side bar",
+      "bonus": false
+    },
+    {
+      "description": "Criar tela de perfil do cliente",
+      "bonus": false
+    },
+    {
+      "description": "Criar Tela de Produtos",
+      "bonus": false
+    },
+    {
+      "description": "Criar Tela de Checkout",
+      "bonus": false
+    },
+    {
+      "description": "Criar Tela de Meus Pedidos",
+      "bonus": false
+    },
+    {
+      "description": "Criar Tela de Detalhes Pedidos",
+      "bonus": false
+    },
+    {
+      "description": "Criar menu side bar para Administrador",
+      "bonus": false
+    },
+    {
+      "description": "Criar tela de perfil de Administrador",
+      "bonus": false
+    },
+    {
+      "description": "Criar tela de pedidos de admin",
+      "bonus": false
+    },
+    {
+      "description": "Criar Tela de Detalhes Pedidos",
+      "bonus": false
+    },
+    {
+      "description": "Cobertura de testes unitários",
+      "bonus": true
+    }
+  ]
+}
