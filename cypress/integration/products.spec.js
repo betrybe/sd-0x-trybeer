@@ -75,7 +75,7 @@ describe('Criar Tela de Produtos', () => {
     verifyElementContainsText('[data-testid="0-product-qtd"]','0');
   });
 
-  it('Será validado que é possível visualizar o botão "ver carrinho"', () => {
+  it('Será validado que é possível visualizar o botão "Ver Carrinho"', () => {
     login(Cypress.env('login'), Cypress.env('password'));
     verifyElementVisible('[data-testid="checkout-bottom-btn"]');
     verifyElementContainsText('[data-testid="checkout-bottom-btn"]', 'Ver Carrinho');
@@ -110,7 +110,7 @@ describe('Criar Tela de Produtos', () => {
     verifyElementContainsText('[data-testid="checkout-bottom-btn-value"]', 'R$ 2,20');
   });
 
-  it('Será validado que é possível adicionar um produto e clicar no botão "ver carrinho" e ser redirecionado para tela de carrinho', () => {
+  it('Será validado que é possível adicionar um produto e clicar no botão "Ver Carrinho" e ser redirecionado para tela de carrinho', () => {
     login(Cypress.env('login'), Cypress.env('password'));
     cy.visit(`${Cypress.config().baseUrl}/products`);
     clickButton('[data-testid="0-product-plus"]');
@@ -119,7 +119,7 @@ describe('Criar Tela de Produtos', () => {
     verifyContainsUrl(`${Cypress.config().baseUrl}/checkout`);
   });
 
-  it('Será validado que não o botão ver carrinho fique desabilitado caso não adicione nenhum produto', () => {
+  it('Será validado que o botão "Ver Carrinho" fique desabilitado caso não adicione nenhum produto', () => {
     login(Cypress.env('login'), Cypress.env('password'));
     cy.visit(`${Cypress.config().baseUrl}/products`);
     verifyElementIsDisable('[data-testid="checkout-bottom-btn"]');

@@ -85,4 +85,17 @@ describe('Criar Tela de Detalhes Pedidos', () => {
     verifyElementContainsText('[data-testid="order-status"]', 'Entregue');
     verifyElementNotVisible('[data-testid="mark-as-delivered-btn"]');
   });
+
+  it('Será validado que o pedido ao marcar como entregue o status mude para entregue" na tela de pedidos admin', () => {
+    login(Cypress.env('loginAdmin'), Cypress.env('passwordAdmin'));
+    accessOrdersAdmin();
+    clickButton('[data-testid="0-order-number"]');
+    verifyElementContainsText('[data-testid="order-number"]', 'Pedido 1');
+    verifyElementContainsText('[data-testid="order-status"]', 'Pendente');
+    clickButton('[data-testid="mark-as-delivered-btn"]');
+    verifyElementContainsText('[data-testid="order-status"]', 'Entregue');
+    verifyElementNotVisible('[data-testid="mark-as-delivered-btn"]');
+    clickButton('[data-testid="side-menu-item-orders"]');
+    verifyElementContainsText('[data-testid="0-order-status"]', 'Entregue');
+  });
 });

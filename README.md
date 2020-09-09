@@ -41,13 +41,13 @@ Você pode ler mais sobre os atributos que serão utilizados para testes [neste 
 
 Esse repositório contém duas pastas, `back-end` e `front-end`, onde você deve desenvolver o front-end e o back-end da aplicação. Ambas as pastas contêm um projeto iniciado com as configurações básicas necessárias. Após clonar o projeto e instalar as dependências, sinta-se livre para escolher usar Redux ou ContextAPI + React Hooks. Saiba avaliar as vantagens/desvantagens de cada um na hora da escolha.
 
-Para o banco de dados, você deverá utilizar o `MySQL`. Modele-o e disponibilize um script, na raiz do seu app, para que o seu projeto seja corrigido utilizando o banco de dados arquitetado por você! O nome do script deve ser `script.sql`.
+Para o banco de dados, você deverá utilizar o `MySQL`. Já existe um script, na raiz do seu app. O nome do script é `script.sql`.
 
 ##### Você também deve **escrever testes unitários que devem cobrir pelo menos 90% do projeto**. Na [documentação do Jest CLI](https://jestjs.io/docs/en/cli) é possível ver como essa cobertura é coletada.
 
 Para que seu projeto seja corretamente avaliado, siga as orientações a seguir:
 
-- Sua aplicação deve ter um admin padrão com o nome de usuário `tryber` e senha `123456`.
+- Sua aplicação deve ter um admin padrão com o nome de usuário `Tryber Admin` e senha `123456`.
 
 - Sua aplicação deve ter, no mínimo, os produtos abaixo cadastrados. O arquivo `images.tar.gz`, na raiz do projeto, contém imagens para estes produtos.
 
@@ -96,44 +96,47 @@ O intuito desse app é que uma pessoa possa pedir uma cerveja no aplicativo e ou
 
 ##### Requisitos Gerais
 
-1. Os `endpoints` da API devem ser criados utilizando o padrão REST;
+- Os `endpoints` da API devem ser criados utilizando o padrão REST;
 
-2. O back-end deve utilizar o banco de dados `MySQL`;
+- O back-end deve utilizar o banco de dados `MySQL`;
 
-3. O back-end deve ser construído seguindo o padrão arquitetural `MSC`;
+- O back-end deve ser construído seguindo o padrão arquitetural `MSC`;
 
-4. Disponibilize um script SQL na raiz do projeto com comandos para a criação do banco de dados, das tabelas, inserção dos dados iniciais e criação do admin padrão. O script deve ser nomeado `script.sql`.
+- Rode um script SQL na raiz do projeto com comandos para a criação do banco de dados, das tabelas, inserção dos dados iniciais e criação do admin padrão. O script é `script.sql`.
 
 ### 1 - Crie uma página de login
 
 Esta tela possui o nome `Login` no protótipo.
 
-5. Todos os elementos da tela devem respeitar os atributos descritos no protótipo;
+- Todos os elementos da tela devem respeitar os atributos descritos no protótipo;
 
-6. A rota da tela deve ser `/login`;
+- A rota da tela deve ser `/login`;
 
-7. A pessoa deve conseguir escrever seu email no input de email;
+- A pessoa deve conseguir escrever seu email no input de email;
 
-8. A pessoa deve conseguir escrever sua senha no input de senha;
+- A pessoa deve conseguir escrever sua senha no input de senha;
 
-9. O formulário só fica válido após um email válido e uma senha de, no mínimo, 6 números serem preenchidos. Um email válido possui a forma `<nome>@<domínio>`. Caso o formulário esteja inválido, o botão de submeter deve estar desativado. Caso contrário, deve estar ativado;
+- O formulário só fica válido após um email válido e uma senha de, no mínimo, 6 números serem preenchidos. Um email válido possui a forma `<nome>@<domínio>`. Caso o formulário esteja inválido, o botão de submeter deve estar desativado. Caso contrário, deve estar ativado;
 
-10. Após a submissão bem sucedida do formulário, o token que identifica o usuário recebido na resposta deve ser salvo no `localStorage`. Esse token deve ser utilizado para futuras requisições à API;
+- Após a submissão bem sucedida do formulário, o token que identifica o usuário recebido na resposta deve ser salvo no `localStorage`. Esse token deve ser utilizado para futuras requisições à API;
 
-11. Após a submissão bem sucedida do formulário, se o usuário for do tipo `administrador`, a pessoa deve ser redirecionada para a página **Admin - Home**;
+- Após a submissão bem sucedida do formulário, se o usuário for do tipo `administrador`, a pessoa deve ser redirecionada para a página **Admin - Home**;
 
-12. Após a submissão bem sucedida do formulário, se o usuário for do tipo `cliente`, a pessoa deve ser redirecionada para a página **Cliente - Produtos**;
+- Após a submissão bem sucedida do formulário, se o usuário for do tipo `cliente`, a pessoa deve ser redirecionada para a página **Cliente - Produtos**;
 
-13. Deve existir um botão para o usuário se registrar com o texto `"Ainda não tenho conta"`. Ao ser clicado, a pessoa deve ser redirecionada para a página **Registro**.
-
-DATA TEST ID
-URL - /login
-Campo email                - data-testid="email-input"
-campo senha                - data-testid="password-input"
-botao entrar               - data-testid="signin-btn"
-link ainda nao tenho conta - data-testid="no-account-btn"
+- Deve existir um botão para o usuário se registrar com o texto `"Ainda não tenho conta"`. Ao ser clicado, a pessoa deve ser redirecionada para a página **Registro**.
 
 ### Página de Login:
+
+- O campo input 'Email' deverá conter a tag `data-testid="email-input"`
+
+- O campo input 'Senha' deverá conter a tag `data-testid="password-input"`
+
+- O botão 'Entrar' deverá conter a tag `data-testid="signin-btn"`
+
+- O campo link/botão 'Ainda nao tenho conta' deverá conter a tag `data-testid="no-account-btn"`
+
+![Tela de login](./public/login.png)
 
 **[Será validado que é possível acessar a home]**
 
@@ -155,11 +158,11 @@ link ainda nao tenho conta - data-testid="no-account-btn"
 
 Esta tela possui o nome `Registro` no protótipo.
 
-14. Todos os elementos devem respeitar os atributos descritos no protótipo;
+- Todos os elementos devem respeitar os atributos descritos no protótipo;
 
-15. A rota da tela deve ser `/register`;
+- A rota da tela deve ser `/register`;
 
-16. A tela deve mostrar um formulário com os seguintes campos:
+- A tela deve mostrar um formulário com os seguintes campos:
 
     - **nome** - deve conter, no mínimo, 12 letras, sem números ou caracteres especiais;
 
@@ -169,21 +172,25 @@ Esta tela possui o nome `Registro` no protótipo.
 
     - **quero vender** - um checkbox opcional, desmarcado por padrão.
 
-17. Caso a opção `Quero vender` esteja marcada, o usuário deve ser cadastrado com um papel de **admin**. Caso contrário, será um **client**;
+- Caso a opção `Quero vender` esteja marcada, o usuário deve ser cadastrado com um papel de **admin**. Caso contrário, será um **client**;
 
-18. Caso os dados inseridos no formulário sejam inválidos, o botão de submeter deve estar desativado. Caso contrário, deve estar ativado;
+- Caso os dados inseridos no formulário sejam inválidos, o botão de submeter deve estar desativado. Caso contrário, deve estar ativado;
 
-19. Caso a opção `Quero vender` esteja marcada, ao clicar no botão `"Cadastrar"`, a pessoa deve ser redirecionada para a página **Admin - Home**. Caso contrario, deve ser redirecionada para a página de **Cliente - Produtos**.
-
-DATA TEST ID
-
-Campo nome            - data-testid="signup-name"
-Campo email           - data-testid="signup-email"
-Campo password        - data-testid="signup-password"
-Checkbox quero vender - data-testid="signup-seller"
-Botão de cadastrar    - data-testid="signup-btn"
+- Caso a opção `Quero vender` esteja marcada, ao clicar no botão `"Cadastrar"`, a pessoa deve ser redirecionada para a página **Admin - Home**. Caso contrario, deve ser redirecionada para a página de **Cliente - Produtos**.
 
 ### Página de Registro 
+
+- O campo input 'name' deverá conter a tag `data-testid="signup-name"`
+
+- O campo input 'email' deverá conter a tag `data-testid="signup-email"`
+
+- O campo input 'password' deverá conter a tag `data-testid="signup-password"`
+
+- O campo checkbox 'Quero vender' deverá conter a tag `data-testid="signup-seller"`
+
+- O botão 'Cadastrar' deverá conter a tag `data-testid="signup-btn"`
+
+![Tela de cadastro](./public/cadastro.png)
 
 **[Será validado que é possível acessar a tela de registro]**
 
@@ -213,39 +220,47 @@ Botão de cadastrar    - data-testid="signup-btn"
 
 ### 3 - Crie o menu top e o menu side bar
 
-20. Todos os elementos devem respeitar os atributos descritos no protótipo para o menu superior;
+- Todos os elementos devem respeitar os atributos descritos no protótipo para o menu superior;
 
-21. O menu superior deve sempre ser exibido em todas as telas;
+- O menu superior deve sempre ser exibido em todas as telas;
 
-22. O título correspondente à tela em que o usuário se encontra deve ser mostrado, confome protótipos;
+- O título correspondente à tela em que o usuário se encontra deve ser mostrado, confome protótipos;
 
-23. Deve haver um ícone do tipo "hambúrguer" no canto superior esquerdo do menu superior. Quando clicado, caso o menu lateral esteja oculto, deve ser mostrado. Caso contrário, o menu lateral deve ser escondido.
+- Deve haver um ícone do tipo "hambúrguer" no canto superior esquerdo do menu superior. Quando clicado, caso o menu lateral esteja oculto, deve ser mostrado. Caso contrário, o menu lateral deve ser escondido.
 
-24. Todos os elementos devem respeitar os atributos descritos no protótipo para o menu lateral;
+- Todos os elementos devem respeitar os atributos descritos no protótipo para o menu lateral;
 
-25. Deve conter quatro itens: `"Produtos"`, `"Meus pedidos"`, `"Meu Perfil"` e `"Sair"`;
+- Deve conter quatro itens: `"Produtos"`, `"Meus pedidos"`, `"Meu Perfil"` e `"Sair"`;
 
-26. Ao clicar no item `"Produtos"`, a pessoa deve ser redirecionada para a tela **Cliente - Produtos**;
+- Ao clicar no item `"Produtos"`, a pessoa deve ser redirecionada para a tela **Cliente - Produtos**;
 
-27. Ao clicar no item `"Meus pedidos"`, a pessoa deve ser redirecionada para a tela **Cliente - Meus Pedidos**;
+- Ao clicar no item `"Meus pedidos"`, a pessoa deve ser redirecionada para a tela **Cliente - Meus Pedidos**;
 
-28. Ao clicar no item `"Meu Perfil"`, a pessoa deve ser redirecionada para tela **Cliente - Meu Perfil**;
+- Ao clicar no item `"Meu Perfil"`, a pessoa deve ser redirecionada para tela **Cliente - Meu Perfil**;
 
-29. Ao clicar no item `"Sair"`, a pessoa deve ser redirecionada para a tela **Login** e ser deslogada.
+- Ao clicar no item `"Sair"`, a pessoa deve ser redirecionada para a tela **Login** e ser deslogada.
 
 ### Menu superior 
 
-side-bar - class="side-menu-container"
-titulo - data-testid="top-title"
-Botão Hamburguer - data-testid="top-hamburguer"
+- O título do top 'Trybeer' deverá conter a tag `data-testid="top-title"`
+
+- O botão 'Hamburguer' deverá conter a tag `data-testid="top-hamburguer"`
+
+![Menu Superior](./public/menusuperior.png)
 
 ### Menu lateral
 
-botao produtos     - data-testid="side-menu-item-products"
-botao meus pedidos - data-testid="side-menu-item-my-orders"
-botao meu perfil   - data-testid="side-menu-item-my-profile"
-botao sair         - data-testid="side-menu-item-logout"
-o componente sidebar deve ter a seguinte classe = ".side-menu-container"
+- O componente sidebar deverá conter a seguinte classe `class="side-menu-container"`
+
+- O botão 'Produtos' deverá conter a tag `data-testid="side-menu-item-products"`
+
+- O botão 'Meus Pedidos' deverá conter a tag `data-testid="side-menu-item-my-orders"`
+
+- O botão 'Meu Perfil' deverá conter a tag `data-testid="side-menu-item-my-profile"`
+
+- O botão 'Sair' deverá conter a tag `data-testid="side-menu-item-logout"`
+
+![Menu Lateral](./public/menulateral.png)
 
 **[Será validado que os atributos do top menu devem ser mostrados confome protótipos]**
 
@@ -259,30 +274,35 @@ o componente sidebar deve ter a seguinte classe = ".side-menu-container"
 
 **[Será validado que ao clicar no botão "meu perfil" será redirecionado para tela de meu perfil]**
 
-**[Será validado que ao clicar no botão sair será redirecionado para tela home]**
+**[Será validado que ao clicar no botão "sair" será redirecionado para tela home]**
 
 ### 4 - Criar tela de perfil do cliente
 
-Esta tela possui o nome `Cliente - Meu Pefil` no protótipo.
+Esta tela possui o nome `Cliente - Meu Perfil` no protótipo.
 
-30. Todos os elementos devem respeitar os atributos descritos no protótipo;
+- Todos os elementos devem respeitar os atributos descritos no protótipo;
 
-31. A rota da tela deve ser `/profile`;
+- A rota da tela deve ser `/profile`;
 
-32. Deve ter dois campos de texto: um para o `email` e o outro para o `nome`. Apenas o `nome` pode ser alterado. Dessa forma, o campo `email` deve ser `read-only`;
+- Deve ter dois campos de texto: um para o `email` e o outro para o `name`. Apenas o `name` pode ser alterado. Dessa forma, o campo `email` deve ser `read-only`;
 
-33. Deve ter um botão `"Salvar"`". Caso o usuário tenha editado o nome, o botão deve ser habilitado. Caso contrário, o botão deve estar desabilitado;
+- Deve ter um botão `"Salvar"`". Caso o usuário tenha editado o nome, o botão deve ser habilitado. Caso contrário, o botão deve estar desabilitado;
 
-34. Ao clicar no botão `"Salvar"`, uma requisição deve ser feita à API e o nome da pessoa deve ser atualizado no banco de dados;
+- Ao clicar no botão `"Salvar"`, uma requisição deve ser feita à API e o nome da pessoa deve ser atualizado no banco de dados;
 
-35. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
-
-input name   - data-testid="profile-name-input"
-input email  - data-testid="profile-email-input"
-botao salvar - data-testid="profile-save-btn"
-title        - data-testid="top-title"
+- Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
 ### Tela de perfil
+
+- O título do top 'Meu perfil' deverá conter a tag `data-testid="top-title"`
+
+- O campo input 'Name' deverá conter a tag `data-testid="profile-name-input"`
+
+- O campo input 'Email' deverá conter a tag `data-testid="profile-email-input"`
+
+- O botão 'Salvar' deverá conter a tag `data-testid="profile-save-btn"`
+
+![Tela do perfil do cliente](./public/perfilcliente.png)
 
 **[Será validado que é possível acessar a tela de perfil do cliente]**
 
@@ -300,13 +320,13 @@ title        - data-testid="top-title"
 
 Esta tela possui o nome `Cliente - Produtos` no protótipo.
 
-36. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de produtos;
+- Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de produtos;
 
-37. A rota da tela deve ser `/products`;
+- A rota da tela deve ser `/products`;
 
-38. Nessa tela, os produtos devem ser organizados em "cards", e deve haver um card para cada produto;
+- Nessa tela, os produtos devem ser organizados em "cards", e deve haver um card para cada produto;
 
-39. Os cards devem conter os seguintes dados do produto:
+- Os cards devem conter os seguintes dados do produto:
 
     - Foto;
 
@@ -318,37 +338,71 @@ Esta tela possui o nome `Cliente - Produtos` no protótipo.
 
     - Botão de adicionar (`+`) e de remover (`-`) uma unidade do produto no carrinho.
 
-40. Ao clicar no botão `+`, a quantidade do produto deve aumentar em 1;
+- Ao clicar no botão `+`, a quantidade do produto deve aumentar em 1;
 
-41. Ao clicar no botão `-`, a quantidade do produto deve diminuir em 1, limitado a 0;
+- Ao clicar no botão `-`, a quantidade do produto deve diminuir em 1, limitado a 0;
 
-43. Caso a pessoa atualize o browser, o carrinho deve ser mantido;
+- Caso a pessoa atualize o browser, o carrinho deve ser mantido;
 
-43. O preço unitário deve seguir o padrão `R$ 00,00`;
+- O preço unitário deve seguir o padrão `R$ 00,00`;
 
-44. Quando a quantidade mostrada no card do produto chegar a 0, o produto deve ser removido do carrinho;
+- Quando a quantidade mostrada no card do produto chegar a 0, o produto deve ser removido do carrinho;
 
-45. Deve ter um botão `"Ver carrinho"`. Esse botão também deve exibir o **valor total** dos produtos no carrinho;
+- Deve ter um botão `"Ver carrinho"`. Esse botão também deve exibir o **valor total** dos produtos no carrinho;
 
-46. O **valor total** mostrado no botão `"Ver carrinho"` deve ser alterado dinamicamente, ou seja, ao adicionar ou remover um produto no carrinho, o valor total deve ser atualizado;
+- O **valor total** mostrado no botão `"Ver carrinho"` deve ser alterado dinamicamente, ou seja, ao adicionar ou remover um produto no carrinho, o valor total deve ser atualizado;
 
-47. Ao clicar no botão `"Ver carrinho"`, a pessoa deve ser redirecionada para a página **Cliente - Checkout**.
+- Ao clicar no botão `"Ver carrinho"`, a pessoa deve ser redirecionada para a página **Cliente - Checkout**.
 
-48. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
-
-card de um elemento - class="product-card"
-garantir que o id mude de um produto para o outro em ordem crescente sendo o primeiro produto comecando por 0
-
-valor do produto - data-testid="0-product-price"
-imagem do produto - data-testid="0-product-img"
-nome do produto - data-testid="0-product-name"
-botao mais - data-testid="0-product-plus"
-botao menos - data-testid="0-product-minus"
-quantidade do produto - data-testid="1-product-qtd"
-botao ver carrinho - data-testid="checkout-bottom-btn"
-valor carrinho - data-testid="checkout-bottom-btn-value"
+- Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
 ### Tela de produtos
+
+- O valor do produto 'R$ 2,20' deverá conter a tag `data-testid="0-product-price"`
+
+- A imagem do produto deverá conter a tag `data-testid="0-product-img"`
+
+- O nome do produto 'Skoll..' deverá conter a tag `data-testid="0-product-name"`
+
+- O botão 'Mais' deverá conter a tag `data-testid="0-product-plus"`
+
+- O botão 'Menos' deverá conter a tag `data-testid="0-product-minus"`
+
+- A quantidade de produtos deverá conter a tag `data-testid="0-product-qtd"`
+
+- O botão 'Ver Carrinho' deverá conter a tag `data-testid="checkout-bottom-btn"`
+
+- O valor total do carrinho deverá conter a tag `data-testid="checkout-bottom-btn-value"`
+
+**[OBS: os campos data-testid deverão ser implementado um index para cada produto sempre comecando pelo index 0, para cada um dessas tags veja os exemplo abaixo:]**
+
+Produto 1:
+
+data-testid="0-product-price"
+
+Produto 2:
+
+data-testid="1-product-price"
+
+Produto 3:
+
+data-testid="2-product-price"
+
+Deverá ser alterado para os seguintes data-testid listados abaixo:
+
+data-testid="0-product-price"
+
+data-testid="0-product-img"
+
+data-testid="0-product-name"
+
+data-testid="0-product-plus"
+
+data-testid="0-product-minus"
+
+data-testid="0-product-qtd"
+
+![Tela do perfil do cliente](./public/produtos.png)
 
 **[Será validado que existe um produto na tela de produtos]**
 
@@ -360,7 +414,7 @@ valor carrinho - data-testid="checkout-bottom-btn-value"
 
 **[Será validado que não é possível clicar no botão "-" e atualizar o produto para menor que zero]**
 
-**[Será validado que é possível visualizar o botão "ver carrinho"]**
+**[Será validado que é possível visualizar o botão "Ver Carrinho"]**
 
 **[Será validado que é possível atualizar o valor do carrinho ao adicionar um produto]**
 
@@ -368,9 +422,9 @@ valor carrinho - data-testid="checkout-bottom-btn-value"
 
 **[Será validado que ao atualizar a tela continuará na tela de produtos e carrinho com o mesmo valor]**
 
-**[Será validado que é possível adicionar um produto e clicar no botão "ver carrinho" e ser redirecionado para tela de carrinho]**
+**[Será validado que é possível adicionar um produto e clicar no botão "Ver Carrinho" e ser redirecionado para tela de carrinho]**
 
-**[Será validado que não o botão ver carrinho fique desabilitado caso não adicione nenhum produto]**
+**[Será validado que o botão "Ver Carrinho" fique desabilitado caso não adicione nenhum produto]**
 
 **[Será validado que não é possível acessar a tela de produtos sem estar logado e será redirecionado para tela de login]**
 
@@ -379,50 +433,82 @@ valor carrinho - data-testid="checkout-bottom-btn-value"
 ## Requisitos Entrega 2
 
 ##### Requisitos Gerais
-<!-- VERIFICAR SE VALE -->
-49. A cobertura de testes unitários deve ser de, no mínimo, 90%;
 
 ### 6 - Criar Tela de Checkout
 
 Esta tela possui o nome `Cliente - Checkout` no protótipo.
 
-50. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela;
+- Todos os elementos devem respeitar os atributos descritos no protótipo para a tela;
 
-51. A rota da tela deve ser `/checkout`;
+- A rota da tela deve ser `/checkout`;
 
-52. Caso a pessoa atualize o browser, o carrinho deve ser mantido;
+- Caso a pessoa atualize o browser, o carrinho deve ser mantido;
 
-53. Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`, sendo o valor total calculado por **quantidade * preço unitário**;
+- Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`, sendo o valor total calculado por **quantidade * preço unitário**;
 
-54. Ao lado de cada produto deve haver um botão que, quando clicado, exclui este produto do carrinho;
+- Ao lado de cada produto deve haver um botão que, quando clicado, exclui este produto do carrinho;
 
-55. Abaixo da lista, mostre o **valor total do pedido**, no seguinte formato: `Total: R$ 0,00`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**;
+- Abaixo da lista, mostre o **valor total do pedido**, no seguinte formato: `Total: R$ 0,00`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**;
 
-56. Deve existir um formulário para a pessoa digitar o endereço de entrega dos produtos. O formulário deve conter dois campos de texto: um para a **rua** e o outro para o **número da casa**;
+- Deve existir um formulário para a pessoa digitar o endereço de entrega dos produtos. O formulário deve conter dois campos de texto: um para a **rua** e o outro para o **número da casa**;
 
-57. Deve ter um botão `"Finalizar Pedido"`. O botão deve estar habilitado **apenas** se o valor total do pedido for **maior que zero** e o endereço de entrega estiver preenchido;
+- Deve ter um botão `"Finalizar Pedido"`. O botão deve estar habilitado **apenas** se o valor total do pedido for **maior que zero** e o endereço de entrega estiver preenchido;
 
-58. Ao clicar em "`Finalizar pedido`", caso a operação dê certo, uma mensagem de sucesso deve ser exibida e a pessoa deve ser redirecionada para a página **Cliente - Produtos**. Caso contrário, deve ser exibido uma mensagem de erro;
+- Ao clicar em "`Finalizar pedido`", caso a operação dê certo, uma mensagem de sucesso deve ser exibida e a pessoa deve ser redirecionada para a página **Cliente - Produtos**. Caso contrário, deve ser exibido uma mensagem de erro;
 
-59. Quando um pedido for finalizado, o carrinho deve ser esvaziado;
+- Quando um pedido for finalizado, o carrinho deve ser esvaziado;
 
-60. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
-
-
-titulo - data-testid="top-title"
-quantidade do produto - data-testid="0-product-qtd-input"
-nome do produto - data-testid="0-product-name"
-valor do produto - data-testid="0-product-total-value"
-valor unitario  - data-testid="0-product-unit-price"
-botao de remover produto - data-testid="0-removal-button"
-valor total - data-testid="order-total-value"
-input da rua - data-testid="checkout-street-input"
-numero da casa - data-testid="checkout-house-number-input"
-botao finalizar pedido - data-testid="checkout-finish-btn"
-mensagem de sucesso - Compra realizada com sucesso!
-excluir todos os produtos aparece essa mensagem - Não há produtos no carrinho
+- Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
 ### Tela de Checkout
+
+- O título do top 'Finalizar Pedido' deverá conter a tag `data-testid="top-title"`
+
+- A quantidade do produto deverá conter a tag `data-testid="0-product-qtd-input"`
+
+- O nome do produto deverá conter a tag `data-testid="0-product-name"`
+
+- O valor do produto deverá conter a tag `data-testid="0-product-total-value"`
+
+- O preço unitário do produto deverá conter a tag `data-testid="0-product-unit-price"`
+
+- O botão de remover um produto deverá conter a tag `data-testid="0-removal-button"`
+
+- O valor total do carrinho  deverá conter a tag `data-testid="order-total-value"`
+
+- O campo input 'Rua' deverá conter a tag `data-testid="checkout-street-input"`
+
+- O campo input 'Número da casa' deverá conter a tag `data-testid="checkout-house-number-input"`
+
+- O botão 'Finalizar Pedido' deverá conter a tag `data-testid="checkout-finish-btn"`
+
+**[OBS: os campos data-testid deverão ser implementado um index para cada produto sempre comecando pelo index 0, para cada um dessas tags veja os exemplo abaixo:]**
+
+Produto 1:
+
+data-testid="0-product-price"
+
+Produto 2:
+
+data-testid="1-product-price"
+
+Produto 3:
+
+data-testid="2-product-price"
+
+Deverá ser alterado para os seguintes data-testid listados abaixo:
+
+data-testid="0-product-qtd-input"
+
+data-testid="0-product-name"
+
+data-testid="0-product-total-value"
+
+data-testid="0-product-unit-price"
+
+data-testid="0-removal-button"
+
+![Tela do checkout](./public/checkout.png)
 
 **[Será validado que é possível acessar a tela de checkout]**
 
@@ -436,9 +522,16 @@ excluir todos os produtos aparece essa mensagem - Não há produtos no carrinho
 
 **[Será validado que é possível excluir um produto no checkout]**
 
+- Será validado que ao excluir os produtos aparecerá uma mensagem na tela de:
+`Não há produtos no carrinho` como na imagem abaixo:
+
+![Checkout sem produtos](./public/naohaprodutos.png)
+
 **[Será validado que é possível o botão finalizar pedido ficar habilitado apenas quando tiver produto maior que zero e rua e numero preenchidos]**
 
 **[Será validado que é possível fazer a compra de um produto e ao finalizar ver a mensagem de sucesso e ser redirecionado para tela de produtos]**
+
+- Será validado que ao fazer a compra com sucesso a mensagem de sucesso "Compra realizada com sucesso!" irá aparecer na tela.
 
 **[Será validado que não é possível acessar o checkout sem estar logado e será redirecionado para tela de login]**
 
@@ -446,25 +539,55 @@ excluir todos os produtos aparece essa mensagem - Não há produtos no carrinho
 
 Esta tela possui o nome `Cliente - Meus Pedidos` no protótipo.
 
-61. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de meus pedidos;
+- Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de meus pedidos;
 
-62. A rota da tela deve ser `/orders`;
+- A rota da tela deve ser `/orders`;
 
-63. Deve conter uma lista de cards, onde cada card é um pedido. Cada card deve conter as seguintes informações: `número do pedido`, `data de realização` e `valor total do pedido`. Para a data de realização do pedido, mostre apenas o dia e o mês;
+- Deve conter uma lista de cards, onde cada card é um pedido. Cada card deve conter as seguintes informações: `número do pedido`, `data de realização` e `valor total do pedido`. Para a data de realização do pedido, mostre apenas o dia e o mês;
 
-64. A listagem deve mostrar os pedidos ordenados por id;
+- A listagem deve mostrar os pedidos ordenados por id;
 
-65. Ao clicar no card, a pessoa deve ser redirecionada para a página **Cliente - Detalhes do Pedido**.
+- Ao clicar no card, a pessoa deve ser redirecionada para a página **Cliente - Detalhes do Pedido**.
 
-66. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
-
-data-testid="top-title"
-numero do pedido - data-testid="0-order-number"
-data do pedido - data-testid="0-order-date"
-valor do pedido - data-testid="0-order-total-value"
-cards - data-testid="0-order-card-container"
+- Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
 ### Tela de Meus Pedidos
+
+- O título do top 'Meus Pedidos' deverá conter a tag `data-testid="top-title"`
+
+- O card do pedido deverá conter a tag `data-testid="0-order-card-container"`
+
+- O número do pedido deverá conter a tag `data-testid="0-order-number"`
+
+- A data do pedido deverá conter a tag `data-testid="0-order-date"`
+
+- O valor do pedido deverá conter a tag `data-testid="0-order-total-value"`
+
+**[OBS: os campos data-testid deverão ser implementado um index para cada produto sempre comecando pelo index 0, para cada um dessas tags veja os exemplo abaixo:]**
+
+Produto 1:
+
+data-testid="0-product-price"
+
+Produto 2:
+
+data-testid="1-product-price"
+
+Produto 3:
+
+data-testid="2-product-price"
+
+Deverá ser alterado para os seguintes data-testid listados abaixo:
+
+data-testid="0-order-number"
+
+data-testid="0-order-date"
+
+data-testid="0-order-total-value"
+
+data-testid="0-order-card-container"
+
+![Meus Pedidos](./public/meuspedidos.png)
 
 **[Será validado que é possível acessar a tela de meus pedidos]**
 
@@ -476,23 +599,21 @@ cards - data-testid="0-order-card-container"
 
 **[Será validado que não é possível acessar a tela de meus pedidos sem estar logado e será redirecionado para tela de login]**
 
-<!--  -->
-
 ### 8 - Criar Tela de Detalhes Pedidos
 
 Esta tela possui o nome `Cliente - Detalhes de Pedido` no protótipo.
 
-67. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de detalhes do pedido;
+- Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de detalhes do pedido;
 
-68. A rota da página deve ser `/orders/:numero-do-pedido`;
+- A rota da página deve ser `/orders/:numero-do-pedido`;
 
-69. Mostre o `número do pedido` e a `data de realização`. Para a data de realização do pedido, mostre apenas o dia e o mês;
+- Mostre o `número do pedido` e a `data de realização`. Para a data de realização do pedido, mostre apenas o dia e o mês;
 
-70. Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`. Sendo o valor total calculado por **quantidade * preço unitário**;
+- Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`. Sendo o valor total calculado por **quantidade * preço unitário**;
 
-71. Abaixo da lista, mostre o `valor total do pedido`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**.
+- Abaixo da lista, mostre o `valor total do pedido`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**.
 
-72. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
+- Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
 titulo - data-testid="top-title" - Detalhes de Pedido
 numero do pedido - data-testid="order-number" - Pedido 1
@@ -504,6 +625,44 @@ valor total da compra - data-testid="order-total-value" - Total: R$ 2,20
 url - http://localhost:3000/orders/1
 
 ### Tela de detalhes de pedido
+
+- O título do top 'Detalhes de Pedido' deverá conter a tag `data-testid="top-title"`
+
+- O número do pedido deverá conter a tag `data-testid="order-number"`
+
+- A data do pedido deverá conter a tag `data-testid="order-date"`
+
+- A quantidade do produto deverá conter a tag `data-testid="0-product-qtd"`
+
+- O nome do produto deverá conter a tag `data-testid="0-product-name"`
+
+- O valor total do produto deverá conter a tag `data-testid="0-product-total-value"`
+
+- O valor total da compra deverá conter a tag `data-testid="order-total-value"`
+
+**[OBS: os campos data-testid deverão ser implementado um index para cada produto sempre comecando pelo index 0, para cada um dessas tags veja os exemplo abaixo:]**
+
+Produto 1:
+
+data-testid="0-product-price"
+
+Produto 2:
+
+data-testid="1-product-price"
+
+Produto 3:
+
+data-testid="2-product-price"
+
+Deverá ser alterado para os seguintes data-testid listados abaixo:
+
+data-testid="0-product-qtd"
+
+data-testid="0-product-name"
+
+data-testid="0-product-total-value"
+
+![Detalhes do Pedido](./public/detalhesdopedido.png)
 
 **[Será validado que é possível acessar a tela do detalhe do pedido]**
 
@@ -521,25 +680,27 @@ url - http://localhost:3000/orders/1
 
 ### 9 - Criar menu side bar para Administrador
 
-73. Todos os elementos devem respeitar os atributos descritos no protótipo para o menu lateral;
+- Todos os elementos devem respeitar os atributos descritos no protótipo para o menu lateral;
 
-74. Deve conter três itens: `"Pedidos"`", `"Perfil"`" e "`Sair`";
+- Deve conter três itens: `"Pedidos"`", `"Perfil"`" e "`Sair`";
 
-75. Ao clicar no item `"Pedidos"`, a pessoa deve ser redirecionada para a tela **Admin - Home**;
+- Ao clicar no item `"Pedidos"`, a pessoa deve ser redirecionada para a tela **Admin - Home**;
 
-76. Ao clicar no item `"Perfil"`, a pessoa deve ser redirecionada para tela **Admin - Perfil**;
+- Ao clicar no item `"Perfil"`, a pessoa deve ser redirecionada para tela **Admin - Perfil**;
 
-77. Ao clicar no item `"Sair"`, a pessoa deve ser redirecionada para a tela **Login** e ser deslogada.
-
-url http://localhost:3000/admin/orders
-
-side bar - class - admin-side-bar-container
-
-botao meus pedidos - data-testid="side-menu-item-orders"
-botao meu perfil - data-testid="side-menu-item-profile"
-botao logout - data-testid="side-menu-item-logout"
+- Ao clicar no item `"Sair"`, a pessoa deve ser redirecionada para a tela **Login** e ser deslogada.
 
 ### Menu lateral Administrador
+
+- O componente sidebar deverá conter a seguinte classe `class="admin-side-bar-container"`
+
+- O botão 'Meus Pedidos' deverá conter a tag `data-testid="side-menu-item-orders"`
+
+- O botão 'Meu Perfil' deverá conter a tag `data-testid="side-menu-item-profile"`
+
+- O botão 'Sair' deverá conter a tag `data-testid="side-menu-item-logout"`
+
+![SideBar Admin](./public/sidebaradmin.png)
 
 **[Será validado que o sidebar devem ser mostrados, conforme protótipos]**
 
@@ -553,20 +714,21 @@ botao logout - data-testid="side-menu-item-logout"
 
 Esta tela possui o nome `Admin - Perfil` no protótipo.
 
-78. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de perfil;
+- Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de perfil;
 
-79. A rota da página deve ser `/admin/profile`;
+- A rota da página deve ser `/admin/profile`;
 
-80. Mostrar o `email` e o `nome` do usuário. Não permita que o usuário edite os dados;
+- Mostrar o `email` e o `nome` do usuário. Não permita que o usuário edite os dados;
 
-81. Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
-
-texto - Perfil
-url - `/admin/profile`
-campo email - data-testid="profile-email"
-campo nome - data-testid="profile-name"
+- Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
 ### Tela de perfil Administrador
+
+- O nome deverá conter a seguinte classe `data-testid="profile-name"`
+
+- O email deverá conter a seguinte classe `data-testid="profile-email"`
+
+![Perfil Admin](./public/perfiladmin.png)
 
 **[Será validado que é possível acessar a tela do perfil do administrador]**
 
@@ -580,17 +742,15 @@ campo nome - data-testid="profile-name"
 
 Esta tela possui o nome `Admin - Pedidos` no protótipo.
 
-82. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de pedidos;
+- Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de pedidos;
 
-83. A rota da página deve ser `/admin/orders`;
+- A rota da página deve ser `/admin/orders`;
 
-84. Essa tela deve mostrar todos os pedidos feitos;
+- Essa tela deve mostrar todos os pedidos feitos;
 
-85. Os pedidos pendentes devem ter o label `Pendentes`, ao passo que os pedidos entregues devem ter o label `Entregue`;
+- Os pedidos pendentes devem ter o label `Pendentes`, ao passo que os pedidos entregues devem ter o label `Entregue`;
 
-86. Pedidos pendentes devem ser listados antes dos pedidos entregues
-
-87. Os "cards" dos pedidos devem conter as informações:
+- Os "cards" dos pedidos devem conter as informações:
 
     - Número do pedido;
 
@@ -598,14 +758,43 @@ Esta tela possui o nome `Admin - Pedidos` no protótipo.
 
     - Valor total do pedido.
 
-88. Ao clicar em qualquer parte do card do pedido, a pessoa deve ser redirecionada para a tela `Admin - Detalhe de Pedido`.
-
-numero do pedido - data-testid="0-order-number"
-endereco do pedido - data-testid="0-order-address"
-valor total do pedido - data-testid="0-order-total-value"
-status - data-testid="0-order-status"
+- Ao clicar em qualquer parte do card do pedido, a pessoa deve ser redirecionada para a tela `Admin - Detalhe de Pedido`.
 
 ### Tela de Pedidos
+
+- O numero do pedido deverá conter a seguinte classe `data-testid="0-order-number"`
+
+- O endereço deverá conter a seguinte classe `data-testid="0-order-address"`
+
+- O valor total do pedido deverá conter a seguinte classe `data-testid="0-order-total-value"`
+
+- O valor total do pedido deverá conter a seguinte classe `data-testid="0-order-status"`
+
+**[OBS: os campos data-testid deverão ser implementado um index para cada produto sempre comecando pelo index 0, para cada um dessas tags veja os exemplo abaixo:]**
+
+Produto 1:
+
+data-testid="0-product-price"
+
+Produto 2:
+
+data-testid="1-product-price"
+
+Produto 3:
+
+data-testid="2-product-price"
+
+Deverá ser alterado para os seguintes data-testid listados abaixo:
+
+data-testid="0-order-number"
+
+data-testid="0-order-address"
+
+data-testid="0-order-total-value"
+
+data-testid="0-order-status"
+
+![Pedidos Admin](./public/pedidosadmin.png)
 
 **[Será validado que é possível acessar a tela do pedidos do administrador]**
 
@@ -619,13 +808,13 @@ status - data-testid="0-order-status"
 
 Essa página corresponde às páginas `Admin - Detalhes de Pedido - Pendente` e `Admin - Detalhes de Pedido - Entregue` no protótipo.
 
-89. Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de detalhes do pedido;
+- Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de detalhes do pedido;
 
-90. A rota da página deve ser `/admin/orders/:id`;
+- A rota da página deve ser `/admin/orders/:id`;
 
-91. No cabeçalho, mostre o `número do pedido` e o `status` atual - Pendente ou Entregue;
+- No cabeçalho, mostre o `número do pedido` e o `status` atual - Pendente ou Entregue;
 
-92. Deve ter uma listagem com os produtos do pedido, onde cada linha deve conter:
+- Deve ter uma listagem com os produtos do pedido, onde cada linha deve conter:
 
     - Quantidade;
 
@@ -633,33 +822,85 @@ Essa página corresponde às páginas `Admin - Detalhes de Pedido - Pendente` e 
 
     - Valor total do produto.
 
-93. O `preço total` do produto é calculado usando **quantidade * preço unitário**;
+- O `preço total` do produto é calculado usando **quantidade * preço unitário**;
 
-94. Mostre também o `valor total do pedido`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**;
+- Mostre também o `valor total do pedido`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**;
 
-95. Caso o status do pedido seja **pendente**, um botão para marcar o pedido como entregue deve ser exibido. Caso contrário, não exiba o botão;
+- Caso o status do pedido seja **pendente**, um botão para marcar o pedido como entregue deve ser exibido. Caso contrário, não exiba o botão;
 
-96. Ao clicar no botão `"Marcar pedido como entregue"`, o status desse pedido deve mudar para `Entregue` e o botão deve desaparecer.
-
-numero do pedido - data-testid="order-number"
-nome do pedido - data-testid="0-product-name"
-valor tota do produto - data-testid="0-product-total-value"
-valor unitario - data-testid="order-unit-price"
-valor total do pedido - data-testid="order-total-value"
+- Ao clicar no botão `"Marcar pedido como entregue"`, o status desse pedido deve mudar para `Entregue` e o botão deve desaparecer.
 
 ### Tela de Detalhes de Pedido
 
-**[]**
-**[]**
-**[]**
-**[]**
-**[]**
+- O numero do pedido deverá conter a seguinte classe `data-testid="order-number"`
+
+- O status do pedido deverá conter a seguinte classe `data-testid="order-status"`
+
+- A quantidade do produto deverá conter a seguinte classe `data-testid="0-product-qtd"`
+
+- O nome do produto deverá conter a seguinte classe `data-testid="0-product-name"`
+
+- O valor total do produto deverá conter a seguinte classe `data-testid="0-product-total-value"`
+
+- O preço unitário do produto deverá conter a seguinte classe `data-testid="0-order-unit-price"`
+
+- O valor total do pedido deverá conter a seguinte classe `data-testid="order-total-value"`
+
+- O botão 'Marcar como entregue' deverá conter a seguinte classe `data-testid="mark-as-delivered-btn"`
+
+**[OBS: os campos data-testid deverão ser implementado um index para cada produto sempre comecando pelo index 0, para cada um dessas tags veja os exemplo abaixo:]**
+
+Produto 1:
+
+data-testid="0-product-price"
+
+Produto 2:
+
+data-testid="1-product-price"
+
+Produto 3:
+
+data-testid="2-product-price"
+
+Deverá ser alterado para os seguintes data-testid listados abaixo:
+
+data-testid="0-product-qtd"
+
+data-testid="0-product-name"
+
+data-testid="0-product-total-value"
+
+data-testid="0-order-unit-price"
+
+![Detalhes pedidos Admin](./public/detalhespedidosadmin.png)
+
+**[Será validado que é possível acessar a tela do detalhe do pedido do administrador]**
+
+**[Será validado que contém os atributos descritos no protótipo]**
+
+**[Será validado que o pedido contém nome e status do pedido]**
+
+**[Será validado que o pedido contém todos os detalhes do pedido]**
+
+**[Será validado que o pedido com status pendente irá apresentar na tela o botão "Marcar como entregue"]**
+
+**[Será validado que o pedido ao marcar como entregue o status mude para entregue" e o botão nao esteja mais visível]**
+
+Será validado que o status do pedido fique marcado como entregue como na imagem abaixo:
+
+![Entregue](./public/entregue.png)
+
+**[Será validado que o pedido ao marcar como entregue o status mude para entregue" na tela de pedidos admin]**
+
+Será validado que o status do pedido fique marcado como entregue como na imagem abaixo:
+
+![Entregue](./public/pedidoentregue.png)
 
 ### Bônus
 
 ### 13 - Cobertura de testes unitários
 
-97. Escreva testes unitários com cobertura de, no mínimo, 90%, considerando front-end e back-end;
+- Escreva testes unitários com cobertura de, no mínimo, 90%, considerando front-end e back-end;
 
 ---
 
