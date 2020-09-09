@@ -1,8 +1,64 @@
 # Boas vindas ao repositório do projeto TryBeer!
 
-Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
+Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por Slack! #vqv 🚀
 
-Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir desse repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
+Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um Pull Request para colocar seus códigos.
+
+---
+## Instruções para entregar seu projeto:
+
+### ANTES DE COMEÇAR A DESENVOLVER:
+
+1. Clone o repositório
+  * `git clone https://github.com/betrybe/sd-0x-trybeer.git`.
+  * Entre na pasta do repositório que você acabou de clonar:
+    * `cd sd-0x-trybeer`
+
+2. Instale as dependências [**Caso existam**]
+  * `npm install`
+
+3. Crie uma branch a partir da branch `master`
+  * Verifique que você está na branch `master`
+    * Exemplo: `git branch`
+  * Se não estiver, mude para a branch `master`
+    * Exemplo: `git checkout master`
+  * Agora crie uma branch à qual você vai submeter os `commits` do seu projeto
+    * Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
+    * Exemplo: `git checkout -b joaozinho-sd-0x-trybeer`
+
+4. Adicione as mudanças ao _stage_ do Git e faça um `commit`
+  * Verifique que as mudanças ainda não estão no _stage_
+    * Exemplo: `git status` (deve aparecer listada a pasta _joaozinho_ em vermelho)
+  * Adicione o novo arquivo ao _stage_ do Git
+      * Exemplo:
+        * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
+        * `git status` (deve aparecer listado o arquivo _joaozinho/README.md_ em verde)
+  * Faça o `commit` inicial
+      * Exemplo:
+        * `git commit -m 'iniciando o projeto x'` (fazendo o primeiro commit)
+        * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
+
+5. Adicione a sua branch com o novo `commit` ao repositório remoto
+  * Usando o exemplo anterior: `git push -u origin joaozinho-sd-0x-trybeer`
+
+6. Crie um novo `Pull Request` _(PR)_
+  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-trybeer/pulls)
+  * Clique no botão verde _"New pull request"_
+  * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
+  * Clique no botão verde _"Create pull request"_
+  * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
+  * **Não se preocupe em preencher mais nada por enquanto!**
+  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-trybeer/pulls) e confira que o seu _Pull Request_ está criado
+
+---
+
+# Entregáveis
+
+Para entregar o seu projeto você deverá criar um Pull Request neste repositório.
+
+Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://course.betrybe.com/intro/git/) sempre que precisar!
+
+---
 
 ## O que deverá ser desenvolvido
 
@@ -82,7 +138,15 @@ Para que seu projeto seja corretamente avaliado, siga as orientações a seguir:
 
   - Ao deslogar, remova completamente a chave `user` do `localStorage`.
 
-## Requisitos do projeto
+## Requisitos Obrigatórios:
+
+### 💡Veja o exemplo a seguir de como o projeto pode se parecer depois de pronto. Lembre-se que você pode ~~e deve~~ ir além para deixar o projeto com a sua cara e impressionar à todos!
+
+## ⚠️ Leia-os atentamente e siga à risca o que for pedido. ⚠️
+
+Vamos pedir que você adicione `data-testid` em alguns elementos, além de algumas tags e textos especificos, Siga à risca o que iremos pedir nos requisitos, para que o corretor automatizado possa avaliar o seu projeto corretamente.
+
+O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação.
 
 ⚠️ Lembre-se de que o seu projeto só será avaliado se estiver passando pelos _checks_ do **CodeClimate** e se estiver, também, seguindo corretamente os padrões REST para rotas e MVC para o back-end. Além disso, você deve também disponibilizar um script contendo a criação do seu banco de dados, das tabelas e inserção de dados iniciais.
 
@@ -91,6 +155,82 @@ Para que seu projeto seja corretamente avaliado, siga as orientações a seguir:
 O intuito desse app é que uma pessoa possa pedir uma cerveja no aplicativo e outra pessoa possa aceitar esse pedido no **admin**.
 
 ##### O projeto sera composto por duas entregas, cada uma especificada abaixo com seus respectivos requisitos e o prazo decidido com a facilitação.
+
+### 👀Observações importantes:
+
+Haverá um arquivo chamado `script.sql` onde já contém a criação de do banco e alguns inserts.
+
+Para rodar o arquivo basta rodar o comando:
+
+`mysql -u root -p`
+
+Isso fará com que abra o terminal do MySQL se abra. Depois, basta executar o comando:
+
+`source pasta_do_projeto/script.sql`
+
+Assim já irá criar o banco e terá alguns dados inseridos. **É essencial seguir esses passos!**
+
+Haverá um arquivo no caminho: `sd-0x-trybeer/cypress/plugins/index.js`. Neste arquivo, na linha 17, Haverá a seguinte comando:
+
+`const connection = my.createConnection({host: process.env.HOSTNAME, user: process.env.MYSQL_USER, password: process.env.MYSQL_PASSWORD});`
+
+**Você irá precisar configurar as variáveis globais do MySQL.** Você pode usar esse [Conteúdo de variáveis de ambiente com NodeJS](https://blog.rocketseat.com.br/variaveis-ambiente-nodejs/) como referência.
+
+**Faça essas configurações também para as variáveis de ambiente usadas nesses arquivos:**
+
+`sd-0x-cookmaster/config/config.js`
+
+```
+module.exports = {
+  "development": {
+    "username": process.env.MYSQL_USER,
+    "password": process.env.MYSQL_PASSWORD, 
+    "database": 'Trybeer', 
+    "host": process.env.HOSTNAME,
+    "dialect": 'mysql',
+  },
+  "test": {
+    "username": process.env.MYSQL_USER,
+    "password": process.env.MYSQL_PASSWORD,
+    "database": 'Trybeer',
+    "host": process.env.HOSTNAME,
+    "dialect": "mysql",
+  },
+  "production": {
+    "username": process.env.MYSQL_USER,
+    "password": process.env.MYSQL_PASSWORD,
+    "database": 'Trybeer',
+    "host": process.env.HOSTNAME,
+    "dialect": 'mysql',
+  },
+};
+```
+
+**(Neste arquivo e obrigatório deixar o nome do database como `"database": 'Trybeer'`)**
+
+`sd-0x-trybeer/back-end/models/connection.js`
+
+```
+const config = {
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  host: process.env.HOSTNAME,
+  port: 33060,
+  socketPath: '/var/run/mysqld/mysqld.sock',
+};
+```
+
+(esse arquivo você irá criar e configurar quando programar a conexão com banco, e essencial estar na porta 33060).
+
+**É essencial usar essas 3 variávies nos três arquivos acima:**
+
+Variáveis:
+
+`host: process.env.HOSTNAME`
+`user: process.env.MYSQL_USER`
+`password: process.env.MYSQL_PASSWORD`
+
+**Com elas que iremos conseguir conectar ao banco do avaliador automático**
 
 ## Requisitos Entrega 1
 
@@ -904,68 +1044,7 @@ Será validado que o status do pedido fique marcado como entregue como na imagem
 
 ---
 
-## Instruções para entregar seu projeto:
-
-### ANTES DE COMEÇAR A DESENVOLVER:
-
-1. Clone o repositório
-
-- `git clone git@github.com:tryber/trybeer-project.git`.
-- Entre na pasta do repositório que você acabou de clonar:
-  - `cd trybeer-project`
-
-2. Instale as dependências do front-end e do back-end
-
-- Instale as dependências do front-end e inicie o servidor
-  - `cd front-end`
-  - `npm install`
-  - `npm start` (uma nova página deve abrir no seu navegador com um texto simples)
-- Instale as dependências do back-end
-  - `cd back-end`
-  - `npm install`
-
-3. Crie uma branch a partir da branch `master`
-
-- Verifique que você está na branch `master`
-  - Exemplo: `git branch`
-- Se não estiver, mude para a branch `master`
-  - Exemplo: `git checkout master`
-- Agora, crie uma branch onde você vai guardar os `commits` do seu projeto
-  - Você deve criar uma branch no seguinte formato: `nome-de-usuário-nome-do-projeto`
-  - Exemplo: `git checkout -b joaozinho-trybeer`
-
-5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
-
-- Verifique que as mudanças ainda não estão no _stage_
-  - Exemplo: `git status` (deve aparecer listada a pasta _components_ em vermelho)
-- Adicione o novo arquivo ao _stage_ do Git
-  - Exemplo:
-    - `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
-    - `git status` (deve aparecer listado o arquivo _components/Header.jsx_ em verde)
-- Faça o `commit` inicial
-  - Exemplo:
-    - `git commit -m 'iniciando o projeto'` (fazendo o primeiro commit)
-    - `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
-
-6. Adicione a sua branch com o novo `commit` ao repositório remoto
-
-- Usando o exemplo anterior: `git push -u origin joaozinho-trybeer`
-
-7. Crie um novo `Pull Request` _(PR)_
-
-- Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/trybeer-project/pulls)
-- Clique no botão verde _"New pull request"_
-- Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
-- Clique no botão verde _"Create pull request"_
-- Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
-- **Não se preocupe em preencher mais nada por enquanto!**
-- Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/trybeer-project/pulls) e confira que o seu _Pull Request_ está criado
-
----
-
 ### DURANTE O DESENVOLVIMENTO
-
-- ⚠ **LEMBRE-SE DE CRIAR TODOS OS ARQUIVOS DENTRO DA PASTA COM O SEU NOME** ⚠
 
 * Faça `commits` das alterações que você fizer no código regularmente
 
@@ -980,25 +1059,24 @@ Será validado que o status do pedido fique marcado como entregue como na imagem
 
 ---
 
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO
+### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
 
-Para **"entregar"** seu projeto, siga os passos a seguir:
+Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
 
-- Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
-  - No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
-  - No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  - No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-01`
+* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
 
-Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
+  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
+
+  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
+
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
+
+Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
 ---
 
 ### REVISANDO UM PULL REQUEST
 
-⚠⚠⚠
+Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
 
-À medida que você e os outros alunos forem entregando os projetos, vocês serão alertados **via Slack** para também fazer a revisão dos _Pull Requests_ dos seus colegas. Fiquem atentos às mensagens do _"Pull Reminders"_ no _Slack_!
-
-Os monitores também farão a revisão de todos os projetos, e irão avaliar tanto o seu _Pull Request_, quanto as revisões que você fizer nos _Pull Requests_ dos seus colegas!!!
-
-Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
+#VQV
