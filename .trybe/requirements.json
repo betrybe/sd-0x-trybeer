@@ -17,27 +17,27 @@
       "bonus": false
     },
     {
-      "description": "Criar Tela de Produtos",
+      "description": "Criar tela de produtos",
       "bonus": false
     },
     {
-      "description": "Criar Tela de Checkout",
+      "description": "Criar tela de checkout",
       "bonus": false
     },
     {
-      "description": "Criar Tela de Meus Pedidos",
+      "description": "Criar tela de meus pedidos",
       "bonus": false
     },
     {
-      "description": "Criar Tela de Detalhes Pedidos",
+      "description": "Criar tela de detalhes pedidos",
       "bonus": false
     },
     {
-      "description": "Criar menu side bar para Administrador",
+      "description": "Criar menu side bar para administrador",
       "bonus": false
     },
     {
-      "description": "Criar tela de perfil de Administrador",
+      "description": "Criar tela de perfil de administrador",
       "bonus": false
     },
     {
@@ -45,11 +45,11 @@
       "bonus": false
     },
     {
-      "description": "Criar Tela de Detalhes Pedidos",
+      "description": "Criar tela de detalhes pedidos do admininstrador",
       "bonus": false
     },
     {
-      "description": "Cobertura de testes unitários",
+      "description": "A cobertura de testes unitários deve ser de no mínimo 90%",
       "bonus": true
     }
   ]

@@ -12,7 +12,7 @@ import {
   buyProducts,
 } from '../actions/actionBase';
   
-describe('Criar Tela de Detalhes Pedidos', () => {
+describe('Criar tela de detalhes pedidos', () => {
   beforeEach(() => {
     createAndInsertsDataBase();
     cy.visit(Cypress.config().baseUrl);

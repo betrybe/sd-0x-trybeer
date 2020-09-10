@@ -13,7 +13,7 @@ import {
   verifyElementNotContainsAttribute,
 } from '../actions/actionBase';
   
-describe('Criar Tela de Checkout', () => {
+describe('Criar tela de checkout', () => {
   before(() => {
     createAndInsertsDataBase()
   });
