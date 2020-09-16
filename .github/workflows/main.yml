@@ -25,7 +25,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Evaluator step
         id: evaluator
-        uses: betrybe/cypress-evaluator-action@fix-outmemory
+        uses: betrybe/cypress-evaluator-action@v5
         with:
           repository-test-name: 'betrybe/sd-0x-trybeer-tests'
           repository-test-branch: 'master'

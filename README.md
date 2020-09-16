@@ -93,6 +93,19 @@ Você pode ler mais sobre os atributos que serão utilizados para testes [neste 
 
 ---
 
+### Analise Estática 
+
+Iremos usar o [Eslint](https://eslint.org/) para fazer analize Estática do seu código.
+
+No projeto Trybeer ele já vem instalado as suas dependências nos arquivos package.json nos seguintes caminhos:
+
+`sd-0x-trybeer/back-end/package.json`
+`sd-0x-trybeer/front-end/package.json`
+
+Para poder rodar os `Eslint` basta executar o comando `npm run lint`, assim ele irá fazer a analise estática do seu código, lembrando que a configuração das regras do `Eslint` do front são diferentes então é preciso executar o eslint em cada projeto back e front.
+
+Você pode tambem instalar o plugins do `Eslint` no vscode, bastar ir em extensions e baixar o plugins `ESLint`.
+ 
 ## Desenvolvimento
 
 Esse repositório contém duas pastas, `back-end` e `front-end`, onde você deve desenvolver o front-end e o back-end da aplicação. Ambas as pastas contêm um projeto iniciado com as configurações básicas necessárias. Após clonar o projeto e instalar as dependências, sinta-se livre para escolher usar Redux ou ContextAPI + React Hooks. Saiba avaliar as vantagens/desvantagens de cada um na hora da escolha.
