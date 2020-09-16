@@ -93,6 +93,21 @@ Você pode ler mais sobre os atributos que serão utilizados para testes [neste 
 
 ---
 
+### Análise Estática 
+
+Usaremos o [ESLint](https://eslint.org/) para fazer a análise estática do seu código.
+
+Este projeto já vem com as dependências relacionadas ao _linter_ configuradas nos arquivos `package.json` nos seguintes caminhos:
+
+- `sd-0x-trybeer/back-end/package.json`
+- `sd-0x-trybeer/front-end/package.json`
+
+Para poder rodar os `ESLint` em um projeto basta executar o comando `npm install` dentro do projeto e depois `npm run lint`. Se a análise do `ESLint` encontrar problemas no seu código, tais problemas serão mostrados no seu terminal. Se não houver problema no seu código, nada será impresso no seu terminal.
+
+Devido ao fato de as configurações das regras do `ESLint` dos projetos de front e back **serem diferentes**, **é preciso executar o `ESLint` em cada projeto**.
+
+Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+ 
 ## Desenvolvimento
 
 Esse repositório contém duas pastas, `back-end` e `front-end`, onde você deve desenvolver o front-end e o back-end da aplicação. Ambas as pastas contêm um projeto iniciado com as configurações básicas necessárias. Após clonar o projeto e instalar as dependências, sinta-se livre para escolher usar Redux ou ContextAPI + React Hooks. Saiba avaliar as vantagens/desvantagens de cada um na hora da escolha.
@@ -148,7 +163,7 @@ Vamos pedir que você adicione `data-testid` em alguns elementos, além de algum
 
 O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação.
 
-⚠️ Lembre-se de que o seu projeto só será avaliado se estiver passando pelos _checks_ do **CodeClimate** e se estiver, também, seguindo corretamente os padrões REST para rotas e MVC para o back-end. Além disso, você deve também disponibilizar um script contendo a criação do seu banco de dados, das tabelas e inserção de dados iniciais.
+⚠️ Lembre-se de que o seu projeto só será avaliado se estiver passando pelos _checks_ do **ESLint** e se estiver, também, seguindo corretamente os padrões REST para rotas e MVC para o back-end. Além disso, você deve também disponibilizar um script contendo a criação do seu banco de dados, das tabelas e inserção de dados iniciais.
 
 ⚠️ A criação dos endpoints da API, a modelagem do banco e a estrutura geral do projeto é livre, desde que os requisitos especificados na seção `Requisitos Gerais` sejam cumpridos.
 
