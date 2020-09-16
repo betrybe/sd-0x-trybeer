@@ -95,14 +95,14 @@ Você pode ler mais sobre os atributos que serão utilizados para testes [neste 
 
 ### Analise Estática 
 
-Iremos usar o [Eslint](https://eslint.org/) para fazer analize Estática do seu código.
+Iremos usar o [Eslint](https://eslint.org/) para fazer a análise estática do seu código.
 
-No projeto Trybeer ele já vem instalado as suas dependências nos arquivos package.json nos seguintes caminhos:
+Este projeto já vem com as dependências relacionadas ao _linter_ configuradas nos arquivos `package.json` nos seguintes caminhos:
 
 `sd-0x-trybeer/back-end/package.json`
 `sd-0x-trybeer/front-end/package.json`
 
-Para poder rodar os `Eslint` basta executar o comando `npm run lint`, assim ele irá fazer a analise estática do seu código, lembrando que a configuração das regras do `Eslint` do front são diferentes então é preciso executar o eslint em cada projeto back e front.
+Para poder rodar os `Eslint` basta executar o comando `npm install` dentro do projeto e depois `npm run lint`, assim ele irá fazer a analise estática do seu código, lembrando que a configuração das regras do `Eslint` do front e do back são diferentes então é preciso executar o eslint em cada projeto back e front.
 
 Você pode tambem instalar o plugins do `Eslint` no vscode, bastar ir em extensions e baixar o plugins `ESLint`.
  
