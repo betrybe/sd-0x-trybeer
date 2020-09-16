@@ -99,15 +99,14 @@ Usaremos o [ESLint](https://eslint.org/) para fazer a análise estática do seu 
 
 Este projeto já vem com as dependências relacionadas ao _linter_ configuradas nos arquivos `package.json` nos seguintes caminhos:
 
-`sd-0x-trybeer/back-end/package.json`
-
-`sd-0x-trybeer/front-end/package.json`
+- `sd-0x-trybeer/back-end/package.json`
+- `sd-0x-trybeer/front-end/package.json`
 
 Para poder rodar os `ESLint` em um projeto basta executar o comando `npm install` dentro do projeto e depois `npm run lint`. Se a análise do `ESLint` encontrar problemas no seu código, tais problemas serão mostrados no seu terminal. Se não houver problema no seu código, nada será impresso no seu terminal.
 
 Devido ao fato de as configurações das regras do `ESLint` dos projetos de front e back **serem diferentes**, **é preciso executar o `ESLint` em cada projeto**.
 
-Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o plugin `ESLint` [link](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
  
 ## Desenvolvimento
 
