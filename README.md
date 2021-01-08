@@ -5,50 +5,57 @@ Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora
 Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um Pull Request para colocar seus códigos.
 
 ---
+
 ## Instruções para entregar seu projeto:
 
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone https://github.com/betrybe/sd-0x-trybeer.git`.
-  * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-0x-trybeer`
+
+- `git clone https://github.com/betrybe/sd-0x-trybeer.git`.
+- Entre na pasta do repositório que você acabou de clonar:
+  - `cd sd-0x-trybeer`
 
 2. Instale as dependências [**Caso existam**]
-  * `npm install`
+
+- `npm install`
 
 3. Crie uma branch a partir da branch `master`
-  * Verifique que você está na branch `master`
-    * Exemplo: `git branch`
-  * Se não estiver, mude para a branch `master`
-    * Exemplo: `git checkout master`
-  * Agora crie uma branch à qual você vai submeter os `commits` do seu projeto
-    * Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
-    * Exemplo: `git checkout -b joaozinho-sd-0x-trybeer`
+
+- Verifique que você está na branch `master`
+  - Exemplo: `git branch`
+- Se não estiver, mude para a branch `master`
+  - Exemplo: `git checkout master`
+- Agora crie uma branch à qual você vai submeter os `commits` do seu projeto
+  - Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
+  - Exemplo: `git checkout -b joaozinho-sd-0x-trybeer`
 
 4. Adicione as mudanças ao _stage_ do Git e faça um `commit`
-  * Verifique que as mudanças ainda não estão no _stage_
-    * Exemplo: `git status` (deve aparecer listada a pasta _joaozinho_ em vermelho)
-  * Adicione o novo arquivo ao _stage_ do Git
-      * Exemplo:
-        * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
-        * `git status` (deve aparecer listado o arquivo _joaozinho/README.md_ em verde)
-  * Faça o `commit` inicial
-      * Exemplo:
-        * `git commit -m 'iniciando o projeto x'` (fazendo o primeiro commit)
-        * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
+
+- Verifique que as mudanças ainda não estão no _stage_
+  - Exemplo: `git status` (deve aparecer listada a pasta _joaozinho_ em vermelho)
+- Adicione o novo arquivo ao _stage_ do Git
+  - Exemplo:
+    - `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
+    - `git status` (deve aparecer listado o arquivo _joaozinho/README.md_ em verde)
+- Faça o `commit` inicial
+  - Exemplo:
+    - `git commit -m 'iniciando o projeto x'` (fazendo o primeiro commit)
+    - `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
 
 5. Adicione a sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin joaozinho-sd-0x-trybeer`
+
+- Usando o exemplo anterior: `git push -u origin joaozinho-sd-0x-trybeer`
 
 6. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-trybeer/pulls)
-  * Clique no botão verde _"New pull request"_
-  * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
-  * Clique no botão verde _"Create pull request"_
-  * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
-  * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-trybeer/pulls) e confira que o seu _Pull Request_ está criado
+
+- Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-trybeer/pulls)
+- Clique no botão verde _"New pull request"_
+- Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
+- Clique no botão verde _"Create pull request"_
+- Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
+- **Não se preocupe em preencher mais nada por enquanto!**
+- Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-trybeer/pulls) e confira que o seu _Pull Request_ está criado
 
 ---
 
@@ -93,7 +100,7 @@ Você pode ler mais sobre os atributos que serão utilizados para testes [neste 
 
 ---
 
-### Análise Estática 
+### Análise Estática
 
 Usaremos o [ESLint](https://eslint.org/) para fazer a análise estática do seu código.
 
@@ -107,7 +114,7 @@ Para poder rodar os `ESLint` em um projeto basta executar o comando `npm install
 Devido ao fato de as configurações das regras do `ESLint` dos projetos de front e back **serem diferentes**, **é preciso executar o `ESLint` em cada projeto**.
 
 Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
- 
+
 ## Desenvolvimento
 
 Esse repositório contém duas pastas, `back-end` e `front-end`, onde você deve desenvolver o front-end e o back-end da aplicação. Ambas as pastas contêm um projeto iniciado com as configurações básicas necessárias. Após clonar o projeto e instalar as dependências, sinta-se livre para escolher usar Redux ou ContextAPI + React Hooks. Saiba avaliar as vantagens/desvantagens de cada um na hora da escolha.
@@ -199,8 +206,8 @@ Haverá um arquivo no caminho: `sd-0x-trybeer/cypress/plugins/index.js`. Neste a
 module.exports = {
   "development": {
     "username": process.env.MYSQL_USER,
-    "password": process.env.MYSQL_PASSWORD, 
-    "database": 'Trybeer', 
+    "password": process.env.MYSQL_PASSWORD,
+    "database": 'Trybeer',
     "host": process.env.HOSTNAME,
     "dialect": 'mysql',
   },
@@ -230,8 +237,7 @@ const config = {
   user: process.env.MYSQL_USER,
   password: process.env.MYSQL_PASSWORD,
   host: process.env.HOSTNAME,
-  port: 33060,
-  socketPath: '/var/run/mysqld/mysqld.sock',
+  database: 'Trybeer'
 };
 ```
 
@@ -319,13 +325,13 @@ Esta tela possui o nome `Registro` no protótipo.
 
 - A tela deve mostrar um formulário com os seguintes campos:
 
-    - **nome** - deve conter, no mínimo, 12 letras, sem números ou caracteres especiais;
+  - **nome** - deve conter, no mínimo, 12 letras, sem números ou caracteres especiais;
 
-    - **email** - deve conter um email válido. Um email válido possui o formato `<nome>@<domínio>`;
+  - **email** - deve conter um email válido. Um email válido possui o formato `<nome>@<domínio>`;
 
-    - **senha** - composta por, no mínimo, 6 números;
+  - **senha** - composta por, no mínimo, 6 números;
 
-    - **quero vender** - um checkbox opcional, desmarcado por padrão.
+  - **quero vender** - um checkbox opcional, desmarcado por padrão.
 
 - Caso a opção `Quero vender` esteja marcada, o usuário deve ser cadastrado com um papel de **admin**. Caso contrário, será um **client**;
 
@@ -333,7 +339,7 @@ Esta tela possui o nome `Registro` no protótipo.
 
 - Caso a opção `Quero vender` esteja marcada, ao clicar no botão `"Cadastrar"`, a pessoa deve ser redirecionada para a página **Admin - Home**. Caso contrario, deve ser redirecionada para a página de **Cliente - Produtos**.
 
-### Página de Registro 
+### Página de Registro
 
 - O campo input 'name' deverá conter a tag `data-testid="signup-name"`
 
@@ -369,9 +375,9 @@ Esta tela possui o nome `Registro` no protótipo.
 
 **[Será validado que é possível fazer cadastro de um cliente com sucesso e ser redirecionado para tela do cliente]**
 
-## Cliente 
+## Cliente
 
-### Menu superior 
+### Menu superior
 
 ### 3 - Crie o menu top e o menu side bar
 
@@ -395,7 +401,7 @@ Esta tela possui o nome `Registro` no protótipo.
 
 - Ao clicar no item `"Sair"`, a pessoa deve ser redirecionada para a tela **Login** e ser deslogada.
 
-### Menu superior 
+### Menu superior
 
 - O título do top 'Trybeer' deverá conter a tag `data-testid="top-title"`
 
@@ -483,15 +489,15 @@ Esta tela possui o nome `Cliente - Produtos` no protótipo.
 
 - Os cards devem conter os seguintes dados do produto:
 
-    - Foto;
+  - Foto;
 
-    - Nome do produto;
+  - Nome do produto;
 
-    - Preço unitário;
+  - Preço unitário;
 
-    - Quantidade atual inserida no carrinho;
+  - Quantidade atual inserida no carrinho;
 
-    - Botão de adicionar (`+`) e de remover (`-`) uma unidade do produto no carrinho.
+  - Botão de adicionar (`+`) e de remover (`-`) uma unidade do produto no carrinho.
 
 - Ao clicar no botão `+`, a quantidade do produto deve aumentar em 1;
 
@@ -599,7 +605,7 @@ Esta tela possui o nome `Cliente - Checkout` no protótipo.
 
 - Caso a pessoa atualize o browser, o carrinho deve ser mantido;
 
-- Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`, sendo o valor total calculado por **quantidade * preço unitário**;
+- Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`, sendo o valor total calculado por **quantidade \* preço unitário**;
 
 - Ao lado de cada produto deve haver um botão que, quando clicado, exclui este produto do carrinho;
 
@@ -629,7 +635,7 @@ Esta tela possui o nome `Cliente - Checkout` no protótipo.
 
 - O botão de remover um produto deverá conter a tag `data-testid="0-removal-button"`
 
-- O valor total do carrinho  deverá conter a tag `data-testid="order-total-value"`
+- O valor total do carrinho deverá conter a tag `data-testid="order-total-value"`
 
 - O campo input 'Rua' deverá conter a tag `data-testid="checkout-street-input"`
 
@@ -678,7 +684,7 @@ data-testid="0-removal-button"
 **[Será validado que é possível excluir um produto no checkout]**
 
 - Será validado que ao excluir os produtos aparecerá uma mensagem na tela de:
-`Não há produtos no carrinho` como na imagem abaixo:
+  `Não há produtos no carrinho` como na imagem abaixo:
 
 ![Checkout sem produtos](./public/naohaprodutos.png)
 
@@ -764,7 +770,7 @@ Esta tela possui o nome `Cliente - Detalhes de Pedido` no protótipo.
 
 - Mostre o `número do pedido` e a `data de realização`. Para a data de realização do pedido, mostre apenas o dia e o mês;
 
-- Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`. Sendo o valor total calculado por **quantidade * preço unitário**;
+- Deve ter uma lista dos produtos selecionados com a seguinte estrutura: `quantidade do produto -- nome do produto -- valor total do produto`. Sendo o valor total calculado por **quantidade \* preço unitário**;
 
 - Abaixo da lista, mostre o `valor total do pedido`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**.
 
@@ -907,11 +913,11 @@ Esta tela possui o nome `Admin - Pedidos` no protótipo.
 
 - Os "cards" dos pedidos devem conter as informações:
 
-    - Número do pedido;
+  - Número do pedido;
 
-    - Endereço para entrega;
+  - Endereço para entrega;
 
-    - Valor total do pedido.
+  - Valor total do pedido.
 
 - Ao clicar em qualquer parte do card do pedido, a pessoa deve ser redirecionada para a tela `Admin - Detalhe de Pedido`.
 
@@ -971,13 +977,13 @@ Essa página corresponde às páginas `Admin - Detalhes de Pedido - Pendente` e 
 
 - Deve ter uma listagem com os produtos do pedido, onde cada linha deve conter:
 
-    - Quantidade;
+  - Quantidade;
 
-    - Nome do produto;
+  - Nome do produto;
 
-    - Valor total do produto.
+  - Valor total do produto.
 
-- O `preço total` do produto é calculado usando **quantidade * preço unitário**;
+- O `preço total` do produto é calculado usando **quantidade \* preço unitário**;
 
 - Mostre também o `valor total do pedido`. O valor total do pedido é calculado a partir da **soma de todos os valores totais dos produtos**;
 
@@ -1061,11 +1067,11 @@ Será validado que o status do pedido fique marcado como entregue como na imagem
 
 ### DURANTE O DESENVOLVIMENTO
 
-* Faça `commits` das alterações que você fizer no código regularmente
+- Faça `commits` das alterações que você fizer no código regularmente
 
-* Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
+- Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
 
-* Os comandos que você utilizará com mais frequência são:
+- Os comandos que você utilizará com mais frequência são:
   1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
   2. `git add` _(para adicionar arquivos ao stage do Git)_
   3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
@@ -1078,13 +1084,13 @@ Será validado que o status do pedido fique marcado como entregue como na imagem
 
 Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
 
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
+- Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
 
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
+  - No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
 
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
+  - No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
 
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
+  - No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
 
 Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
