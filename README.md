@@ -359,7 +359,7 @@ Usaremos também o [StyleLint](https://stylelint.io/) para fazer a análise est�
 
 Para poder rodar o `StyleLint` em um projeto basta executar o comando `npm install` dentro do projeto e depois `npm run lint:styles`. Se a análise do `StyleLint` encontrar problemas no seu código, tais problemas serão mostrados no seu terminal. Se não houver problema no seu código, nada será impresso no seu terminal.
 
-##### Requisitos Gerais
+### Requisitos Gerais
 
 - Os `endpoints` da API devem ser criados utilizando o padrão REST;
 
