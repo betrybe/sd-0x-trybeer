@@ -247,7 +247,7 @@ Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-enginee
 
 #### ⚠️ Leia-os atentamente e siga à risca o que for pedido. ⚠️
 
-Vamos pedir que você adicione `data-testid` em alguns elementos, além de algumas tags e textos especificos, Siga à risca o que iremos pedir nos requisitos, para que o corretor automatizado possa avaliar o seu projeto corretamente.
+Vamos pedir que você adicione `data-testid` em alguns elementos, além de algumas tags e textos especificos. Siga à risca o que iremos pedir nos requisitos, para que o corretor automatizado possa avaliar o seu projeto corretamente.
 
 O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação.
 
