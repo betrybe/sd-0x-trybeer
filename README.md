@@ -275,7 +275,7 @@ Esta tela possui o nome `Login` no protótipo.
 
 - A pessoa deve conseguir escrever seu email no input de email;
 
-- A pessoa deve conseguir escrever sua senha no input de senha;
+- A pessoa deve conseguir escrever sua senha (letras ou números) no input de senha;
 
 - O formulário só fica válido após um email válido e uma senha de, no mínimo, 6 números serem preenchidos. Um email válido possui a forma `<nome>@<domínio>`. Caso o formulário esteja inválido, o botão de submeter deve estar desativado. Caso contrário, deve estar ativado;
 
@@ -329,7 +329,7 @@ Esta tela possui o nome `Registro` no protótipo.
 
   - **email** - deve conter um email válido. Um email válido possui o formato `<nome>@<domínio>`;
 
-  - **senha** - composta por, no mínimo, 6 números;
+  - **senha** - composta por, no mínimo, 6 caracteres;
 
   - **quero vender** - um checkbox opcional, desmarcado por padrão.
 
@@ -615,7 +615,7 @@ Esta tela possui o nome `Cliente - Checkout` no protótipo.
 
 - Deve ter um botão `"Finalizar Pedido"`. O botão deve estar habilitado **apenas** se o valor total do pedido for **maior que zero** e o endereço de entrega estiver preenchido;
 
-- Ao clicar em "`Finalizar pedido`", caso a operação dê certo, uma mensagem de sucesso deve ser exibida e a pessoa deve ser redirecionada para a página **Cliente - Produtos**. Caso contrário, deve ser exibido uma mensagem de erro;
+- Ao clicar em "`Finalizar pedido`", caso a operação dê certo, uma mensagem de sucesso deve ser exibida por 2 segundos e em seguida a pessoa deve ser redirecionada para a página **Cliente - Produtos**. Caso contrário, deve ser exibido uma mensagem de erro;
 
 - Quando um pedido for finalizado, o carrinho deve ser esvaziado;
 
