@@ -1,0 +1,5 @@
+coverage/*
+node_modules/
+reports/
+cypress/
+models/index.js
