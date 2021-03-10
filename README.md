@@ -383,7 +383,7 @@ Esta tela possui o nome `Login` no protótipo.
 
 - A pessoa deve conseguir escrever seu email no input de email;
 
-- A pessoa deve conseguir escrever sua senha no input de senha;
+- A pessoa deve conseguir escrever sua senha (letras ou números) no input de senha;
 
 - O formulário só fica válido após um email válido e uma senha de, no mínimo, 6 números serem preenchidos. Um email válido possui a forma `<nome>@<domínio>`. Caso o formulário esteja inválido, o botão de submeter deve estar desativado. Caso contrário, deve estar ativado;
 
@@ -440,7 +440,7 @@ Esta tela possui o nome `Registro` no protótipo.
 
   - **email** - deve conter um email válido. Um email válido possui o formato `<nome>@<domínio>`;
 
-  - **senha** - composta por, no mínimo, 6 números;
+  - **senha** - composta por, no mínimo, 6 caracteres;
 
   - **quero vender** - um checkbox opcional, desmarcado por padrão.
 
@@ -734,7 +734,7 @@ Esta tela possui o nome `Cliente - Checkout` no protótipo.
 
 - Deve ter um botão `"Finalizar Pedido"`. O botão deve estar habilitado **apenas** se o valor total do pedido for **maior que zero** e o endereço de entrega estiver preenchido;
 
-- Ao clicar em "`Finalizar pedido`", caso a operação dê certo, uma mensagem de sucesso deve ser exibida e a pessoa deve ser redirecionada para a página **Cliente - Produtos**. Caso contrário, deve ser exibido uma mensagem de erro;
+- Ao clicar em "`Finalizar pedido`", caso a operação dê certo, uma mensagem de sucesso deve ser exibida por **2 segundos** e em seguida a pessoa deve ser redirecionada para a página **Cliente - Produtos**. Caso contrário, deve ser exibido uma mensagem de erro;
 
 - Quando um pedido for finalizado, o carrinho deve ser esvaziado;
 
@@ -1211,4 +1211,21 @@ Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência 
 
 Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
 
-O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
+#VQV
+
+---
+
+### IMPORTANTE ⚠️ 
+
+* O projeto TryBeer é a base para o desenvolvimento do projeto TryBeer **v2**;
+
+* Portanto, **o cumprimento de 100% dos requisitos obrigatórios desse projeto** (TryBeer) é um pré-requisito para o projeto **TryBeer v2**;
+
+* O grupo precisa estar ciente que a não realização de todos os requisitos _(mesmo que o cumprimento pelo menos 80% dos requisitos obrigatórios para garantir a aprovação antes do prazo para entrar em recuperação, ou 90% dos requisitos totais depois do prazo)_, impactará na entrega do **TryBeer v2**;
+
+* O prazo disponível para esse projeto contempla o tempo previsto para atingir o objetivo de concluir 100% dos requisitos obrigatórios;
+
+* Dessa forma, o grupo terá todas as condições para chegar ao projeto **TryBeer v2** com o código preparado _(100% dos requisitos obrigatórios deste projeto)_ para iniciar o desenvolvimento dos seus requisitos.
+
+* O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
+
