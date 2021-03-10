@@ -257,7 +257,7 @@ O não cumprimento de um requisito, total ou parcialmente, impactará na sua ava
 
 O intuito desse app é que uma pessoa possa pedir uma cerveja no aplicativo e outra pessoa possa aceitar esse pedido no **admin**.
 
-##### O projeto sera composto por duas entregas, cada uma especificada abaixo com seus respectivos requisitos e o prazo decidido com a facilitação.
+##### O projeto será composto por duas entregas, cada uma especificada abaixo com seus respectivos requisitos e o prazo decidido com a facilitação.
 
 ### 👀Observações importantes:
 
@@ -309,7 +309,7 @@ module.exports = {
 };
 ```
 
-**(Neste arquivo e obrigatório deixar o nome do database como `"database": 'Trybeer'`)**
+**(Neste arquivo é obrigatório deixar o nome do database como `"database": 'Trybeer'`)**
 
 `sd-0x-trybeer/back-end/models/connection.js`
 
@@ -322,7 +322,7 @@ const config = {
 };
 ```
 
-(esse arquivo você irá criar e configurar quando programar a conexão com banco, e essencial estar na porta 33060).
+(esse arquivo você irá criar e configurar quando programar a conexão com banco).
 
 **É essencial usar essas 3 variávies nos três arquivos acima:**
 
