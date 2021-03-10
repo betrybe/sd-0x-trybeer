@@ -89,9 +89,6 @@ O banco de dados utilizado será o `MySQL`!
 
 Você pode acessar um protótipo do front-end [aqui](https://www.figma.com/file/tzP4txu6Uy0qCxVZWdWMBO/TryBeer?node-id=0%3A1).
 
-Para servir arquivos estáticos como imagens no back-end, utilize o seguinte path:
-`/back-end/public/`
-
 ##### ⚠️ Lembre-se de escrever testes unitários e sinta-se livre para alterar a UI. Contudo, respeite os atributos `data-testid`, pois eles serão usados na correção do projeto.
 
 Você pode ler mais sobre os atributos que serão utilizados para testes [neste link](https://www.eduardopedroso.com.br/?p=494).
