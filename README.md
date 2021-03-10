@@ -249,7 +249,7 @@ Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-enginee
 
 Vamos pedir que você adicione `data-testid` em alguns elementos, além de algumas tags e textos especificos. Siga à risca o que iremos pedir nos requisitos, para que o corretor automatizado possa avaliar o seu projeto corretamente.
 
-O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação.
+O não cumprimento de um requisito, total ou parcialmente, impactará na sua avaliação.
 
 ⚠️ Lembre-se de que o seu projeto só será avaliado se estiver passando pelos _checks_ do **ESLint** e se estiver, também, seguindo corretamente os padrões REST para rotas e MSC para o back-end. Além disso, você deve também disponibilizar um script contendo a criação do seu banco de dados, das tabelas e inserção de dados iniciais.
 
