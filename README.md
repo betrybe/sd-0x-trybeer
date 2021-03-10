@@ -997,7 +997,7 @@ O que será verificado:
 
 - Será validado que ao clicar no menu meus pedidos será redirecionado para tela de meus pedidos'
 
-- Será validado que ao clicar no menu meus perfil será redirecionado para tela de meus perfil
+- Será validado que ao clicar no menu `meu perfil` será redirecionado para tela de `meu perfil`
 
 - Será validado que ao clicar no menu sair será redirecionado para tela home
 ```
@@ -1186,14 +1186,14 @@ O que será verificado:
 
 - Será validado que o pedido ao marcar como entregue o status mude para entregue" e o botão nao esteja mais visível
 
-- Será validado que o status do pedido fique marcado como entregue como na imagem abaixo:
+- Será validado que o status do pedido fica marcado como entregue como na imagem abaixo:
 ```
 ![Entregue](./public/entregue.png)
 ```
 
 - Será validado que o pedido ao marcar como entregue o status mude para entregue" na tela de pedidos admin
 
-- Será validado que o status do pedido fique marcado como entregue como na imagem abaixo:
+- Será validado que o status do pedido fica marcado como entregue como na imagem abaixo:
 ```
 ![Entregue](./public/pedidoentregue.png)
 
