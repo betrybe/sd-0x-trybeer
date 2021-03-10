@@ -1101,3 +1101,17 @@ Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362
 Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
 
 #VQV
+
+---
+
+### IMPORTANTE ⚠️ 
+
+* O projeto TryBeer é a base para o desenvolvimento do projeto TryBeer **v2**;
+
+* Portanto, **o cumprimento de 100% dos requisitos obrigatórios desse projeto** (TryBeer) é um pré-requisito para o projeto **TryBeer v2**;
+
+* O grupo precisa estar ciente que a não realização de todos os requisitos _(mesmo que o cumprimento pelo menos 80% dos requisitos obrigatórios para garantir a aprovação antes do prazo para entrar em recuperação, ou 90% dos requisitos totais depois do prazo)_, impactará na entrega do **TryBeer v2**;
+
+* O prazo disponível para esse projeto contempla o tempo previsto para atingir o objetivo de concluir 100% dos requisitos obrigatórios;
+
+* Dessa forma, o grupo terá todas as condições para chegar ao projeto **TryBeer v2** com o código preparado _(100% dos requisitos obrigatórios deste projeto)_ para iniciar o desenvolvimento dos seus requisitos.
