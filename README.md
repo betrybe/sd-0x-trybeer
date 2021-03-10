@@ -1106,7 +1106,7 @@ Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-enginee
 
 ### IMPORTANTE ⚠️ 
 
-* O projeto TryBeer é a base para o desenvolvimento projeto TryBeer **v2**;
+* O projeto TryBeer é a base para o desenvolvimento do projeto TryBeer **v2**;
 
 * Portanto, **o cumprimento de 100% dos requisitos obrigatórios desse projeto** (TryBeer) é um pré-requisito para o projeto **TryBeer v2**;
 
