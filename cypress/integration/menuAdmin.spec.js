@@ -33,7 +33,7 @@ describe('Criar menu side bar para administrador', () => {
     verifyContainsUrl(`${Cypress.config().baseUrl}/admin/orders`);
   });
 
-  it('Será validado que ao clicar no menu meus perfil será redirecionado para tela de meus perfil', () => {
+  it('Será validado que ao clicar no menu Perfil será redirecionado para tela de Perfil', () => {
     login(Cypress.env('loginAdmin'), Cypress.env('passwordAdmin'));
     clickButton('[data-testid="side-menu-item-profile"]');
     verifyContainsUrl(`${Cypress.config().baseUrl}/admin/profile`);

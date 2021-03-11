@@ -31,7 +31,6 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
     - [2 - Crie uma página de registro de usuários](#2---crie-uma-página-de-registro-de-usuários)
     - [3 - Crie o menu top e o menu side bar](#3---crie-o-menu-top-e-o-menu-side-bar)
     
-    `Cliente:`
     - [4 - Criar tela de perfil do cliente](#4---criar-tela-de-perfil-do-cliente)
     - [5 - Criar Tela de Produtos](#5---criar-tela-de-produtos)
     
@@ -39,8 +38,6 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
     - [6 - Criar Tela de Checkout](#6---criar-tela-de-checkout)
     - [7 - Criar Tela de Meus Pedidos](#7---criar-tela-de-meus-pedidos)
     - [8 - Criar Tela de Detalhes Pedidos](#8---criar-tela-de-detalhes-pedidos)
-
-    `Administrador:`
     - [9 - Criar menu side bar para Administrador](#9---criar-menu-side-bar-para-administrador)
     - [10 - Criar tela de perfil de Administrador](#10---criar-tela-de-perfil-de-administrador)
     - [11 - Criar tela de pedidos de admin](#11---criar-tela-de-pedidos-de-admin)
@@ -470,9 +467,9 @@ O que será verificado:
 
 - Será validado que contém os atributos descritos no protótipo
 
-- Será validado que não é possível fazer o registro com um nome com caracteres especiais
-
 - Será validado que não é possível fazer o registro com um nome com menos de 12 letras
+
+- Será validado que não é possível fazer o registro com um nome com caracteres especiais
 
 - Será validado que não é possível fazer o registro com um nome com números
 
@@ -997,7 +994,7 @@ O que será verificado:
 
 - Será validado que ao clicar no menu meus pedidos será redirecionado para tela de meus pedidos'
 
-- Será validado que ao clicar no menu `meu perfil` será redirecionado para tela de `meu perfil`
+- Será validado que ao clicar no menu Perfil será redirecionado para tela de Perfil
 
 - Será validado que ao clicar no menu sair será redirecionado para tela home
 ```
