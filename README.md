@@ -1,3 +1,7 @@
+### Termos e acordos
+
+Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe
+
 # Boas vindas ao repositório do projeto TryBeer!
 
 Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por Slack! #vqv 🚀
@@ -6,9 +10,147 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ---
 
-## Instruções para entregar seu projeto:
+# Sumário
 
-### ANTES DE COMEÇAR A DESENVOLVER:
+- [Habilidades](#habilidades)
+- [Entregáveis](#entregáveis)
+  - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
+  - [Desenvolvimento](#desenvolvimento)
+  - [Data de entrega](#data-de-entrega)
+- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
+  - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
+  - [Durante o desenvolvimento](#durante-o-desenvolvimento)
+  - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
+- [Como desenvolver](#como-desenvolver)
+- [Requisitos do projeto](#requisitos-do-projeto)
+  - [Linter](#linter)
+  - [Lista de requisitos](#lista-de-requisitos)
+
+    `Requisitos Entrega 1:`
+    - [1 - Crie uma página de login](#1---crie-uma-página-de-login)
+    - [2 - Crie uma página de registro de usuários](#2---crie-uma-página-de-registro-de-usuários)
+    - [3 - Crie o menu top e o menu side bar](#3---crie-o-menu-top-e-o-menu-side-bar)
+    
+    - [4 - Criar tela de perfil do cliente](#4---criar-tela-de-perfil-do-cliente)
+    - [5 - Criar Tela de Produtos](#5---criar-tela-de-produtos)
+    
+    `Requisitos Entrega 2:`
+    - [6 - Criar Tela de Checkout](#6---criar-tela-de-checkout)
+    - [7 - Criar Tela de Meus Pedidos](#7---criar-tela-de-meus-pedidos)
+    - [8 - Criar Tela de Detalhes Pedidos](#8---criar-tela-de-detalhes-pedidos)
+    - [9 - Criar menu side bar para Administrador](#9---criar-menu-side-bar-para-administrador)
+    - [10 - Criar tela de perfil de Administrador](#10---criar-tela-de-perfil-de-administrador)
+    - [11 - Criar tela de pedidos de admin](#11---criar-tela-de-pedidos-de-admin)
+    - [12 - Criar tela de Detalhes de admin](#12---criar-tela-de-detalhes-de-admin)
+    
+    `Bônus:`
+    - [13 - Cobertura de testes unitários](#13---cobertura-de-testes-unitários)
+- [Avisos Finais](#avisos-finais)
+
+---
+
+# Habilidades
+
+Nesse projeto, você será capaz de:
+
+- Aderência do código à especificação. Seu programa deve se comportar como especificado no repositório e no protótipo;
+- Organização do seu código e a arquitetura geral da aplicação (tanto da API quando do front-end);
+- Aderência ao padrão REST na API;
+- Cobertura de testes. Seu código deve ser testável , e deve possuir uma suíte de testes robusta e com alta cobertura.
+
+# Entregáveis
+
+Para entregar o seu projeto você deverá criar um Pull Request neste repositório.
+
+Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://course.betrybe.com/intro/git/) sempre que precisar!
+
+---
+
+## O que deverá ser desenvolvido
+
+Esse será o projeto mais desafiador até agora! Você será responsável por criar uma aplicação de ponta a ponta!
+
+Isso significa que a API, o banco de dados e o front-end serão escritos por você. 😁
+
+O projeto em si é super divertido! Você vai criar uma plataforma de delivery de cerveja. 🍻
+
+Para facilitar o entendimento, dá para dividirmos a aplicação em três partes:
+
+- Front-end do **cliente**, onde nossos clientes vão comprar cerveja;
+
+- Front-end do **admin**, onde o estabelecimento controlará os pedidos feitos;
+
+- API, que será compartilhada entre cliente e admin.
+
+O banco de dados utilizado será o `MySQL`!
+
+Você pode acessar um protótipo do front-end [aqui](https://www.figma.com/file/tzP4txu6Uy0qCxVZWdWMBO/TryBeer?node-id=0%3A1).
+
+Para servir arquivos estáticos como imagens no back-end, utilize o seguinte path: `/images` para manter de acordo com os caminhos da imagem que são salvas com os produtos no `script.sql`.
+
+
+##### ⚠️ Lembre-se de escrever testes unitários e sinta-se livre para alterar a UI. Contudo, respeite os atributos `data-testid`, pois eles serão usados na correção do projeto.
+
+Você pode ler mais sobre os atributos que serão utilizados para testes [neste link](https://www.eduardopedroso.com.br/?p=494).
+
+##### ⚠️ Para ver os comentários sobre cada componente, basta clicar no ícone de comentários no Figma (lado esquerdo superior).
+
+![image](https://res.cloudinary.com/drdpedroso/image/upload/c_scale,w_400/v1575815877/Screenshot_2019-12-08_at_11.37.25_kzt7rl.png)
+
+---
+
+## Desenvolvimento
+
+Esse repositório contém duas pastas, `back-end` e `front-end`, onde você deve desenvolver o front-end e o back-end da aplicação. Ambas as pastas contêm um projeto iniciado com as configurações básicas necessárias. Após clonar o projeto e instalar as dependências, sinta-se livre para escolher usar Redux ou ContextAPI + React Hooks. Saiba avaliar as vantagens/desvantagens de cada um na hora da escolha.
+
+Para o banco de dados, você deverá utilizar o `MySQL`. Já existe um script, na raiz do seu app. O nome do script é `script.sql`.
+
+##### Você também deve **escrever testes unitários que devem cobrir pelo menos 90% do projeto**. Na [documentação do Jest CLI](https://jestjs.io/docs/en/cli) é possível ver como essa cobertura é coletada.
+
+Para que seu projeto seja corretamente avaliado, siga as orientações a seguir:
+
+- Sua aplicação deve ter um admin padrão com o nome de usuário `Tryber Admin` e senha `123456`.
+
+- Sua aplicação deve ter, no mínimo, os produtos abaixo cadastrados. O arquivo `images.tar.gz`, na raiz do projeto, contém imagens para estes produtos.
+
+  - Skol Lata 250ml, R$ 2.20;
+  - Heineken 600ml, R$ 7.50;
+  - Antarctica Pilsen 300ml, R$ 2.49;
+  - Brahma 600ml, R$ 7.50;
+  - Skol 269ml, R$ 2.19;
+  - Skol Beats Senses 313ml, R$ 4.49;
+  - Becks 330ml, R$ 4.99;
+  - Brahma Duplo Malte 350ml, R$ 2.79;
+  - Becks 600ml, R$ 8.89;
+  - Skol Beats Senses 269ml, R$ 3.57;
+  - Stella Artois 275ml, R$ 3.49.
+
+- O front-end deve ser iniciado com `npm start` na pasta `front-end` e escutar a porta `3000`. A API deve ser iniciada com `npm start` dentro da pasta `back-end` e escutar a porta `3001`.
+
+- O uso de `localStorage` é necessário para que as informações não se percam caso o usuário atualize a página.
+
+- No `localStorage` do navegador:
+
+  - A chave `user` deve conter a seguinte estrutura:
+
+    ```json
+    {
+      "name": "Taylor Swift",
+      "email": "taylorswift@email.com",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4(...)",
+      "role": "client"
+    }
+    ```
+
+  - Ao deslogar, remova completamente a chave `user` do `localStorage`.
+
+### Data de Entrega
+
+Data de entrega para avaliação final do projeto: `DD/MM/YYYY - 14:00h`.
+
+# Instruções para entregar seu projeto
+
+## Antes de começar a desenvolver
 
 1. Clone o repositório
 
@@ -59,116 +201,52 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ---
 
-# Entregáveis
+## Durante o desenvolvimento
 
-Para entregar o seu projeto você deverá criar um Pull Request neste repositório.
+- Faça `commits` das alterações que você fizer no código regularmente
 
-Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://course.betrybe.com/intro/git/) sempre que precisar!
+- Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
 
----
-
-## O que deverá ser desenvolvido
-
-Esse será o projeto mais desafiador até agora! Você será responsável por criar uma aplicação de ponta a ponta!
-
-Isso significa que a API, o banco de dados e o front-end serão escritos por você. 😁
-
-O projeto em si é super divertido! Você vai criar uma plataforma de delivery de cerveja. 🍻
-
-Para facilitar o entendimento, dá para dividirmos a aplicação em três partes:
-
-- Front-end do **cliente**, onde nossos clientes vão comprar cerveja;
-
-- Front-end do **admin**, onde o estabelecimento controlará os pedidos feitos;
-
-- API, que será compartilhada entre cliente e admin.
-
-O banco de dados utilizado será o `MySQL`!
-
-Você pode acessar um protótipo do front-end [aqui](https://www.figma.com/file/tzP4txu6Uy0qCxVZWdWMBO/TryBeer?node-id=0%3A1).
-
-Para servir arquivos estáticos como imagens no back-end, utilize o seguinte path:
-`/back-end/public/`
-
-##### ⚠️ Lembre-se de escrever testes unitários e sinta-se livre para alterar a UI. Contudo, respeite os atributos `data-testid`, pois eles serão usados na correção do projeto.
-
-Você pode ler mais sobre os atributos que serão utilizados para testes [neste link](https://www.eduardopedroso.com.br/?p=494).
-
-##### ⚠️ Para ver os comentários sobre cada componente, basta clicar no ícone de comentários no Figma (lado esquerdo superior).
-
-![image](https://res.cloudinary.com/drdpedroso/image/upload/c_scale,w_400/v1575815877/Screenshot_2019-12-08_at_11.37.25_kzt7rl.png)
+- Os comandos que você utilizará com mais frequência são:
+  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
+  2. `git add` _(para adicionar arquivos ao stage do Git)_
+  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
+  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
+  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
 
 ---
 
-### Análise Estática
+## Depois de terminar o desenvolvimento (opcional)
 
-Usaremos o [ESLint](https://eslint.org/) para fazer a análise estática do seu código.
+Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
 
-Este projeto já vem com as dependências relacionadas ao _linter_ configuradas nos arquivos `package.json` nos seguintes caminhos:
+- Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
 
-- `sd-0x-trybeer/back-end/package.json`
-- `sd-0x-trybeer/front-end/package.json`
+  - No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
 
-Para poder rodar os `ESLint` em um projeto basta executar o comando `npm install` dentro do projeto e depois `npm run lint`. Se a análise do `ESLint` encontrar problemas no seu código, tais problemas serão mostrados no seu terminal. Se não houver problema no seu código, nada será impresso no seu terminal.
+  - No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
 
-Devido ao fato de as configurações das regras do `ESLint` dos projetos de front e back **serem diferentes**, **é preciso executar o `ESLint` em cada projeto**.
+  - No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
 
-Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
-## Desenvolvimento
+---
 
-Esse repositório contém duas pastas, `back-end` e `front-end`, onde você deve desenvolver o front-end e o back-end da aplicação. Ambas as pastas contêm um projeto iniciado com as configurações básicas necessárias. Após clonar o projeto e instalar as dependências, sinta-se livre para escolher usar Redux ou ContextAPI + React Hooks. Saiba avaliar as vantagens/desvantagens de cada um na hora da escolha.
+## Revisando um pull request
 
-Para o banco de dados, você deverá utilizar o `MySQL`. Já existe um script, na raiz do seu app. O nome do script é `script.sql`.
+Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
 
-##### Você também deve **escrever testes unitários que devem cobrir pelo menos 90% do projeto**. Na [documentação do Jest CLI](https://jestjs.io/docs/en/cli) é possível ver como essa cobertura é coletada.
+---
 
-Para que seu projeto seja corretamente avaliado, siga as orientações a seguir:
+# Como desenvolver
 
-- Sua aplicação deve ter um admin padrão com o nome de usuário `Tryber Admin` e senha `123456`.
+#### 💡Veja o exemplo a seguir de como o projeto pode se parecer depois de pronto. Lembre-se que você pode ~~e deve~~ ir além para deixar o projeto com a sua cara e impressionar à todos!
 
-- Sua aplicação deve ter, no mínimo, os produtos abaixo cadastrados. O arquivo `images.tar.gz`, na raiz do projeto, contém imagens para estes produtos.
+#### ⚠️ Leia-os atentamente e siga à risca o que for pedido. ⚠️
 
-  - Skol Lata 250ml, R$ 2.20;
-  - Heineken 600ml, R$ 7.50;
-  - Antarctica Pilsen 300ml, R$ 2.49;
-  - Brahma 600ml, R$ 7.50;
-  - Skol 269ml, R$ 2.19;
-  - Skol Beats Senses 313ml, R$ 4.49;
-  - Becks 330ml, R$ 4.99;
-  - Brahma Duplo Malte 350ml, R$ 2.79;
-  - Becks 600ml, R$ 8.89;
-  - Skol Beats Senses 269ml, R$ 3.57;
-  - Stella Artois 275ml, R$ 3.49.
+Vamos pedir que você adicione `data-testid` em alguns elementos, além de algumas tags e textos especificos. Siga à risca o que iremos pedir nos requisitos, para que o corretor automatizado possa avaliar o seu projeto corretamente.
 
-- O front-end deve ser iniciado com `npm start` na pasta `front-end` e escutar a porta `3000`. A API deve ser iniciada com `npm start` dentro da pasta `back-end` e escutar a porta `3001`.
-
-- O uso de `localStorage` é necessário para que as informações não se percam caso o usuário atualize a página.
-
-- No `localStorage` do navegador:
-
-  - A chave `user` deve conter a seguinte estrutura:
-
-    ```json
-    {
-      "name": "Taylor Swift",
-      "email": "taylorswift@email.com",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4(...)",
-      "role": "client"
-    }
-    ```
-
-  - Ao deslogar, remova completamente a chave `user` do `localStorage`.
-
-## Requisitos Obrigatórios:
-
-### 💡Veja o exemplo a seguir de como o projeto pode se parecer depois de pronto. Lembre-se que você pode ~~e deve~~ ir além para deixar o projeto com a sua cara e impressionar à todos!
-
-## ⚠️ Leia-os atentamente e siga à risca o que for pedido. ⚠️
-
-Vamos pedir que você adicione `data-testid` em alguns elementos, além de algumas tags e textos especificos, Siga à risca o que iremos pedir nos requisitos, para que o corretor automatizado possa avaliar o seu projeto corretamente.
-
-O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação.
+O não cumprimento de um requisito, total ou parcialmente, impactará na sua avaliação.
 
 ⚠️ Lembre-se de que o seu projeto só será avaliado se estiver passando pelos _checks_ do **ESLint** e se estiver, também, seguindo corretamente os padrões REST para rotas e MSC para o back-end. Além disso, você deve também disponibilizar um script contendo a criação do seu banco de dados, das tabelas e inserção de dados iniciais.
 
@@ -176,7 +254,7 @@ O não cumprimento de um requisito, total ou parcialmente, impactará em sua ava
 
 O intuito desse app é que uma pessoa possa pedir uma cerveja no aplicativo e outra pessoa possa aceitar esse pedido no **admin**.
 
-##### O projeto sera composto por duas entregas, cada uma especificada abaixo com seus respectivos requisitos e o prazo decidido com a facilitação.
+##### O projeto será composto por duas entregas, cada uma especificada abaixo com seus respectivos requisitos e o prazo decidido com a facilitação.
 
 ### 👀Observações importantes:
 
@@ -228,7 +306,7 @@ module.exports = {
 };
 ```
 
-**(Neste arquivo e obrigatório deixar o nome do database como `"database": 'Trybeer'`)**
+**(Neste arquivo é obrigatório deixar o nome do database como `"database": 'Trybeer'`)**
 
 `sd-0x-trybeer/back-end/models/connection.js`
 
@@ -241,7 +319,7 @@ const config = {
 };
 ```
 
-(esse arquivo você irá criar e configurar quando programar a conexão com banco, e essencial estar na porta 33060).
+(esse arquivo você irá criar e configurar quando programar a conexão com banco).
 
 **É essencial usar essas 3 variávies nos três arquivos acima:**
 
@@ -253,9 +331,32 @@ Variáveis:
 
 **Com elas que iremos conseguir conectar ao banco do avaliador automático**
 
-## Requisitos Entrega 1
+# Requisitos do projeto
 
-##### Requisitos Gerais
+### Linter
+
+Usaremos o [ESLint](https://eslint.org/) para fazer a análise estática do seu código.
+
+Este projeto já vem com as dependências relacionadas ao _linter_ configuradas nos arquivos `package.json` nos seguintes caminhos:
+
+- `sd-0x-trybeer/back-end/package.json`
+- `sd-0x-trybeer/front-end/package.json`
+
+Para poder rodar os `ESLint` em um projeto basta executar o comando `npm install` dentro do projeto e depois `npm run lint`. Se a análise do `ESLint` encontrar problemas no seu código, tais problemas serão mostrados no seu terminal. Se não houver problema no seu código, nada será impresso no seu terminal.
+
+Devido ao fato de as configurações das regras do `ESLint` dos projetos de front e back **serem diferentes**, **é preciso executar o `ESLint` em cada projeto**.
+
+Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+
+---
+
+Usaremos também o [StyleLint](https://stylelint.io/) para fazer a análise estática do seu código.
+
+**O Stylelint é aplicável _APENAS_ no frontend**
+
+Para poder rodar o `StyleLint` em um projeto basta executar o comando `npm install` dentro do projeto e depois `npm run lint:styles`. Se a análise do `StyleLint` encontrar problemas no seu código, tais problemas serão mostrados no seu terminal. Se não houver problema no seu código, nada será impresso no seu terminal.
+
+### Requisitos Gerais
 
 - Os `endpoints` da API devem ser criados utilizando o padrão REST;
 
@@ -264,6 +365,10 @@ Variáveis:
 - O back-end deve ser construído seguindo o padrão arquitetural `MSC`;
 
 - Rode um script SQL na raiz do projeto com comandos para a criação do banco de dados, das tabelas, inserção dos dados iniciais e criação do admin padrão. O script é `script.sql`.
+
+## Lista de requisitos
+
+### Requisitos Entrega 1
 
 ### 1 - Crie uma página de login
 
@@ -287,7 +392,7 @@ Esta tela possui o nome `Login` no protótipo.
 
 - Deve existir um botão para o usuário se registrar com o texto `"Ainda não tenho conta"`. Ao ser clicado, a pessoa deve ser redirecionada para a página **Registro**.
 
-### Página de Login:
+#### Página de Login:
 
 - O campo input 'Email' deverá conter a tag `data-testid="email-input"`
 
@@ -299,21 +404,24 @@ Esta tela possui o nome `Login` no protótipo.
 
 ![Tela de login](./public/login.png)
 
-**[Será validado que é possível acessar a home]**
+O que será verificado:
+```
+- Será validado que é possível acessar a home
 
-**[Será validado que a tela login contém os atributos descritos no protótipo]**
+- Será validado que a tela login contém os atributos descritos no protótipo
 
-**[Será validado que não é possível fazer login com um email inválido]**
+- Será validado que não é possível fazer login com um email inválido
 
-**[Será validado que não é possível fazer login com uma senha em branco]**
+- Será validado que não é possível fazer login com uma senha em branco
 
-**[Será validado que não é possível fazer login com uma senha com menos de 6 caracteres]**
+- Será validado que não é possível fazer login com uma senha com menos de 6 caracteres
 
-**[Será validado que é possível fazer login com um cliente e ser redirecionado para tela de cliente]**
+- Será validado que é possível fazer login com um cliente e ser redirecionado para tela de cliente
 
-**[Será validado que é possível fazer login com um admin e ser redirecionado para tela de admin]**
+- Será validado que é possível fazer login com um admin e ser redirecionado para tela de admin
 
-**[Será validado que é possível clicar no botão "Ainda não tenho conta" e ser redirecionado para tela de registro]**
+- Será validado que é possível clicar no botão "Ainda não tenho conta" e ser redirecionado para tela de registro
+```
 
 ### 2 - Crie uma página de registro de usuários
 
@@ -339,7 +447,7 @@ Esta tela possui o nome `Registro` no protótipo.
 
 - Caso a opção `Quero vender` esteja marcada, ao clicar no botão `"Cadastrar"`, a pessoa deve ser redirecionada para a página **Admin - Home**. Caso contrario, deve ser redirecionada para a página de **Cliente - Produtos**.
 
-### Página de Registro
+#### Página de Registro
 
 - O campo input 'name' deverá conter a tag `data-testid="signup-name"`
 
@@ -353,31 +461,32 @@ Esta tela possui o nome `Registro` no protótipo.
 
 ![Tela de cadastro](./public/cadastro.png)
 
-**[Será validado que é possível acessar a tela de registro]**
+O que será verificado:
+```
+- Será validado que é possível acessar a tela de registro
 
-**[Será validado que contém os atributos descritos no protótipo]**
+- Será validado que contém os atributos descritos no protótipo
 
-**[Será validado que não é possível fazer o registro com um nome com caracteres especiais]**
+- Será validado que não é possível fazer o registro com um nome com menos de 12 letras
 
-**[Será validado que não é possível fazer o registro com um nome com menos de 12 letras]**
+- Será validado que não é possível fazer o registro com um nome com caracteres especiais
 
-**[Será validado que não é possível fazer o registro com um nome com números]**
+- Será validado que não é possível fazer o registro com um nome com números
 
-**[Será validado que não é possível fazer login com um email inválido]**
+- Será validado que não é possível fazer login com um email inválido
 
-**[Será validado que não é possível fazer login com um email já existente]**
+- Será validado que não é possível fazer login com um email já existente
 
-**[Será validado que não é possível fazer login com uma senha em branco]**
+- Será validado que não é possível fazer login com uma senha em branco
 
-**[Será validado que não é possível fazer login com uma senha com menos de 6 caracteres]**
+- Será validado que não é possível fazer login com uma senha com menos de 6 caracteres
 
-**[Será validado que é possível fazer cadastro de um admin com sucesso e ser redirecionado para tela do admin]**
+- Será validado que é possível fazer cadastro de um admin com sucesso e ser redirecionado para tela do admin
 
-**[Será validado que é possível fazer cadastro de um cliente com sucesso e ser redirecionado para tela do cliente]**
+- Será validado que é possível fazer cadastro de um cliente com sucesso e ser redirecionado para tela do cliente
+```
 
-## Cliente
-
-### Menu superior
+### Cliente
 
 ### 3 - Crie o menu top e o menu side bar
 
@@ -401,7 +510,7 @@ Esta tela possui o nome `Registro` no protótipo.
 
 - Ao clicar no item `"Sair"`, a pessoa deve ser redirecionada para a tela **Login** e ser deslogada.
 
-### Menu superior
+#### Menu superior
 
 - O título do top 'Trybeer' deverá conter a tag `data-testid="top-title"`
 
@@ -409,7 +518,7 @@ Esta tela possui o nome `Registro` no protótipo.
 
 ![Menu Superior](./public/menusuperior.png)
 
-### Menu lateral
+#### Menu lateral
 
 - O componente sidebar deverá conter a seguinte classe `class="side-menu-container"`
 
@@ -423,19 +532,22 @@ Esta tela possui o nome `Registro` no protótipo.
 
 ![Menu Lateral](./public/menulateral.png)
 
-**[Será validado que os atributos do top menu devem ser mostrados confome protótipos]**
+O que será verificado:
+```
+- Será validado que os atributos do top menu devem ser mostrados confome protótipos
 
-**[Será validado que ao clicar no componente hamburguer o sidebar deve ficar visível]**
+- Será validado que ao clicar no componente hamburguer o sidebar deve ficar visível
 
-**[Será validado que os atributos do side menu devem ser mostrados confome protótipos]**
+- Será validado que os atributos do side menu devem ser mostrados confome protótipos
 
-**[Será validado que ao clicar no botão "produtos" será redirecionado para tela de produtos]**
+- Será validado que ao clicar no botão "produtos" será redirecionado para tela de produtos
 
-**[Será validado que ao clicar no botão "meus pedidos" será redirecionado para tela de meus pedidos]**
+- Será validado que ao clicar no botão "meus pedidos" será redirecionado para tela de meus pedidos
 
-**[Será validado que ao clicar no botão "meu perfil" será redirecionado para tela de meu perfil]**
+- Será validado que ao clicar no botão "meu perfil" será redirecionado para tela de meu perfil
 
-**[Será validado que ao clicar no botão "sair" será redirecionado para tela home]**
+- Será validado que ao clicar no botão "sair" será redirecionado para tela home
+```
 
 ### 4 - Criar tela de perfil do cliente
 
@@ -453,7 +565,7 @@ Esta tela possui o nome `Cliente - Meu Perfil` no protótipo.
 
 - Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
-### Tela de perfil
+#### Tela de perfil
 
 - O título do top 'Meu perfil' deverá conter a tag `data-testid="top-title"`
 
@@ -465,17 +577,20 @@ Esta tela possui o nome `Cliente - Meu Perfil` no protótipo.
 
 ![Tela do perfil do cliente](./public/perfilcliente.png)
 
-**[Será validado que é possível acessar a tela de perfil do cliente]**
+O que será verificado:
+```
+- Será validado que é possível acessar a tela de perfil do cliente
 
-**[Será validado que contém os atributos descritos no protótipo]**
+- Será validado que contém os atributos descritos no protótipo
 
-**[Será validado que campo email está como readonly]**
+- Será validado que campo email está como readonly
 
-**[Será validado que o botão salvar fique desabilitado caso não altere o nome]**
+- Será validado que o botão salvar fique desabilitado caso não altere o nome
 
-**[Será validado que o botão salvar fique habilitado caso altere o nome]**
+- Será validado que o botão salvar fique habilitado caso altere o nome
 
-**[Será validado que é possível alterar o nome com sucesso]**
+- Será validado que é possível alterar o nome com sucesso
+```
 
 ### 5 - Criar Tela de Produtos
 
@@ -517,7 +632,7 @@ Esta tela possui o nome `Cliente - Produtos` no protótipo.
 
 - Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
-### Tela de produtos
+#### Tela de produtos
 
 - O valor do produto 'R$ 2,20' deverá conter a tag `data-testid="0-product-price"`
 
@@ -565,35 +680,36 @@ data-testid="0-product-qtd"
 
 ![Tela do perfil do cliente](./public/produtos.png)
 
-**[Será validado que existe um produto na tela de produtos]**
+O que será verificado:
+```
+- Será validado que existe um produto na tela de produtos
 
-**[Será validado que existe todos os produtos na tela de produtos]**
+- Será validado que existe todos os produtos na tela de produtos
 
-**[Será validado que é possíve clicar no botão "+" e atualizar o produto para 1]**
+- Será validado que é possíve clicar no botão "+" e atualizar o produto para 1
 
-**[Será validado que é possível clicar no botão "-"e atualizar o produto para 0]**
+- Será validado que é possível clicar no botão "-"e atualizar o produto para 0
 
-**[Será validado que não é possível clicar no botão "-" e atualizar o produto para menor que zero]**
+- Será validado que não é possível clicar no botão "-" e atualizar o produto para menor que zero
 
-**[Será validado que é possível visualizar o botão "Ver Carrinho"]**
+- Será validado que é possível visualizar o botão "Ver Carrinho"
 
-**[Será validado que é possível atualizar o valor do carrinho ao adicionar um produto]**
+- Será validado que é possível atualizar o valor do carrinho ao adicionar um produto
 
-**[Será validado que é possível atualizar o valor do carrinho ao remover um produto]**
+- Será validado que é possível atualizar o valor do carrinho ao remover um produto
 
-**[Será validado que ao atualizar a tela continuará na tela de produtos e carrinho com o mesmo valor]**
+- Será validado que ao atualizar a tela continuará na tela de produtos e carrinho com o mesmo valor
 
-**[Será validado que é possível adicionar um produto e clicar no botão "Ver Carrinho" e ser redirecionado para tela de carrinho]**
+- Será validado que é possível adicionar um produto e clicar no botão "Ver Carrinho" e ser redirecionado para tela de carrinho
 
-**[Será validado que o botão "Ver Carrinho" fique desabilitado caso não adicione nenhum produto]**
+- Será validado que o botão "Ver Carrinho" fique desabilitado caso não adicione nenhum produto
 
-**[Será validado que não é possível acessar a tela de produtos sem estar logado e será redirecionado para tela de login]**
+- Será validado que não é possível acessar a tela de produtos sem estar logado e será redirecionado para tela de login
 
+```
 ---
 
-## Requisitos Entrega 2
-
-##### Requisitos Gerais
+### Requisitos Entrega 2
 
 ### 6 - Criar Tela de Checkout
 
@@ -621,7 +737,7 @@ Esta tela possui o nome `Cliente - Checkout` no protótipo.
 
 - Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
-### Tela de Checkout
+#### Tela de Checkout
 
 - O título do top 'Finalizar Pedido' deverá conter a tag `data-testid="top-title"`
 
@@ -671,30 +787,33 @@ data-testid="0-removal-button"
 
 ![Tela do checkout](./public/checkout.png)
 
-**[Será validado que é possível acessar a tela de checkout]**
+O que será verificado:
+```
+- Será validado que é possível acessar a tela de checkout
 
-**[Será validado que contém atributos descritos no protótipo]**
+- Será validado que contém atributos descritos no protótipo
 
-**[Será validado que é possível ver que o produto tem quantidade, nome e valor total do produto]**
+- Será validado que é possível ver que o produto tem quantidade, nome e valor total do produto
 
-**[Será validado que é possível a lista mostrar o valor total do carrinho]**
+- Será validado que é possível a lista mostrar o valor total do carrinho
 
-**[Será validado que é possível fazer refresh da tela e os dados continuarem na tela]**
+- Será validado que é possível fazer refresh da tela e os dados continuarem na tela
 
-**[Será validado que é possível excluir um produto no checkout]**
+- Será validado que é possível excluir um produto no checkout
 
 - Será validado que ao excluir os produtos aparecerá uma mensagem na tela de:
   `Não há produtos no carrinho` como na imagem abaixo:
-
+```
 ![Checkout sem produtos](./public/naohaprodutos.png)
+```
+- Será validado que é possível o botão finalizar pedido ficar habilitado apenas quando tiver produto maior que zero e rua e numero preenchidos]**
 
-**[Será validado que é possível o botão finalizar pedido ficar habilitado apenas quando tiver produto maior que zero e rua e numero preenchidos]**
-
-**[Será validado que é possível fazer a compra de um produto e ao finalizar ver a mensagem de sucesso e ser redirecionado para tela de produtos]**
+- Será validado que é possível fazer a compra de um produto e ao finalizar ver a mensagem de sucesso e ser redirecionado para tela de produtos
 
 - Será validado que ao fazer a compra com sucesso a mensagem de sucesso "Compra realizada com sucesso!" irá aparecer na tela.
 
-**[Será validado que não é possível acessar o checkout sem estar logado e será redirecionado para tela de login]**
+- Será validado que não é possível acessar o checkout sem estar logado e será redirecionado para tela de login
+```
 
 ### 7 - Criar Tela de Meus Pedidos
 
@@ -712,7 +831,7 @@ Esta tela possui o nome `Cliente - Meus Pedidos` no protótipo.
 
 - Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
-### Tela de Meus Pedidos
+#### Tela de Meus Pedidos
 
 - O título do top 'Meus Pedidos' deverá conter a tag `data-testid="top-title"`
 
@@ -750,15 +869,18 @@ data-testid="0-order-card-container"
 
 ![Meus Pedidos](./public/meuspedidos.png)
 
-**[Será validado que é possível acessar a tela de meus pedidos]**
+O que será verificado:
+```
+- Será validado que é possível acessar a tela de meus pedidos
 
-**[Será validado que contém os atributos descritos no protótipo]**
+- Será validado que contém os atributos descritos no protótipo
 
-**[Será validado que é possível ver que o produto tem quantidade, nome, valor total e a data da compra]**
+- Será validado que é possível ver que o produto tem quantidade, nome, valor total e a data da compra
 
-**[Será validado que é possível clicar no card e ser redirecionado para tela do detalhe do produto]**
+- Será validado que é possível clicar no card e ser redirecionado para tela do detalhe do produto
 
-**[Será validado que não é possível acessar a tela de meus pedidos sem estar logado e será redirecionado para tela de login]**
+- Será validado que não é possível acessar a tela de meus pedidos sem estar logado e será redirecionado para tela de login
+```
 
 ### 8 - Criar Tela de Detalhes Pedidos
 
@@ -785,7 +907,7 @@ valor do produto - data-testid="0-product-total-value" - R$ 2,20
 valor total da compra - data-testid="order-total-value" - Total: R$ 2,20
 url - http://localhost:3000/orders/1
 
-### Tela de detalhes de pedido
+#### Tela de detalhes de pedido
 
 - O título do top 'Detalhes de Pedido' deverá conter a tag `data-testid="top-title"`
 
@@ -825,19 +947,22 @@ data-testid="0-product-total-value"
 
 ![Detalhes do Pedido](./public/detalhesdopedido.png)
 
-**[Será validado que é possível acessar a tela do detalhe do pedido]**
+O que será verificado:
+```
+- Será validado que é possível acessar a tela do detalhe do pedido
 
-**[Será validado que contém os atributos descritos no protótipo]**
+- Será validado que contém os atributos descritos no protótipo
 
-**[Será validado que é possível ver que tem numero do pedido e a data da compra]**
+- Será validado que é possível ver que tem numero do pedido e a data da compra
 
-**[Será validado que é possível ver que o produto tem quantidade, nome e valor total do produto]**
+- Será validado que é possível ver que o produto tem quantidade, nome e valor total do produto
 
-**[Será validado que é possível ver o valor total do pedido]**
+- Será validado que é possível ver o valor total do pedido
 
-**[Será validado que não é possível acessar a tela de meus pedidos sem estar logado e será redirecionado para tela de login]**
+- Será validado que não é possível acessar a tela de meus pedidos sem estar logado e será redirecionado para tela de login
+```
 
-## Administrador
+### Administrador
 
 ### 9 - Criar menu side bar para Administrador
 
@@ -851,7 +976,7 @@ data-testid="0-product-total-value"
 
 - Ao clicar no item `"Sair"`, a pessoa deve ser redirecionada para a tela **Login** e ser deslogada.
 
-### Menu lateral Administrador
+#### Menu lateral Administrador
 
 - O componente sidebar deverá conter a seguinte classe `class="admin-side-bar-container"`
 
@@ -863,13 +988,16 @@ data-testid="0-product-total-value"
 
 ![SideBar Admin](./public/sidebaradmin.png)
 
-**[Será validado que o sidebar devem ser mostrados, conforme protótipos]**
+O que será verificado:
+```
+- Será validado que o sidebar devem ser mostrados, conforme protótipos
 
-**[Será validado que ao clicar no menu meus pedidos será redirecionado para tela de meus pedidos']**
+- Será validado que ao clicar no menu meus pedidos será redirecionado para tela de meus pedidos'
 
-**[Será validado que ao clicar no menu meus perfil será redirecionado para tela de meus perfil]**
+- Será validado que ao clicar no menu Perfil será redirecionado para tela de Perfil
 
-**[Será validado que ao clicar no menu sair será redirecionado para tela home]**
+- Será validado que ao clicar no menu sair será redirecionado para tela home
+```
 
 ### 10 - Criar tela de perfil de Administrador
 
@@ -883,7 +1011,7 @@ Esta tela possui o nome `Admin - Perfil` no protótipo.
 
 - Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
-### Tela de perfil Administrador
+#### Tela de perfil Administrador
 
 - O nome deverá conter a seguinte classe `data-testid="profile-name"`
 
@@ -891,13 +1019,16 @@ Esta tela possui o nome `Admin - Perfil` no protótipo.
 
 ![Perfil Admin](./public/perfiladmin.png)
 
-**[Será validado que é possível acessar a tela do perfil do administrador]**
+O que será verificado:
+```
+- Será validado que é possível acessar a tela do perfil do administrador
 
-**[Será validado que a tela de perfil contém os atributos descritos no protótipo]**
+- Será validado que a tela de perfil contém os atributos descritos no protótipo
 
-**[Será validado que a tela de perfil contém o email e nome do administrador]**
+- Será validado que a tela de perfil contém o email e nome do administrador
 
-**[Será validado que não é possível acessar a tela sem estar autenticado e ser redirecionado para tela de login]**
+- Será validado que não é possível acessar a tela sem estar autenticado e ser redirecionado para tela de login
+```
 
 ### 11 - Criar tela de pedidos de admin
 
@@ -921,7 +1052,7 @@ Esta tela possui o nome `Admin - Pedidos` no protótipo.
 
 - Ao clicar em qualquer parte do card do pedido, a pessoa deve ser redirecionada para a tela `Admin - Detalhe de Pedido`.
 
-### Tela de Pedidos
+#### Tela de Pedidos
 
 - O numero do pedido deverá conter a seguinte classe `data-testid="0-order-number"`
 
@@ -957,13 +1088,16 @@ data-testid="0-order-status"
 
 ![Pedidos Admin](./public/pedidosadmin.png)
 
-**[Será validado que é possível acessar a tela do pedidos do administrador]**
+O que será verificado:
+```
+- Será validado que é possível acessar a tela do pedidos do administrador
 
-**[Será validado que a tela de pedidos contém os atributos descritos no protótipo]**
+- Será validado que a tela de pedidos contém os atributos descritos no protótipo
 
-**[Será validado que os dados do card estão corretos]**
+- Será validado que os dados do card estão corretos
 
-**[Será validado que é possível clicar no card do produto e ser redirecionado para tela de detalhes do produto]**
+- Será validado que é possível clicar no card do produto e ser redirecionado para tela de detalhes do produto
+```
 
 ### 12 - Criar tela de Detalhes de admin
 
@@ -991,7 +1125,7 @@ Essa página corresponde às páginas `Admin - Detalhes de Pedido - Pendente` e 
 
 - Ao clicar no botão `"Marcar pedido como entregue"`, o status desse pedido deve mudar para `Entregue` e o botão deve desaparecer.
 
-### Tela de Detalhes de Pedido
+#### Tela de Detalhes de Pedido
 
 - O numero do pedido deverá conter a seguinte classe `data-testid="order-number"`
 
@@ -1035,26 +1169,29 @@ data-testid="0-order-unit-price"
 
 ![Detalhes pedidos Admin](./public/detalhespedidosadmin.png)
 
-**[Será validado que é possível acessar a tela do detalhe do pedido do administrador]**
+O que será verificado:
+```
+- Será validado que é possível acessar a tela do detalhe do pedido do administrador
 
-**[Será validado que contém os atributos descritos no protótipo]**
+- Será validado que contém os atributos descritos no protótipo
 
-**[Será validado que o pedido contém nome e status do pedido]**
+- Será validado que o pedido contém nome e status do pedido
 
-**[Será validado que o pedido contém todos os detalhes do pedido]**
+- Será validado que o pedido contém todos os detalhes do pedido
 
-**[Será validado que o pedido com status pendente irá apresentar na tela o botão "Marcar como entregue"]**
+- Será validado que o pedido com status pendente irá apresentar na tela o botão "Marcar como entregue"
 
-**[Será validado que o pedido ao marcar como entregue o status mude para entregue" e o botão nao esteja mais visível]**
+- Será validado que o pedido ao marcar como entregue o status mude para entregue" e o botão nao esteja mais visível
 
-Será validado que o status do pedido fique marcado como entregue como na imagem abaixo:
-
+- Será validado que o status do pedido fica marcado como entregue como na imagem abaixo:
+```
 ![Entregue](./public/entregue.png)
+```
 
-**[Será validado que o pedido ao marcar como entregue o status mude para entregue" na tela de pedidos admin]**
+- Será validado que o pedido ao marcar como entregue o status mude para entregue" na tela de pedidos admin
 
-Será validado que o status do pedido fique marcado como entregue como na imagem abaixo:
-
+- Será validado que o status do pedido fica marcado como entregue como na imagem abaixo:
+```
 ![Entregue](./public/pedidoentregue.png)
 
 ### Bônus
@@ -1065,40 +1202,11 @@ Será validado que o status do pedido fique marcado como entregue como na imagem
 
 ---
 
-### DURANTE O DESENVOLVIMENTO
+# Avisos finais
 
-- Faça `commits` das alterações que você fizer no código regularmente
+Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
-- Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
-
-- Os comandos que você utilizará com mais frequência são:
-  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
-  2. `git add` _(para adicionar arquivos ao stage do Git)_
-  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
-  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
-
----
-
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
-
-Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
-
-- Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
-
-  - No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
-
-  - No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
-
-  - No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
-
-Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
-
----
-
-### REVISANDO UM PULL REQUEST
-
-Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
+Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
 
 #VQV
 
@@ -1115,3 +1223,6 @@ Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-enginee
 * O prazo disponível para esse projeto contempla o tempo previsto para atingir o objetivo de concluir 100% dos requisitos obrigatórios;
 
 * Dessa forma, o grupo terá todas as condições para chegar ao projeto **TryBeer v2** com o código preparado _(100% dos requisitos obrigatórios deste projeto)_ para iniciar o desenvolvimento dos seus requisitos.
+
+* O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
+
