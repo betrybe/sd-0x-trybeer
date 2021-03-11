@@ -24,6 +24,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 - [Como desenvolver](#como-desenvolver)
 - [Requisitos do projeto](#requisitos-do-projeto)
   - [Linter](#linter)
+  - [Execução de testes de requisito](#execução-de-testes-de-requisito)
   - [Lista de requisitos](#lista-de-requisitos)
 
     `Requisitos Entrega 1:`
@@ -355,6 +356,16 @@ Usaremos também o [StyleLint](https://stylelint.io/) para fazer a análise est�
 **O Stylelint é aplicável _APENAS_ no frontend**
 
 Para poder rodar o `StyleLint` em um projeto basta executar o comando `npm install` dentro do projeto e depois `npm run lint:styles`. Se a análise do `StyleLint` encontrar problemas no seu código, tais problemas serão mostrados no seu terminal. Se não houver problema no seu código, nada será impresso no seu terminal.
+
+### Execução de testes de requisito
+
+Para o projeto ser validado, todos os testes de comportamento devem passar. É possível testar isso local rodando `npm run cy`. Esse comando roda a suite de testes do Cypress que valida se o fluxo geral e os requisitos funcionais estão funcionando como deveriam. Você pode também executar o comando `npm run cy:open` para ter um resultado visual dos testes executados.
+
+Esses testes não consideram o layout de maneira geral, mas sim os atributos e informações corretas, então preste atenção nisso! Os testes te darão uma mensagem de erro caso não estejam passando (seja qual for o motivo). 😉
+
+**Atenção:** Sua aplicação deve estar rodando para o Cypress no terminal poder testar.
+
+#### Além dos testes da avaliação automatizada, o requisito bônus do projeto se baseia em **escrever testes unitários que cubram pelo menos 90% do projeto**. Na [documentação do Jest CLI](https://jestjs.io/docs/en/cli) é possível ver como essa cobertura é coletada.
 
 ### Requisitos Gerais
 
