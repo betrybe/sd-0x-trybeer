@@ -378,6 +378,8 @@ Esta tela possui o nome `Login` no protótipo.
 
 - A rota da tela deve ser `/login`;
 
+- A rota `/` da aplicação deve redirecionar para a rota `/login`;
+
 - A pessoa deve conseguir escrever seu email no input de email;
 
 - A pessoa deve conseguir escrever sua senha (letras ou números) no input de senha;
