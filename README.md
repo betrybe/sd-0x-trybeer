@@ -563,7 +563,7 @@ Esta tela possui o nome `Cliente - Meu Perfil` no protótipo.
 
 - Deve ter um botão `"Salvar"`". Caso o usuário tenha editado o nome, o botão deve ser habilitado. Caso contrário, o botão deve estar desabilitado;
 
-- Ao clicar no botão `"Salvar"`, uma requisição deve ser feita à API e o nome da pessoa deve ser atualizado no banco de dados e exibir a mensagem `Atualização concluída com sucesso`;
+- Ao clicar no botão `"Salvar"`, uma requisição deve ser feita à API e o nome da pessoa deve ser atualizado no banco de dados. Ao backend concluir, deve-se exibir a mensagem `Atualização concluída com sucesso` na tela;
 
 - Ao entrar na tela, se o usuário não estiver logado, deve ser redirecionado para a tela **Login**.
 
