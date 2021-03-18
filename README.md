@@ -825,7 +825,7 @@ Esta tela possui o nome `Cliente - Meus Pedidos` no protótipo.
 
 - A rota da tela deve ser `/orders`;
 
-- Deve conter uma lista de cards, onde cada card é um pedido. Cada card deve conter as seguintes informações: `número do pedido`, `data de realização` e `valor total do pedido`. Para a data de realização do pedido, mostre apenas o dia e o mês;
+- Deve conter uma lista de cards, onde cada card é um pedido. Cada card deve conter as seguintes informações: `número do pedido`, `data de realização` e `valor total do pedido`. Para a data de realização do pedido, mostre **apenas o dia e o mês**;
 
 - A listagem deve mostrar os pedidos ordenados por id;
 
