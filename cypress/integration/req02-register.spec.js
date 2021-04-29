@@ -76,7 +76,7 @@ describe('2 - Crie uma página de registro de usuários', () => {
     insertText('[data-testid="signup-email"]', 'bruno.batista@gmail.com');
     insertText('[data-testid="signup-password"]', '12345678');
     clickButton('[data-testid="signup-btn"]');
-    verifyContainsText('E-mail already in database.');
+    verifyContainsText('Já existe um usuário com esse e-mail.');
   });
 
   it('Será validado que não é possível fazer login com uma senha em branco', () => {
