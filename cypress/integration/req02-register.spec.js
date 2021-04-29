@@ -12,7 +12,7 @@ import {
 
 import { internet } from 'faker';
   
-describe('Crie uma página de registro de usuários', () => {
+describe('2 - Crie uma página de registro de usuários', () => {
   before(() => {
     createAndInsertsDataBase()
   });
