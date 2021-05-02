@@ -84,7 +84,7 @@ Para facilitar o entendimento, dá para dividirmos a aplicação em três partes
 
 O banco de dados utilizado será o `MySQL`!
 
-Você pode acessar um protótipo do front-end [aqui](https://www.figma.com/file/tzP4txu6Uy0qCxVZWdWMBO/TryBeer?node-id=0%3A1).
+Você pode acessar um protótipo do front-end [aqui](https://www.figma.com/file/tzP4txu6Uy0qCxVZWdWMBO/TryBeer?node-id=0%3A1) neste link do Figma.
 
 Para servir arquivos estáticos como imagens no back-end, utilize o seguinte path: `/images` para manter de acordo com os caminhos da imagem que são salvas com os produtos no `script.sql`.
 
