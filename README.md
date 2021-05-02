@@ -321,7 +321,7 @@ const config = {
 
 (esse arquivo você irá criar e configurar quando programar a conexão com banco).
 
-**É essencial usar essas 3 variávies nos três arquivos acima:**
+**É essencial usar essas 3 variáveis nos três arquivos acima:**
 
 Variáveis:
 
